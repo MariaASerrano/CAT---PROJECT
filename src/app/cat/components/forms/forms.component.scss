@@ -1,0 +1,101 @@
+span { //this works for first letters in blue color
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #0085FF;
+    line-height: normal;
+    margin: auto;
+}
+.regulartitle { //this works for regular title
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #000;
+    font-size: 75px;
+    line-height: normal;
+}
+
+button:hover {
+    background-color: #9BCEFD;
+    color: white;
+    border-color: #9BCEFD;
+  }
+
+.help {
+color: #9BCEFD;
+}
+
+.help:hover{
+  color: #0085FF;
+  background-color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  
+  a:hover {
+    background-color: #9BCEFD;
+    color: #FFFFFF;
+    border-color: #9BCEFD;
+  }
+  
+  .previous {
+    background-color: white;
+    font-size: 20px;
+    color: #0085FF;
+    border:2px;
+    border-style: solid;
+    border-color: #0085FF;    
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+  }
+  
+  .next {
+    background-color: white;
+    color: #0085FF;
+    border:2px;
+    font-size: 20px;
+    border-style: solid;
+    border-color: #0085FF;    
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+  }
+
+  .walking-cat{ //progress CAT
+    width: 150px;
+    height: 80px;
+}
+
+.out-container{
+    display: flex;
+    justify-content:space-between;
+    padding: 2rem;
+    flex-direction:column;
+}
+
+.form-container{
+    display: flex;
+    justify-content:space-between;
+    gap: 2rem;
+    width: 100%;
+    flex-direction:row;
+}
+
+.left-container{
+    display: flex;
+    justify-content:space-between;
+    //padding: 2rem;
+    width: 50%;
+    flex-direction:column;
+}
+
+.right-container{
+    display: flex;
+    justify-content:space-between;
+    //padding: 2rem;
+    flex-direction:column;
+    width: 50%;
+}
