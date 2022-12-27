@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms'
+import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms'
 import { HelpComponent } from '../../pages/modal/help/help.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -10,11 +10,35 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class FormsComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  formularioInicial: FormGroup = this.fb.group({
+    name: ['', [ Validators.required, Validators.minLength(3)]],
+    sedes:['', [Validators.required, Validators.min(1)]],
+    empleados:['', [Validators.required, Validators.min(1)]],
+    ganancia:['', [Validators.required, Validators.min(1)]],
+    user:['', [ Validators.required, Validators.minLength(3)]],
+    email:['', [Validators.required, Validators.email]]
+  })
+
+  formularioCheck: FormGroup = this.fb.group({
+    operacion: ['LV', [Validators.requiredTrue]]
+  })
+
+
+ constructor(private dialog: MatDialog, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
+  campoNoValido(campo:string){
+    return this.formularioInicial.controls[campo].errors && this.formularioInicial.controls[campo].touched;
+  }
+
+  guardar(){
+    if(this.formularioInicial.invalid){
+      this.formularioInicial.markAllAsTouched();
+      return
+    }
+  }
   mostrarGeneral=true;
   mostrarcuestionario=false;
   mostrarcuestionario2=false;
