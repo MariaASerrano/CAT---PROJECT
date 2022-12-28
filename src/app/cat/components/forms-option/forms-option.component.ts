@@ -6,6 +6,7 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./forms-option.component.scss']
 })
 export class FormsOptionComponent  {
+
   @Input() options = [
     { label: 'No, inexistente' },
     { label: 'Si, en forma reactiva' },
@@ -13,7 +14,10 @@ export class FormsOptionComponent  {
     { label: 'Si, en forma proactiva' },
     { label: 'Si, en forma anticipada' }
   ];
-  @Output() optionSelected = new EventEmitter<void>();
+  @Output() optionSelected = new EventEmitter<string>();
+  onOptionSelected(option: string) {
+    this.optionSelected.emit(option);
+  }
 
   selectOption() {
     this.optionSelected.emit();

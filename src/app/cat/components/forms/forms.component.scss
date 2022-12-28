@@ -68,6 +68,9 @@ a {
   .walking-cat{ //progress CAT
     width: 150px;
     height: 80px;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
 }
 
 .out-container{
@@ -103,7 +106,7 @@ a {
 
 .progress-bar-wrapper {
   position: fixed;
-  bottom: 100px;
-  width: 95%;
+  bottom: 65px;
+  width: 1470px;
 }
 

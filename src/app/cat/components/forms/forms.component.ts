@@ -14,6 +14,15 @@ export class FormsComponent implements OnInit {
   progress = 0;
   totalQuestions = 18;
   answeredQuestions = 0;
+
+totalWidth = 1470; /* adjust the total width as needed */
+imageWidth = 150; /* adjust the width of the image as needed */
+
+calculateImagePosition() {
+  const progressWidth = this.progress * this.totalWidth / 100;
+  const imagePosition = progressWidth > this.imageWidth ? progressWidth - this.imageWidth : 0;
+  return imagePosition;
+  }
  
   selectedOption: string;
 
