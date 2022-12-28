@@ -6,7 +6,7 @@ import { MaterialModule } from '../material/material.module';
 import { FormsComponent } from './components/forms/forms.component';
 import { ModalComponent } from './pages/modal/modal.component';
 import { HelpComponent } from './pages/modal/help/help.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CurrencyPipe } from '@angular/common';
 import { FormsOptionComponent } from './components/forms-option/forms-option.component';
 
@@ -23,6 +23,7 @@ import { FormsOptionComponent } from './components/forms-option/forms-option.com
     CatRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+    FormsModule
   ],
 
   providers:[

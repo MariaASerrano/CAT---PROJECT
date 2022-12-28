@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms'
+import {FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { HelpComponent } from '../../pages/modal/help/help.component';
-import { FormsOptionComponent } from '../forms-option/forms-option.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CurrencyPipe } from '@angular/common';
 
@@ -15,7 +14,20 @@ export class FormsComponent implements OnInit {
   progress = 0;
   totalQuestions = 18;
   answeredQuestions = 0;
+ 
+  selectedOption: string;
 
+
+  updateSelectedOption(option: string) {
+    this.selectedOption = option;
+  }
+  // Define a FormControl for the currency field
+  currencyControl = new FormControl('', [
+    Validators.pattern('^\d+(\.\d{1,2})?$'), // Allow only numeric characters and a decimal point
+    Validators.required, // Make the field required
+  ]);
+ 
+  
   updateProgress() {
     this.answeredQuestions++;
     this.progress = (this.answeredQuestions / this.totalQuestions) * 100;
@@ -25,21 +37,24 @@ export class FormsComponent implements OnInit {
     name: ['', [ Validators.required, Validators.minLength(3)]],
     sedes:['', [Validators.required, Validators.min(1)]],
     empleados:['', [Validators.required, Validators.min(1)]],
-    ganancia:['', [Validators.required, Validators.min(6)]],
+    ganancia: ['', [Validators.required, Validators.min(6)]],
     user:['', [ Validators.required, Validators.minLength(3)]],
     email:['', [Validators.required, Validators.email]]
   })
 
-  formularioCheck: FormGroup = this.fb.group({
-    operacion: ['LV', [Validators.requiredTrue]]
-  })
-
-
- constructor(private dialog: MatDialog, private fb: FormBuilder, private currencyPipe:CurrencyPipe) { }
+ constructor(private dialog: MatDialog, private fb: FormBuilder,  private currencyPipe: CurrencyPipe) {
+  this.selectedOption = '';  
+}
 
   ngOnInit(): void {
 
   }
+/*   setCurrency(value: string) {
+    console.log(`Setting currency value to ${value}`);
+    if (this.currencyControl) {
+      this.currencyControl.setValue(value);
+    }
+  } */
 
   campoNoValido(campo:string){
     return this.formularioInicial.controls[campo].errors && this.formularioInicial.controls[campo].touched;

@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field appearance="outline">
     <mat-label>Elige una opción</mat-label>
     <mat-select (selectionChange)="selectOption()">
       <mat-option *ngFor="let option of options" [value]="option.label">

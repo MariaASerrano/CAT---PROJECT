@@ -13,21 +13,24 @@
         <mat-label *ngIf="campoNoValido('sedes')">Debes ingresar la cantidad total de sedes</mat-label>
     </mat-form-field>
     <h3>Su entidad opera de:</h3>
-    <mat-checkbox color="primary" >Lunes a viernes</mat-checkbox>
-    <mat-checkbox color="primary" >Lunes a sábado</mat-checkbox>
-    <mat-checkbox color="primary" >Todos los días</mat-checkbox><br>
-  </div>
+    <mat-radio-group [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}">
+      <mat-radio-button color="primary" value="lunesViernes">Lunes a viernes</mat-radio-button><br><br>
+      <mat-radio-button color="primary" value="lunesSabado">Lunes a sábado</mat-radio-button><br><br>
+      <mat-radio-button color="primary" value="todosLosDias">Todos los días</mat-radio-button>
+    </mat-radio-group>
+    </div>
   <div class="right-container">
     <h3>¿Cuántos empleados tiene actualmente la entidad?</h3>
     <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-        <input type="number" matInput placeholder="Ingrese la cantidad de empleados" formControlName="empleados">
-        <mat-label *ngIf="campoNoValido('empleados')">Debes ingresar el total de empleados en la organización</mat-label>
+      <input type="number" min="0" matInput placeholder="Ingrese la cantidad de empleados" formControlName="empleados">  
+      <mat-label *ngIf="campoNoValido('empleados')">Debes ingresar el total de empleados en la organización</mat-label>
     </mat-form-field>
     <h3>¿Cuál fue la ganancia del último año?</h3>
     <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-        <input type="number" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia">
+        <input type="number" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia"
+         required>
         <mat-label *ngIf="campoNoValido('ganancia')">Debes ingresar la ganancia (revenue) del último año</mat-label>
-    </mat-form-field>
+      </mat-form-field>
     <h3>¿Cuál es el nombre de la persona que está realizando esta evaluación?</h3>
     <mat-form-field appearance="outline" [formGroup]="formularioInicial" >
       <input matInput placeholder="Ingrese su nombre" formControlName="user">
@@ -171,7 +174,7 @@
     <div class="progress-bar-wrapper">
       <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
     </div>
-    
+
     <div class="out-container">
         <button mat-flat-button class="previous" (click)="showCuest2()"><mat-icon>west</mat-icon></button>
         <button mat-flat-button class="next" (click)="guardar()"><mat-icon>east</mat-icon></button>
