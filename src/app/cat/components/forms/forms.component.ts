@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms'
 import { HelpComponent } from '../../pages/modal/help/help.component';
+import { FormsOptionComponent } from '../forms-option/forms-option.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-forms',
@@ -10,11 +12,20 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class FormsComponent implements OnInit {
 
+  progress = 0;
+  totalQuestions = 18;
+  answeredQuestions = 0;
+
+  updateProgress() {
+    this.answeredQuestions++;
+    this.progress = (this.answeredQuestions / this.totalQuestions) * 100;
+  }
+
   formularioInicial: FormGroup = this.fb.group({
     name: ['', [ Validators.required, Validators.minLength(3)]],
     sedes:['', [Validators.required, Validators.min(1)]],
     empleados:['', [Validators.required, Validators.min(1)]],
-    ganancia:['', [Validators.required, Validators.min(1)]],
+    ganancia:['', [Validators.required, Validators.min(6)]],
     user:['', [ Validators.required, Validators.minLength(3)]],
     email:['', [Validators.required, Validators.email]]
   })
@@ -24,9 +35,10 @@ export class FormsComponent implements OnInit {
   })
 
 
- constructor(private dialog: MatDialog, private fb: FormBuilder) { }
+ constructor(private dialog: MatDialog, private fb: FormBuilder, private currencyPipe:CurrencyPipe) { }
 
   ngOnInit(): void {
+
   }
 
   campoNoValido(campo:string){

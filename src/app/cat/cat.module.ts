@@ -7,6 +7,8 @@ import { FormsComponent } from './components/forms/forms.component';
 import { ModalComponent } from './pages/modal/modal.component';
 import { HelpComponent } from './pages/modal/help/help.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CurrencyPipe } from '@angular/common';
+import { FormsOptionComponent } from './components/forms-option/forms-option.component';
 
 @NgModule({
   declarations: [
@@ -14,12 +16,17 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsComponent,
     ModalComponent,
     HelpComponent,
+    FormsOptionComponent,
   ],
   imports: [
     CommonModule,
     CatRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
+  ],
+
+  providers:[
+    CurrencyPipe,
   ]
 })
 export class CatModule { }
