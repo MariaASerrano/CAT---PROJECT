@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
+import {FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { HelpComponent } from '../../pages/modal/help/help.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CurrencyPipe } from '@angular/common';
@@ -9,8 +9,9 @@ import { CurrencyPipe } from '@angular/common';
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.scss']
 })
-export class FormsComponent implements OnInit {
 
+export class FormsComponent implements OnInit {
+  formularioInicial: FormGroup =new FormGroup ({}); 
   progress = 0;
   totalQuestions = 18;
   answeredQuestions = 0;
@@ -26,49 +27,74 @@ calculateImagePosition() {
  
   selectedOption: string;
 
-
   updateSelectedOption(option: string) {
     this.selectedOption = option;
   }
-  // Define a FormControl for the currency field
-  currencyControl = new FormControl('', [
-    Validators.pattern('^\d+(\.\d{1,2})?$'), // Allow only numeric characters and a decimal point
-    Validators.required, // Make the field required
-  ]);
  
-  
   updateProgress() {
     this.answeredQuestions++;
     this.progress = (this.answeredQuestions / this.totalQuestions) * 100;
   }
 
-  formularioInicial: FormGroup = this.fb.group({
-    name: ['', [ Validators.required, Validators.minLength(3)]],
-    sedes:['', [Validators.required, Validators.min(1)]],
-    empleados:['', [Validators.required, Validators.min(1)]],
-    ganancia: ['', [Validators.required, Validators.min(6)]],
-    user:['', [ Validators.required, Validators.minLength(3)]],
-    email:['', [Validators.required, Validators.email]]
-  })
 
- constructor(private dialog: MatDialog, private fb: FormBuilder,  private currencyPipe: CurrencyPipe) {
-  this.selectedOption = '';  
-}
-
-  ngOnInit(): void {
+ constructor(private dialog: MatDialog, private fb: FormBuilder, private currencyPipe: CurrencyPipe)
+  {
+  this.selectedOption = '';
 
   }
-/*   setCurrency(value: string) {
-    console.log(`Setting currency value to ${value}`);
-    if (this.currencyControl) {
-      this.currencyControl.setValue(value);
-    }
-  } */
+
+  ngOnInit(): void {
+    
+    this.formularioInicial = this.fb.group({
+      name: ['', [ Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
+      sedes:['', [Validators.required, Validators.min(1),Validators.maxLength(5)]],
+      empleados:['', [Validators.required, Validators.min(1), Validators.maxLength(10)]],
+      ganancia: ['', [Validators.required, Validators.min(6),Validators.maxLength(20)]],
+      user:['', [ Validators.required, Validators.minLength(3),Validators.maxLength(100)]],
+      email:['', [Validators.required, Validators.email,Validators.maxLength(100)]]
+    })
+  }
 
   campoNoValido(campo:string){
     return this.formularioInicial.controls[campo].errors && this.formularioInicial.controls[campo].touched;
   }
 
+/*   isNumeric(n: any): boolean {
+    return !isNaN(parseInt(n, 10));
+  } */
+
+/*   onInput(event: any) {
+    let value = event.target.value;
+    let formattedValue = '';
+    let count = 0;
+    
+    // Recorremos el valor del campo de entrada desde el último dígito
+    for (let i = value.length - 1; i >= 0; i--) {
+      // Si es un dígito, lo añadimos al principio de la cadena formateada
+      if (this.isNumeric(value[i])) {
+        formattedValue = value[i] + formattedValue;
+        count++;
+      }
+      // Si hemos llegado a tres dígitos, añadimos una coma y reseteamos el contador
+      if (count === 3) {
+        formattedValue = '.' + formattedValue;
+        count = 0;
+      }
+    }
+    
+    // Si queda una coma al principio, la eliminamos
+    if (formattedValue[0] === '.') {
+      formattedValue = formattedValue.substr(1);
+    }
+    
+    // Añadimos el símbolo de pesos y actualizamos el valor del campo de entrada
+    const formattedNumber = this.currencyPipe.transform(formattedValue, 'COP', 'symbol');
+    if (formattedNumber) {
+      event.target.value = formattedNumber;
+    }
+  } */
+  
+  
   guardar(){
     if(this.formularioInicial.invalid){
       this.formularioInicial.markAllAsTouched();
@@ -81,6 +107,7 @@ calculateImagePosition() {
   mostrarcuestionario3=false;
   mostrarcuestionario4=false;
   mostrarcuestionario5=false;
+  mostrarransom=false;
 
   showGen() {
     this.mostrarGeneral=true;
@@ -89,6 +116,7 @@ calculateImagePosition() {
     this.mostrarcuestionario3=false;
     this.mostrarcuestionario4=false;
     this.mostrarcuestionario5=false;
+    this.mostrarransom=false;
   }
 
   showCuest() {
@@ -98,6 +126,7 @@ calculateImagePosition() {
     this.mostrarcuestionario3=false;
     this.mostrarcuestionario4=false;
     this.mostrarcuestionario5=false;
+    this.mostrarransom=false;
   }
 
   showCuest2() {
@@ -107,6 +136,7 @@ calculateImagePosition() {
     this.mostrarcuestionario3=false;
     this.mostrarcuestionario4=false;
     this.mostrarcuestionario5=false;
+    this.mostrarransom=false;
   }
 
   showCuest3() {
@@ -116,6 +146,7 @@ calculateImagePosition() {
     this.mostrarcuestionario3=true;
     this.mostrarcuestionario4=false;
     this.mostrarcuestionario5=false;
+    this.mostrarransom=false;
   }
 
   showCuest4() {
@@ -125,6 +156,7 @@ calculateImagePosition() {
     this.mostrarcuestionario3=false;
     this.mostrarcuestionario4=true;
     this.mostrarcuestionario5=false;
+    this.mostrarransom=false;
   }
 
   showCuest5() {
@@ -134,7 +166,18 @@ calculateImagePosition() {
     this.mostrarcuestionario3=false;
     this.mostrarcuestionario4=false;
     this.mostrarcuestionario5=true;
+    this.mostrarransom=false;
   }
+  showCuestRansom() {
+    this.mostrarGeneral=false;
+    this.mostrarcuestionario=false;
+    this.mostrarcuestionario2=false;
+    this.mostrarcuestionario3=false;
+    this.mostrarcuestionario4=false;
+    this.mostrarcuestionario5=false;
+    this.mostrarransom=true;
+  }
+
 
   showHelp() {
     this.dialog.open(HelpComponent)

@@ -26,10 +26,12 @@
       <mat-label *ngIf="campoNoValido('empleados')">Debes ingresar el total de empleados en la organización</mat-label>
     </mat-form-field>
     <h3>¿Cuál fue la ganancia del último año?</h3>
-    <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-        <input type="number" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia"
-         required>
-        <mat-label *ngIf="campoNoValido('ganancia')">Debes ingresar la ganancia (revenue) del último año</mat-label>
+    <mat-form-field appearance="outline" *ngIf="formularioInicial" [formGroup]="formularioInicial">
+<!--       <input type="text" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia" required
+     (input)="onInput($event)"> -->
+      <input type="text" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia" required
+      *ngIf="formularioInicial.controls['ganancia']" [value]="formularioInicial.controls['ganancia'].value | currency:'COP':'symbol':'1.1-2'">
+       <mat-label *ngIf="campoNoValido('ganancia')">Debes ingresar la ganancia (revenue) del último año</mat-label>
       </mat-form-field>
     <h3>¿Cuál es el nombre de la persona que está realizando esta evaluación?</h3>
     <mat-form-field appearance="outline" [formGroup]="formularioInicial" >
@@ -180,7 +182,46 @@
 
     <div class="out-container">
         <button mat-flat-button class="previous" (click)="showCuest2()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" (click)="guardar()"><mat-icon>east</mat-icon></button>
+        <button mat-flat-button class="next" (click)="showCuestRansom()"><mat-icon>east</mat-icon></button>
     </div>
+</div>
+
+<div class="out-container" *ngIf="mostrarransom">
+  <h1 class="regulartitle"><span>3. R</span>ansomware <span>R</span>eadiness <span>A</span>ssessment</h1>
+  <div class="form-container">
+      <div class="left-container">
+          <h3>¿Realiza pruebas de ingeniería social (como phishing) a sus usuarios?
+            <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+          </h3>
+          <app-forms-option></app-forms-option>  
+          <h3>¿Cuenta con tecnologías de gestión de identidad y accesos (IAM) y gestión de privilegios (PAM)?
+            <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+          </h3>
+          <app-forms-option></app-forms-option>
+          <h3>¿Su organización cuenta con actualizaciones automatizadas periódicamente para su software y sistemas?
+          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+          </h3>
+          <app-forms-option></app-forms-option>
+      </div>
+      <div class="right-container">
+        <h3>¿Su organización tiene copias de seguridad programadas regularmente?
+          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+        </h3>
+        <app-forms-option></app-forms-option>
+
+        <h3>¿Desarrolla escenarios para evaluar cuánto tiempo llevaría recuperar datos críticos y sus servicios?
+          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+        </h3>
+        <app-forms-option></app-forms-option>
+        <h3>¿Su sistema tiene una póliza de seguro cibernético que cubre los ataques de Ransomware?
+          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+        </h3>
+        <app-forms-option></app-forms-option>
+      </div>
+  </div>
+  <div class="out-container">
+      <button mat-flat-button class="previous" (click)="showCuest3()"><mat-icon>west</mat-icon></button>
+      <button mat-flat-button class="next" (click)="guardar()"><mat-icon>east</mat-icon></button>
+  </div>
 </div>
 

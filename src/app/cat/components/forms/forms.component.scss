@@ -29,6 +29,17 @@ color: #9BCEFD;
   background-color: #FFFFFF;
 }
 
+::ng-deep {
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+     color: #9BCEFD;
+  }
+  mat-form-field {
+     .mat-hint, input, ::placeholder, .mat-form-field-label {
+        color: #9BCEFD;
+     }
+  }
+}
+
 a {
     text-decoration: none;
     display: inline-block;
@@ -71,7 +82,7 @@ a {
     position: absolute;
     left: 0;
     bottom: 5px;
-    transition: left 0.3s ease-in-out;
+    transition: left 0.5s ease-in-out;
 }
 
 .out-container{
