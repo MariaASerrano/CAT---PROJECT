@@ -48,6 +48,7 @@ calculateImagePosition() {
     this.formularioInicial = this.fb.group({
       name: ['', [ Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
       sedes:['', [Validators.required, Validators.min(1),Validators.maxLength(5)]],
+      depen:['', [Validators.required, Validators.min(1),Validators.maxLength(3)]],
       empleados:['', [Validators.required, Validators.min(1), Validators.maxLength(10)]],
       ganancia: ['', [Validators.required, Validators.min(6),Validators.maxLength(20)]],
       user:['', [ Validators.required, Validators.minLength(3),Validators.maxLength(100)]],
@@ -59,42 +60,6 @@ calculateImagePosition() {
     return this.formularioInicial.controls[campo].errors && this.formularioInicial.controls[campo].touched;
   }
 
-/*   isNumeric(n: any): boolean {
-    return !isNaN(parseInt(n, 10));
-  } */
-
-/*   onInput(event: any) {
-    let value = event.target.value;
-    let formattedValue = '';
-    let count = 0;
-    
-    // Recorremos el valor del campo de entrada desde el último dígito
-    for (let i = value.length - 1; i >= 0; i--) {
-      // Si es un dígito, lo añadimos al principio de la cadena formateada
-      if (this.isNumeric(value[i])) {
-        formattedValue = value[i] + formattedValue;
-        count++;
-      }
-      // Si hemos llegado a tres dígitos, añadimos una coma y reseteamos el contador
-      if (count === 3) {
-        formattedValue = '.' + formattedValue;
-        count = 0;
-      }
-    }
-    
-    // Si queda una coma al principio, la eliminamos
-    if (formattedValue[0] === '.') {
-      formattedValue = formattedValue.substr(1);
-    }
-    
-    // Añadimos el símbolo de pesos y actualizamos el valor del campo de entrada
-    const formattedNumber = this.currencyPipe.transform(formattedValue, 'COP', 'symbol');
-    if (formattedNumber) {
-      event.target.value = formattedNumber;
-    }
-  } */
-  
-  
   guardar(){
     if(this.formularioInicial.invalid){
       this.formularioInicial.markAllAsTouched();

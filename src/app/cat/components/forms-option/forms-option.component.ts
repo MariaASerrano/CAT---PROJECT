@@ -8,11 +8,11 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 export class FormsOptionComponent  {
 
   @Input() options = [
-    { label: 'No, inexistente' },
-    { label: 'Si, en forma reactiva' },
-    { label: 'Si, algunas veces' },
-    { label: 'Si, en forma proactiva' },
-    { label: 'Si, en forma anticipada' }
+    { value: 0, label: 'No, inexistente' },
+    { value: 25, label: 'Si, en forma reactiva' },
+    { value: 50, label: 'Si, algunas veces' },
+    { value: 75, label: 'Si, en forma proactiva' },
+    { value: 100, label: 'Si, en forma anticipada' }
   ];
   @Output() optionSelected = new EventEmitter<string>();
   onOptionSelected(option: string) {

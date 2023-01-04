@@ -16,8 +16,13 @@
     <mat-radio-group [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}">
       <mat-radio-button color="primary" value="lunesViernes">Lunes a viernes</mat-radio-button><br><br>
       <mat-radio-button color="primary" value="lunesSabado">Lunes a sábado</mat-radio-button><br><br>
-      <mat-radio-button color="primary" value="todosLosDias">Todos los días</mat-radio-button>
+      <mat-radio-button color="primary" value="todosLosDias">Todos los días</mat-radio-button><br><br>
     </mat-radio-group>
+    <h3>¿Cuántas horas puede durar sin tecnología la organización?</h3>
+    <mat-form-field appearance="outline"[formGroup]="formularioInicial">
+        <input type="number" matInput placeholder="Ingrese la cantidad de dependencia" formControlName="depen">
+        <mat-label *ngIf="campoNoValido('depen')">Debes ingresar la cantidad de horas que puede durar la institución sin tecnología</mat-label>
+    </mat-form-field>
     </div>
   <div class="right-container">
     <h3>¿Cuántos empleados tiene actualmente la entidad?</h3>
@@ -25,10 +30,8 @@
       <input type="number" min="0" matInput placeholder="Ingrese la cantidad de empleados" formControlName="empleados">  
       <mat-label *ngIf="campoNoValido('empleados')">Debes ingresar el total de empleados en la organización</mat-label>
     </mat-form-field>
-    <h3>¿Cuál fue la ganancia del último año?</h3>
+    <h3>¿Cuál fue el ingreso del último año?</h3>
     <mat-form-field appearance="outline" *ngIf="formularioInicial" [formGroup]="formularioInicial">
-<!--       <input type="text" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia" required
-     (input)="onInput($event)"> -->
       <input type="text" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia" required
       *ngIf="formularioInicial.controls['ganancia']" [value]="formularioInicial.controls['ganancia'].value | currency:'COP':'symbol':'1.1-2'">
        <mat-label *ngIf="campoNoValido('ganancia')">Debes ingresar la ganancia (revenue) del último año</mat-label>
@@ -57,7 +60,7 @@
     <h1 class="regulartitle"><span>2.</span>Determinando el nivel de madurez actual</h1>
     <div class="form-container">
     <div class="left-container">
-    <h3>¿Existe un inventario de activos detallado y actualizado? <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
+    <h3>¿Existe un inventario de activos informáticos detallado y actualizado? <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
       <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
 
       <h3>¿Existe un inventario de software detallado y este mismo debidamente actualizado?<button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
