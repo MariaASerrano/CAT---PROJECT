@@ -8,6 +8,7 @@ import { ModalComponent } from './pages/modal/modal.component';
 import { HelpComponent } from './pages/modal/help/help.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormsOptionComponent } from './components/forms-option/forms-option.component';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FormsOptionComponent } from './components/forms-option/forms-option.com
     ModalComponent,
     HelpComponent,
     FormsOptionComponent,
+    ResultsComponent,
   ],
   imports: [
     CommonModule,

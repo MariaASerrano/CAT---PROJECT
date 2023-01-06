@@ -56,10 +56,12 @@ calculateImagePosition() {
     })
   }
 
-  campoNoValido(campo:string){
-    return this.formularioInicial.controls[campo].errors && this.formularioInicial.controls[campo].touched;
+  campoNoValido(campo: string): boolean {
+    const control = this.formularioInicial.get(campo);
+    return control?.invalid && (control?.dirty || control?.touched) && (control.errors?.['maxlength'] || control.errors?.['maxLength']);
   }
-
+ 
+  
   guardar(){
     if(this.formularioInicial.invalid){
       this.formularioInicial.markAllAsTouched();

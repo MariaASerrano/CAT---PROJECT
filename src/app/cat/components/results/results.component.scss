@@ -1,0 +1,147 @@
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #D5FFFD;
+  }
+  
+  body {
+    position: relative;
+    z-index: 1;
+  }
+
+  .gato-container {
+    position: relative;
+    float: left;
+  }
+  
+.front-cat{ //Results CAT
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    bottom: 10px;
+    left: 25px;
+}
+  div {
+    padding: 1rem;
+    bottom: auto;
+    
+    }
+
+ .toright{ //letras inicio
+    width: 60%;
+    text-align: right;
+ }
+
+ .tomoreright{ //tool letras inicio
+    width:58%;
+    text-align: right;
+ }
+
+ .toright2{ //results letras inicio
+    width: 95%;
+    text-align: right;
+ }
+  .supertitle { //this works for results title
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    color: #000;
+    font-size: 120px;
+    line-height: normal;
+    margin-bottom: 20px;
+
+}
+
+span { //this works for first letters in blue color
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #0085FF;
+    line-height: normal;
+    margin: auto;
+}
+  
+.rectangle {
+    position: absolute;
+    right: 17%;
+    width: 350px;
+    height: 0px;
+    top:13rem;
+    background-color: #fff;
+    border: 2px solid #E2E2E2;
+    display: flex; /* make the rectangles flex containers */
+    align-items: center; /* center the text vertically */
+  }
+  .rectangle::before {
+    content: "Nombre de la empresa: ";
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+  }
+
+  .rectangle2 {
+    position: absolute;
+    right: 17%;
+    width: 350px;
+    height: 0px;
+    top:23rem;
+    background-color: #fff;
+    border: 2px solid #E2E2E2;
+    display: flex; /* make the rectangles flex containers */
+    align-items: center; /* center the text vertically */
+  }
+  .rectangle2::before {
+    content: "Fecha: ";
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+  }
+
+  .rectangle3 {
+    position: absolute;
+    right: 17%;
+    width: 350px;
+    height: 0px;
+    top:33rem;
+    background-color: #fff;
+    border: 2px solid #E2E2E2;
+    display: flex; /* make the rectangles flex containers */
+    align-items: center; /* center the text vertically */
+  }
+  .rectangle3::before {
+    content: "Diligenciado por: ";
+    display: block;
+    font-style: italic;
+    text-align: center;
+    font-size: 16px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+  }
+
+  .start {
+    /* Ver Button */
+    background-color: #0085FF;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 50px;
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+  }
+  
+
+button:hover {
+    background-color: #9BCEFD;
+    color: white;
+    border-color: #9BCEFD;
+  }
+  
