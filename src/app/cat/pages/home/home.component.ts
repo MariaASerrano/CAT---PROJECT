@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalComponent } from '../modal/modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { StartComponent } from '../modal/start/start.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,7 @@ import { MatDialog } from '@angular/material/dialog';
   mostrarformulario = false;
   comofunciona=false;
   
-  constructor(private dialog: MatDialog){}
+  constructor(private dialog: MatDialog, private route:ActivatedRoute){}
 
   showHome() {
     this.mostrarHome = true;
@@ -56,6 +58,10 @@ import { MatDialog } from '@angular/material/dialog';
     this.dialog.open(ModalComponent)
   }
   
+  showFirst(){
+    this.dialog.open(StartComponent)
+  }
+
 }
 
 

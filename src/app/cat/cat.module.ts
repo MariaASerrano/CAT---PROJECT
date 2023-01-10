@@ -9,7 +9,8 @@ import { HelpComponent } from './pages/modal/help/help.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FormsOptionComponent } from './components/forms-option/forms-option.component';
 import { ResultsComponent } from './components/results/results.component';
-
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { StartComponent } from './pages/modal/start/start.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -18,13 +19,15 @@ import { ResultsComponent } from './components/results/results.component';
     HelpComponent,
     FormsOptionComponent,
     ResultsComponent,
+    StartComponent,
   ],
   imports: [
     CommonModule,
     CatRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgApexchartsModule
   ],
   providers:[
     CurrencyPipe

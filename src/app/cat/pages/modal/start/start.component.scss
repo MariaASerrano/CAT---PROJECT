@@ -1,0 +1,51 @@
+.login{ //Login Button
+    background-color: #0085FF;
+    margin-top:2rem;
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    margin-top: 10px;
+    float: left;
+
+}
+
+.register{ //Register Button
+    background-color: #0085FF;
+    margin-top:2rem;
+    width: 150px;
+    height: 50px;
+    font-size: 15px;
+    margin-top: 10px;
+    float: right;
+
+}
+
+.submit{ //submit Button for login and register
+    background-color: #0085FF;
+    margin-top:2rem;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 10px;
+    color: white;
+}
+
+.indent{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #000;
+    font-size: 40px;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+span { //this works for first letters in blue color
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #0085FF;
+}
+
+button:hover {
+    background-color: #9BCEFD;
+    color: white;
+    border-color: #9BCEFD;
+  }

@@ -104,7 +104,7 @@
       </h3>
       <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
 
-        <h3>¿Cuenta con un SOC que está monitoreando eventos de seguridad 24x7 para anticipar, alertar y notificar sobre incidentes de ciberseguridad?
+        <h3>¿Cuenta con un Centro de Operaciones de Seguridad (SOC) que está monitoreando eventos de seguridad 24x7 para anticipar, alertar y notificar sobre incidentes de ciberseguridad?
           <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
         </h3>
         <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
@@ -116,7 +116,7 @@
        </div>
 
        <div class="right-container">
-        <h3>¿Cuenta con un EDR que esté constantemente monitoreando los endpoints?
+        <h3>¿Cuenta con un Endpoint Detection & Response (EDR) que esté constantemente monitoreando los endpoints para mitigar ciber-amenazas?
           <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
         </h3>
         <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
@@ -132,7 +132,7 @@
 
     </div>
     <div class="progress-bar-wrapper">
-      <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif">
+      <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif" alt="walking cat">
     <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
     </div>
 
@@ -148,7 +148,7 @@
     <h1 class="regulartitle"><span>2.</span>Determinando el nivel de madurez actual</h1>
     <div class="form-container">
         <div class="left-container">
-            <h3>¿Cuenta con la tecnología de XDR desplegada en la red?
+            <h3>¿Cuenta con la tecnología Extended Detection & Response (XDR) desplegada en la red que recopila y correlaciona automáticamente datos en múltiples capas de seguridad?
               <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
             </h3>
             <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
@@ -179,7 +179,7 @@
         </div>
     </div>
     <div class="progress-bar-wrapper">
-      <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif">
+      <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif" alt="walking cat">
       <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
     </div>
 
@@ -224,7 +224,7 @@
   </div>
   <div class="out-container">
       <button mat-flat-button class="previous" (click)="showCuest3()"><mat-icon>west</mat-icon></button>
-      <button mat-flat-button class="next" (click)="guardar()"><mat-icon>east</mat-icon></button>
+      <button mat-flat-button class="next" routerLink="/results"><mat-icon>east</mat-icon></button>
   </div>
 </div>
 

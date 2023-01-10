@@ -1,0 +1,54 @@
+<div *ngIf="start">
+<h3><i>Antes de iniciar, ¿ya cuentas con una cuenta en CAT?</i></h3>
+<button mat-raised-button color="primary" class="login" (click)="showLogin()">Iniciar sesión</button>
+<button mat-raised-button color="primary" class="register" (click)="showRegister()">Registrarse</button>
+</div>
+<div *ngIf="login">
+    <form>
+        <mat-card>
+          <mat-card-content>
+            <h1 class="indent"><span>¡</span>Bienvenido de nuevo<span>!</span></h1>
+            <mat-form-field>
+              <mat-label>Correo</mat-label>
+              <input matInput type="email" placeholder="Ingrese el correo">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" placeholder="Ingrese la contraseña">
+            </mat-form-field><br>
+            <mat-checkbox color="primary">Recordarme</mat-checkbox>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button class="submit" (click)="onLogin()">Ingresar</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>    
+</div>
+
+<div *ngIf="register">
+    <form>
+        <mat-card>
+          <mat-card-content>
+            <h1 class="indent"><span>¡</span>Que inicie la aventura<span>!</span></h1>
+            <mat-form-field>
+                <mat-label>Nombre Completo</mat-label>
+                <input matInput type="text" placeholder="Ingrese su nombre">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Correo</mat-label>
+              <input matInput type="email" placeholder="Ingrese el correo">
+            </mat-form-field><br>
+            <mat-form-field>
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" placeholder="Ingrese la contraseña">
+            </mat-form-field><br>
+            <mat-checkbox color="primary">Recordarme</mat-checkbox>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button class="submit" (click)="onSubmit()">Registrar</button>
+          </mat-card-actions>
+        </mat-card>
+      </form> 
+
+
+</div>

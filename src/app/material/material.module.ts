@@ -7,6 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule}from '@angular/material/select';
 import { MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 
@@ -22,6 +23,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatDialogModule,
     MatProgressBarModule,
     MatInputModule,
+    MatCardModule,
     MatSelectModule,
     MatCheckboxModule,
     ReactiveFormsModule,

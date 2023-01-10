@@ -6,8 +6,8 @@
             <h3 class="hometext">Para el sector educativo</h3>
         </div>
         <div class="gato-container"> <img class="front-cat" src="assets\imgs\gato.jpg " alt="cat">
-        <button mat-raised-button color="primary" class="start" (click)="showQue()">Empezar</button></div>
-</div>
+            <button mat-raised-button color="primary" class="start" (click)="showFirst()">Empezar</button>
+        </div>
 
 <div *ngIf="mostrarquees" >
     <h1 class="regulartitle"><span>¿</span>Qué es el Cybersecurity Assessment Tool<span>?</span></h1>
@@ -63,17 +63,17 @@
         necesarios para responder ante un eventual ataque de ransomware <br>
         <b>4. Resultados:</b> Una vez realices todos los pasos anteriores, podrás obtener como resultado de forma online y/o 
         puedes descargarlo para mostrarlo ante la junta directiva. En este resultado encontrarás:<br>  
-        <p class="indent">a. Nivel de madurez respecto a NIST CSF y CIS Top 18<br></p>
-        <p class="indent">b. Nivel de exposición ante ciber ataques<br></p>
-        <p class="indent">c. Plan de mejora<br></p>
-        <p class="indent">d. Hipotesis de ciberriesgo<br></p>
-        <p class="indent">e. Proyección de mejora al aplicar el plan <br></p>
+        <p class="indent">a. Nivel de madurez respecto a NIST CSF <br></p>
+        <p class="indent">b. Nivel de madurez de acuerdo el CIS Top 18<br></p>
+        <p class="indent">c. Nivel de exposición ante ciber ataques<br></p>
+        <p class="indent">d. Plan de mejora<br></p>
+        <p class="indent">e. Hipotesis de ciberriesgo<br></p>
         <p class="indent">f. Resultados del Ransomware Readiness Assessment<br></p>
       
     </h3>
     </div>
     <div class="out-container">
         <button mat-flat-button class="previous" (click)="showImpor()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" (click)="showFun()"><mat-icon>east</mat-icon></button>
+        <button mat-flat-button class="next" routerLink="/information"><mat-icon>east</mat-icon></button>
     </div>
 </div>

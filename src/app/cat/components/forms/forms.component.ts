@@ -3,6 +3,7 @@ import {FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { HelpComponent } from '../../pages/modal/help/help.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CurrencyPipe } from '@angular/common';
+import { StartComponent } from '../../pages/modal/start/start.component';
 
 @Component({
   selector: 'app-forms',
