@@ -2,10 +2,10 @@
     <h1 class="regulartitle"><span>1.</span>Información general</h1>
     <div class="form-container">
     <div class="left-container">
-    <h3>¿Cuál es el nombre de la organización?</h3>
+    <h3>¿Cuál es el nombre de la persona a cargo de esta evaluación?</h3>
         <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-          <input matInput placeholder="Ingrese el nombre de la entidad" formControlName="name">
-          <mat-label *ngIf="campoNoValido('name')">Debes ingresar el nombre de la organización</mat-label>
+          <input matInput placeholder="Ingrese su nombre" formControlName="name">
+          <mat-label *ngIf="campoNoValido('name')">Debes ingresar tu nombre</mat-label>
     </mat-form-field>
     <h3>¿Cuántas sedes tiene la organización?</h3>
     <mat-form-field appearance="outline"[formGroup]="formularioInicial">
@@ -18,13 +18,13 @@
       <mat-radio-button color="primary" value="lunesSabado">Lunes a sábado</mat-radio-button><br><br>
       <mat-radio-button color="primary" value="todosLosDias">Todos los días</mat-radio-button><br><br>
     </mat-radio-group>
+    </div>
+  <div class="right-container">
     <h3>¿Cuántas horas puede durar sin tecnología la organización?</h3>
     <mat-form-field appearance="outline"[formGroup]="formularioInicial">
         <input type="number" matInput placeholder="Ingrese la cantidad de dependencia" formControlName="depen">
         <mat-label *ngIf="campoNoValido('depen')">Debes ingresar la cantidad de horas que puede durar la institución sin tecnología</mat-label>
     </mat-form-field>
-    </div>
-  <div class="right-container">
     <h3>¿Cuántos empleados tiene actualmente la entidad?</h3>
     <mat-form-field appearance="outline" [formGroup]="formularioInicial">
       <input type="number" min="0" matInput placeholder="Ingrese la cantidad de empleados" formControlName="empleados">  
@@ -36,17 +36,6 @@
       *ngIf="formularioInicial.controls['ganancia']" [value]="formularioInicial.controls['ganancia'].value | currency:'COP':'symbol':'1.1-2'">
        <mat-label *ngIf="campoNoValido('ganancia')">Debes ingresar la ganancia (revenue) del último año</mat-label>
       </mat-form-field>
-    <h3>¿Cuál es el nombre de la persona que está realizando esta evaluación?</h3>
-    <mat-form-field appearance="outline" [formGroup]="formularioInicial" >
-      <input matInput placeholder="Ingrese su nombre" formControlName="user">
-      <mat-label *ngIf="campoNoValido('user')">Debes ingresar tu nombre</mat-label>
-    </mat-form-field>
-    <h3>Ingrese el correo electrónico donde desea que sean enviados los resultados de esta evaluación</h3>
-    <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-      <input matInput placeholder="Ingrese un correo electrónico válido ejemplo@correo.com" formControlName="email">
-      <mat-label *ngIf="campoNoValido('email')">Debes ingresar el email donde quieres que se te envíen los resultados</mat-label>
-    </mat-form-field>
-
   </div>
 </div>
     <div class="out-container">

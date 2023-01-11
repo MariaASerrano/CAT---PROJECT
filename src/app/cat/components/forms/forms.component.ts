@@ -3,7 +3,6 @@ import {FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { HelpComponent } from '../../pages/modal/help/help.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CurrencyPipe } from '@angular/common';
-import { StartComponent } from '../../pages/modal/start/start.component';
 
 @Component({
   selector: 'app-forms',
@@ -52,8 +51,6 @@ calculateImagePosition() {
       depen:['', [Validators.required, Validators.min(1),Validators.maxLength(3)]],
       empleados:['', [Validators.required, Validators.min(1), Validators.maxLength(10)]],
       ganancia: ['', [Validators.required, Validators.min(6),Validators.maxLength(20)]],
-      user:['', [ Validators.required, Validators.minLength(3),Validators.maxLength(100)]],
-      email:['', [Validators.required, Validators.email,Validators.maxLength(100)]]
     })
   }
 
