@@ -11,6 +11,11 @@ import { FormsOptionComponent } from './components/forms-option/forms-option.com
 import { ResultsComponent } from './components/results/results.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { StartComponent } from './pages/modal/start/start.component';
+import { HeaderComponent } from './components/results/header/header.component';
+import { SideNavComponent } from './components/results/side-nav/side-nav.component';
+import { MainComponent } from './components/results/main/main.component';
+import { DashboardComponent } from './components/results/dashboard/dashboard.component';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -20,6 +25,10 @@ import { StartComponent } from './pages/modal/start/start.component';
     FormsOptionComponent,
     ResultsComponent,
     StartComponent,
+    HeaderComponent,
+    SideNavComponent,
+    MainComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
