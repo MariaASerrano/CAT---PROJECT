@@ -1,15 +1,23 @@
+span { //this works for first letters in blue color
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic, bold;
+  color: #0085FF;
+  line-height: normal;
+  margin: auto;
+}
 .header {
     height: 70px;
     padding: 20px 50px;
-    background-color: #2874A6;
+    background-color: #9BCEFD;
     color: #fff;
     display: flex;
     justify-content: space-between;
     box-shadow: 5px 5px 5px #939393;
     .logo {
       font-size: 40px;
-      margin-top: 1.5rem;
+      margin-top: 0.75rem;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      font-style: italic;
     }
     .user {
       display: flex;
@@ -20,7 +28,7 @@
         height: 50px;
         border-radius: 50%;
         border: 2px solid #fff;
-        background-color: #9BCEFD;
+        background-color: #2874A6;
         margin-left: 20px;
         display: flex;
         align-items: center;

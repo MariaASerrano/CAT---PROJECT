@@ -1,6 +1,7 @@
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <div class="top-section">
     <div class="widget-container">
-        <div class="widget green">
+        <div class="widget blue">
           <div class="icon">
             <mat-icon>monetization_on</mat-icon>
           </div>
@@ -10,4 +11,8 @@
           </div>
         </div>
       </div>
-  </div>
+</div>
+
+<div class="top-section">
+<apx-chart [series]="series" [chart]="chart" [title]="title" [dataLabels]="dataLabels" [legend]="legend" [plotOptions]="plotOptions" [xaxis]="xaxis" [colors]="colors"></apx-chart>
+</div>

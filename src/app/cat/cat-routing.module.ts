@@ -5,6 +5,7 @@ import { FormsComponent } from './components/forms/forms.component';
 import { ResultsComponent } from './components/results/results.component';
 import { DashboardComponent } from './components/results/dashboard/dashboard.component';
 
+
 const routes: Routes = [{
   path:'home-cat',
   component: HomeComponent
@@ -22,6 +23,7 @@ const routes: Routes = [{
   path:'dashboard',
   component: DashboardComponent
 },
+
 
 {
   path:'**',
