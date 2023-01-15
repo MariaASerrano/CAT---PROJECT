@@ -1,5 +1,6 @@
+import { style, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
-import { ApexAxisChartSeries, ApexTitleSubtitle, ApexChart, ApexYAxis, ApexLegend,ApexXAxis, ApexPlotOptions, ApexDataLabels} from 'ng-apexcharts';
+import { ApexAxisChartSeries, ApexTitleSubtitle, ApexChart, ApexYAxis, ApexLegend, ApexXAxis, ApexPlotOptions, ApexDataLabels, ApexFill, ApexNonAxisChartSeries } from 'ng-apexcharts';
 
 
 @Component({
@@ -9,6 +10,7 @@ import { ApexAxisChartSeries, ApexTitleSubtitle, ApexChart, ApexYAxis, ApexLegen
 })
 export class MainComponent implements OnInit {
 
+//bar series
   series: ApexAxisChartSeries = [];
   chart: ApexChart = { type: 'bar' };
   title: ApexTitleSubtitle = {};
@@ -18,6 +20,14 @@ export class MainComponent implements OnInit {
   plotOptions: ApexPlotOptions = {};
   dataLabels: ApexDataLabels = {};
   legend: ApexLegend = {};
+  //pie series
+  pieseries: ApexNonAxisChartSeries = [];
+  piechart: ApexChart = { type: 'donut'};
+  fill: ApexFill = {}
+  piedataLabels: ApexDataLabels = {};
+  pietitle: ApexTitleSubtitle = {};
+  pieplotOptions: ApexPlotOptions = {};
+  labels:any;
 
   constructor() { }
 
@@ -59,10 +69,47 @@ export class MainComponent implements OnInit {
       },
     }
       this.dataLabels = {
-        enabled: false
+        enabled: true
       },
       this.legend = {
         show: false
-      }
+      };
+//pie series
+      this.pieseries = [4,5,6,2,1];
+      this.piechart = {
+        width:380,
+        type: 'donut'};
+      this.labels = ["Inexistente", "Reactivo", "Algunas veces", "Proactivo", "Anticipado"];
+      this.pieplotOptions = {
+        pie: {
+          donut: {
+            labels: {
+              show: true,
+              value: {
+                show: true,
+                fontSize: '40px',
+                fontFamily: 'Franklin Gothic Medium',
+                offsetY: 20,
+              },
+              name: {
+                fontFamily: 'Franklin Gothic Medium',
+                fontSize:'18px',
+                offsetY: -10,
+                
+              }
+            }
+          }
+        }
+      },
+     
+      this.fill = {
+        type: "gradient"
+      };
+      this.piedataLabels = {
+        enabled: false
+      };
+      this.pietitle = {
+        text: 'Nivel de Madurez según CIS Top 18'
+      };
     }
   }

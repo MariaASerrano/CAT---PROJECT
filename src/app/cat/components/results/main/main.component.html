@@ -15,8 +15,16 @@
 
 <div class="top-section">
   <div class="widget-container">
-    <div class="widget white">
-<apx-chart [series]="series" [chart]="chart" [title]="title" [dataLabels]="dataLabels" [legend]="legend" [plotOptions]="plotOptions" [xaxis]="xaxis" [colors]="colors"></apx-chart>
+    <div class="widget black">
+<apx-chart [series]="series" [chart]="chart" [title]="title" [dataLabels]="dataLabels" [legend]="legend" [plotOptions]="plotOptions" [xaxis]="xaxis" [yaxis]="yaxis" [colors]="colors"></apx-chart>
+    </div>
+  </div>
+</div>
+
+<div class="top-section">
+  <div class="CIS-container">
+    <div class="widget">
+      <apx-chart [chart] = "piechart" [series]="pieseries" [fill]="fill" [dataLabels]="piedataLabels" [title]="pietitle" [labels]="labels" [plotOptions]="pieplotOptions"></apx-chart>
     </div>
   </div>
 </div>
