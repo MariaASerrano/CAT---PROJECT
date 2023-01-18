@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
+import {  MatTableModule } from '@angular/material/table';
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSelectModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
   ]
   
 })

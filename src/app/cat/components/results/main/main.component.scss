@@ -32,8 +32,22 @@
       }
     }
   }
-
-
+  .dbir {
+    width: 700px;
+    height: 400px;
+    float: right;
+    color: white;
+    background-color: white;
+    position: absolute;
+    top: 145px;
+    right: 200px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #939393;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
 
  .widget-container {
     display: flex;
@@ -98,4 +112,24 @@
         align-items: center;
         padding: 20px;
         }
-      }
+    }
+
+table{
+  width: 100%;
+}
+
+element.style {
+  position: absolute;
+  left: auto;
+  top: 24px;
+  right: 5px;
+}
+.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
+  justify-content: center;
+}
+
+.apexcharts-legend {
+  display: flex;
+  overflow: auto;
+  padding: 0 10px;
+}

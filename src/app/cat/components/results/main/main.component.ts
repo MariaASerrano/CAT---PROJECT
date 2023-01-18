@@ -1,7 +1,18 @@
-import { style, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ApexAxisChartSeries, ApexTitleSubtitle, ApexChart, ApexYAxis, ApexLegend, ApexXAxis, ApexPlotOptions, ApexDataLabels, ApexFill, ApexNonAxisChartSeries } from 'ng-apexcharts';
 
+export interface DBIRExpo {
+  name: string[];
+  position: number;
+  weight: number;
+}
+
+
+const ELEMENT_DATA: DBIRExpo[] = [
+  {position: 1, name: ['Ataques básicos a sitios web'], weight: 43},
+  {position: 2, name: ['Intrusión al sistema'], weight: 30},
+  {position: 3, name: ['Errores misceláneos'], weight: 27},
+]
 
 @Component({
   selector: 'app-main',
@@ -9,6 +20,9 @@ import { ApexAxisChartSeries, ApexTitleSubtitle, ApexChart, ApexYAxis, ApexLegen
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+
+displayedColumns: string[] = ['Posición', 'Tipo de ataque', 'Porcentaje de exposición'];
+dataSource = ELEMENT_DATA;
 
 //bar series
   series: ApexAxisChartSeries = [];
@@ -20,7 +34,7 @@ export class MainComponent implements OnInit {
   plotOptions: ApexPlotOptions = {};
   dataLabels: ApexDataLabels = {};
   legend: ApexLegend = {};
-  //pie series
+//pie series
   pieseries: ApexNonAxisChartSeries = [];
   piechart: ApexChart = { type: 'donut'};
   fill: ApexFill = {}
@@ -28,13 +42,13 @@ export class MainComponent implements OnInit {
   pietitle: ApexTitleSubtitle = {};
   pieplotOptions: ApexPlotOptions = {};
   labels:any;
+//TABLE
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.initializeChartOptions();
   }
-
   private initializeChartOptions():void {
     this.title = {
       text: 'Nivel de Madurez según NIST CSF'
@@ -70,7 +84,7 @@ export class MainComponent implements OnInit {
     }
       this.dataLabels = {
         enabled: true
-      },
+      };
       this.legend = {
         show: false
       };
@@ -100,7 +114,7 @@ export class MainComponent implements OnInit {
             }
           }
         }
-      },
+      };
      
       this.fill = {
         type: "gradient"
