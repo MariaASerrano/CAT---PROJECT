@@ -1,0 +1,40 @@
+.main-container {
+    display: flex;
+    .side-nav {
+      width: 300px;
+      height: 765px;
+      background-color: #64B4FE;
+      color: #fff;
+    }
+    .main {
+      padding: 30px;
+    }
+  }
+
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 120px;
+    text-align: center;
+}
+
+  .test { //this works for home title
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #000;
+    font-size: 60px;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+span { //this works for first letters in blue color
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #0085FF;
+    line-height: normal;
+    margin: auto;
+}

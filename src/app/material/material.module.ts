@@ -11,7 +11,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 import {  MatTableModule } from '@angular/material/table';
-
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -31,6 +32,8 @@ import {  MatTableModule } from '@angular/material/table';
     ReactiveFormsModule,
     MatRadioModule,
     MatTableModule,
+    MatMenuModule,
+    MatSidenavModule
   ]
   
 })

@@ -15,6 +15,7 @@ import { HeaderComponent } from './components/results/header/header.component';
 import { SideNavComponent } from './components/results/side-nav/side-nav.component';
 import { MainComponent } from './components/results/main/main.component';
 import { DashboardComponent } from './components/results/dashboard/dashboard.component';
+import { CisComponent } from './components/results/cis/cis.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DashboardComponent } from './components/results/dashboard/dashboard.com
     SideNavComponent,
     MainComponent,
     DashboardComponent,
+    CisComponent,
   ],
   imports: [
     CommonModule,

@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FormsComponent } from './components/forms/forms.component';
 import { ResultsComponent } from './components/results/results.component';
 import { DashboardComponent } from './components/results/dashboard/dashboard.component';
+import { CisComponent } from './components/results/cis/cis.component';
 
 
 const routes: Routes = [{
@@ -22,6 +23,12 @@ const routes: Routes = [{
 {
   path:'dashboard',
   component: DashboardComponent
+},
+
+{
+  path:'CISTop18',
+  component: CisComponent
+
 },
 
 
