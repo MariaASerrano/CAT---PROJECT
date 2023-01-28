@@ -21,7 +21,7 @@ const ELEMENT_DATA: DBIRExpo[] = [
 })
 export class MainComponent implements OnInit {
 
-displayedColumns: string[] = ['Posición', 'Tipo de ataque', 'Porcentaje de exposición'];
+displayedColumns: string[] = ['position', 'name', 'weight'];
 dataSource = ELEMENT_DATA;
 
 //bar series

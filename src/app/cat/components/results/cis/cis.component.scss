@@ -38,3 +38,48 @@ span { //this works for first letters in blue color
     line-height: normal;
     margin: auto;
 }
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    border: 1px solid black;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+
+.table1{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    display:block;
+    padding: 250px;
+    padding-right: 40px;
+    padding-left: 220px;
+    border: 0;
+}
+
+.table2{
+    position: absolute;
+    display:block;
+    padding: 250px;
+    padding-left: 320px;
+    padding-top: 130px;
+    padding-right: 40px;
+    border: 0;
+}
+
+.table3{
+    position: absolute;
+    padding:430px;
+    display:inline;
+    padding-left: 740px;
+    padding-top: 130px;
+    right: 100px;
+    border: 0;
+}
+

@@ -124,8 +124,8 @@ element.style {
   top: 24px;
   right: 5px;
 }
-.apexcharts-legend.apx-legend-position-bottom.apexcharts-align-left, .apexcharts-legend.apx-legend-position-top.apexcharts-align-left, .apexcharts-legend.apx-legend-position-right, .apexcharts-legend.apx-legend-position-left {
-  justify-content: center;
+::ng-deep .apexcharts-legend.apx-legend-position-right {
+  justify-content: center !important;
 }
 
 .apexcharts-legend {
