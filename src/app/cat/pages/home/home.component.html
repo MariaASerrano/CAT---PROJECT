@@ -1,79 +1,146 @@
 <div class="out-container" *ngIf="mostrarHome">
-        <div>
-            <h1 class="supertitle"><span>C</span>ybersecurity</h1>
-            <h1 class="supertitle"><span>A</span>ssessment</h1>
-            <h1 class="supertitle"><span>T</span>ool</h1>
-            <h3 class="hometext">Para el sector educativo</h3>
-        </div>
-        <div class="gato-container"> <img class="front-cat" src="assets\imgs\gato.jpg " alt="cat">
-        <button mat-raised-button color="primary" class="start" (click)="showFirst()">Empezar</button>
+  <div>
+    <h1 class="supertitle"><span>C</span>ybersecurity</h1>
+    <h1 class="supertitle"><span>A</span>ssessment</h1>
+    <h1 class="supertitle"><span>T</span>ool</h1>
+    <h3 class="hometext">Para el sector educativo</h3>
+  </div>
+  <div class="gato-container">
+    <img class="front-cat" src="assets\imgs\gato.jpg " alt="cat">
+    <button
+      mat-raised-button
+      color="primary"
+      class="start"
+      (click)="showFirst()"
+    >
+      Empezar
+    </button>
+  </div>
 </div>
 
-<div *ngIf="mostrarquees" >
-    <h1 class="regulartitle"><span>¿</span>Qué es el Cybersecurity Assessment Tool<span>?</span></h1>
-    <div class="test">
-    <div class="gato-container"> <a target="_blank" href="https://learn.cisecurity.org/cis-controls-download"><img class="what-cat" src="assets\imgs\gato 2.0.jpg " alt="cat"></a></div>
-    <h3 class="othertext">Es una herramienta de evaluación de ciberseguridad, la cual ayudará a toda organización perteneciente 
-        al sector educativo a conocer su nivel de exposición al ciber riesgo y madurez de acuerdo con el CIS Top 18
-        y el NIST CSF respectivamente.<br><br>
-        Esta herramienta permitirá apoyar a la mejora de la postura de ciberseguridad de una organización perteneciente al
-        sector educativo, al trazar un plan de acción.<br><br><br>
-        Si quieres descargar el CIS Top 18 presiona a CAT.
+<div *ngIf="mostrarquees">
+  <h1 class="regulartitle">
+    <span>¿</span>Qué es el Cybersecurity Assessment Tool<span>?</span>
+  </h1>
+  <div class="test">
+    <div class="gato-container">
+      <a
+        target="_blank"
+        href="https://learn.cisecurity.org/cis-controls-download"
+        ><img class="what-cat" src="assets\imgs\gato 2.0.jpg " alt="cat"
+      /></a>
+    </div>
+    <h3 class="othertext">
+      Es una herramienta de evaluación de ciberseguridad, la cual ayudará a toda
+      organización perteneciente al sector educativo a conocer su nivel de
+      exposición al ciber riesgo y madurez de acuerdo con el CIS Top 18 y el
+      NIST CSF respectivamente.<br /><br />
+      Esta herramienta permitirá apoyar a la mejora de la postura de
+      ciberseguridad de una organización perteneciente al sector educativo, al
+      trazar un plan de acción.<br /><br /><br />
+      Si quieres descargar el CIS Top 18 presiona a CAT.
     </h3>
-    </div>
-    <div class="out-container">
-        <button mat-flat-button class="previous" (click)="showHome()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" (click)="showImpor()"><mat-icon>east</mat-icon></button>
-    </div>
+  </div>
+  <div class="out-container">
+    <button mat-flat-button class="previous" (click)="showHome()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-flat-button class="next" (click)="showImpor()">
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
 </div>
 
-<div *ngIf="mostrarimportancia" >
-    <h1 class="regulartitle"><span>¿</span>En qué me afecta la ciberseguridad<span>?</span></h1>
-    <div class="test">
-    <div class="gato-container"><a target="_blank" href="https://www.verizon.com/business/resources/reports/dbir/2022/master-guide/"><img class="what-cat" src="assets\imgs\detective.png " alt="detective-cat"></a>
-    <button mat-raised-button color="primary" (click)="showModal()" class="what">Oprimeme</button> </div>
-    <h3 class="othertext2">Supongamos que la universidad en la que trabajas, sufre de un ataque donde se filtra toda la información de los estudiantes que se encuentra almacenada en los servidores de bases de datos de la universidad y por si fuera poco, esta información ha sido cifrada en los servidores de la universidad y para poder descifrarla debes pagar $100.000 USD.
-        <br><br>
-        En este ejemplo, la universidad se ha visto afectada:
-        <br><br>
-        Reputacionalmente<br>
-        Operacionalmente<br>
-        Financieramente<br>
-        Legalmente <br>     
-        <br><br>
-        ¿Estás preparado para responder este ataque? <br>        
-        <i>Si quieres descargar el reporte más reciente del DBIR de Verizon, presiona a CAT</i></h3>
+<div *ngIf="mostrarimportancia">
+  <h1 class="regulartitle">
+    <span>¿</span>En qué me afecta la ciberseguridad<span>?</span>
+  </h1>
+  <div class="test">
+    <div class="gato-container">
+      <a
+        target="_blank"
+        href="https://www.verizon.com/business/resources/reports/dbir/2022/master-guide/"
+        ><img
+          class="what-cat"
+          src="assets\imgs\detective.png "
+          alt="detective-cat"
+      /></a>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="showModal()"
+        class="what"
+      >
+        Oprimeme
+      </button>
     </div>
-    <div class="out-container">
-        <button mat-flat-button class="previous" (click)="showQue()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" (click)="showFun()"><mat-icon>east</mat-icon></button>
-    </div>
-</div>
-
-<div *ngIf="comofunciona" >
-    <h1 class="regulartitle"><span>¿</span>Cómo funciona el Cybersecurity Assessment Tool<span>?</span></h1>
-    <div>
-    <h3 class="othertext2">La herramienta está dividida en 4 sencillos pasos:
-        <br>
-        <b>1. Información general:</b> Se realizarán preguntas sencillas sobre información de la entidad <br>
-        <b>2. Determinando el nivel de madurez actual:</b> Por medio de preguntas establecidas de acuerdo a los controles
-        del CIS Top 18 y la categorización del NIST CSF se buscará determinar el nivel de madurez actual y de exposición
-        de los vectores de ciber ataque<br>
-        <b>3. Ransomware Readiness Assessment:</b> Se realizarán preguntas para verificar si existen los controles 
-        necesarios para responder ante un eventual ataque de ransomware <br>
-        <b>4. Resultados:</b> Una vez realices todos los pasos anteriores, podrás obtener como resultado de forma online y/o 
-        puedes descargarlo para mostrarlo ante la junta directiva. En este resultado encontrarás:<br>  
-        <p class="indent">a. Nivel de madurez respecto a NIST CSF <br></p>
-        <p class="indent">b. Nivel de madurez de acuerdo el CIS Top 18<br></p>
-        <p class="indent">c. Nivel de exposición ante ciber ataques<br></p>
-        <p class="indent">d. Plan de mejora<br></p>
-        <p class="indent">e. Hipotesis de ciberriesgo<br></p>
-        <p class="indent">f. Resultados del Ransomware Readiness Assessment<br></p>
-      
+    <h3 class="othertext2">
+      Supongamos que la universidad en la que trabajas, sufre de un ataque donde
+      se filtra toda la información de los estudiantes que se encuentra
+      almacenada en los servidores de bases de datos de la universidad y por si
+      fuera poco, esta información ha sido cifrada en los servidores de la
+      universidad y para poder descifrarla debes pagar $100.000 USD.
+      <br /><br />
+      En este ejemplo, la universidad se ha visto afectada:
+      <br /><br />
+      Reputacionalmente<br />
+      Operacionalmente<br />
+      Financieramente<br />
+      Legalmente <br />
+      <br /><br />
+      ¿Estás preparado para responder este ataque? <br />
+      <i
+        >Si quieres descargar el reporte más reciente del DBIR de Verizon,
+        presiona a CAT</i
+      >
     </h3>
-    </div>
-    <div class="out-container">
-        <button mat-flat-button class="previous" (click)="showImpor()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" routerLink="/information"><mat-icon>east</mat-icon></button>
-    </div>
+  </div>
+  <div class="out-container">
+    <button mat-flat-button class="previous" (click)="showQue()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-flat-button class="next" (click)="showFun()">
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div *ngIf="comofunciona">
+  <h1 class="regulartitle">
+    <span>¿</span>Cómo funciona el Cybersecurity Assessment Tool<span>?</span>
+  </h1>
+  <div>
+    <h3 class="othertext2">
+      La herramienta está dividida en 4 sencillos pasos:
+      <br />
+      <b>1. Información general:</b> Se realizarán preguntas sencillas sobre
+      información de la entidad <br />
+      <b>2. Determinando el nivel de madurez actual:</b> Por medio de preguntas
+      establecidas de acuerdo a los controles del CIS Top 18 y la categorización
+      del NIST CSF se buscará determinar el nivel de madurez actual y de
+      exposición de los vectores de ciber ataque<br />
+      <b>3. Ransomware Readiness Assessment:</b> Se realizarán preguntas para
+      verificar si existen los controles necesarios para responder ante un
+      eventual ataque de ransomware <br />
+      <b>4. Resultados:</b> Una vez realices todos los pasos anteriores, podrás
+      obtener como resultado de forma online y/o puedes descargarlo para
+      mostrarlo ante la junta directiva. En este resultado encontrarás:<br />
+      <p class="indent">a. Nivel de madurez respecto a NIST CSF <br /></p>
+      <p class="indent">b. Nivel de madurez de acuerdo el CIS Top 18<br /></p>
+      <p class="indent">c. Nivel de exposición ante ciber ataques<br /></p>
+      <p class="indent">d. Plan de mejora<br /></p>
+      <p class="indent">e. Hipotesis de ciberriesgo<br /></p>
+      <p class="indent">
+        f. Resultados del Ransomware Readiness Assessment<br />
+      </p>
+    </h3>
+  </div>
+  <div class="out-container">
+    <button mat-flat-button class="previous" (click)="showImpor()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-flat-button class="next" routerLink="/information">
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
 </div>

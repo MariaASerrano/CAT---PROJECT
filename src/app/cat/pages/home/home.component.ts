@@ -8,19 +8,16 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  })
-
-
- export class HomeComponent implements OnInit {
-
+})
+export class HomeComponent implements OnInit {
   title = 'CAT-Project';
   mostrarHome = true;
   mostrarquees = false;
   mostrarimportancia = false;
   mostrarformulario = false;
-  comofunciona=false;
-  
-  constructor(private dialog: MatDialog, private route:ActivatedRoute){}
+  comofunciona = false;
+
+  constructor(private dialog: MatDialog, private route: ActivatedRoute) {}
 
   showHome() {
     this.mostrarHome = true;
@@ -50,18 +47,20 @@ import { ActivatedRoute } from '@angular/router';
     this.comofunciona = true;
   }
 
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   showModal() {
-    this.dialog.open(ModalComponent)
-  }
-  
-  showFirst(){
-    this.dialog.open(StartComponent)
+    this.dialog.open(ModalComponent);
   }
 
+  showFirst() {
+    this.dialog
+      .open(StartComponent)
+      .afterClosed()
+      .subscribe((data) => {
+        if (data) {
+          this.showQue();
+        }
+      });
+  }
 }
-
-

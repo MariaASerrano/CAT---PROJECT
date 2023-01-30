@@ -94,8 +94,9 @@ a {
 
 .form-container{
     display: flex;
+    padding-top: 2rem;
     justify-content:space-between;
-    gap: 2rem;
+    gap: 3rem;
     width: 100%;
     flex-direction:row;
 }
@@ -119,6 +120,6 @@ a {
 .progress-bar-wrapper {
   position: fixed;
   bottom: 65px;
-  width: 1470px;
+  width: 1580px;
 }
 

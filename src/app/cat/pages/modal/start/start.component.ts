@@ -30,12 +30,12 @@ export class StartComponent implements OnInit {
 
   onSubmit(){
     this.router.navigate(['/homecat']);
-    this.dialog.close()
+    this.dialog.close(true)
 }
 
   onLogin(){
     this.router.navigate(['/results']);
-    this.dialog.close()
+    this.dialog.close(false)
   }
 
 }

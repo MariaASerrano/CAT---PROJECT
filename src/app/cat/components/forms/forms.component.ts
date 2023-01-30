@@ -16,7 +16,7 @@ export class FormsComponent implements OnInit {
   totalQuestions = 18;
   answeredQuestions = 0;
 
-totalWidth = 1470; /* adjust the total width as needed */
+totalWidth = 1580; /* adjust the total width as needed */
 imageWidth = 150; /* adjust the width of the image as needed */
 
 calculateImagePosition() {
@@ -70,8 +70,6 @@ calculateImagePosition() {
   mostrarcuestionario=false;
   mostrarcuestionario2=false;
   mostrarcuestionario3=false;
-  mostrarcuestionario4=false;
-  mostrarcuestionario5=false;
   mostrarransom=false;
 
   showGen() {
@@ -79,8 +77,6 @@ calculateImagePosition() {
     this.mostrarcuestionario=false;
     this.mostrarcuestionario2=false;
     this.mostrarcuestionario3=false;
-    this.mostrarcuestionario4=false;
-    this.mostrarcuestionario5=false;
     this.mostrarransom=false;
   }
 
@@ -89,8 +85,6 @@ calculateImagePosition() {
     this.mostrarcuestionario=true;
     this.mostrarcuestionario2=false;
     this.mostrarcuestionario3=false;
-    this.mostrarcuestionario4=false;
-    this.mostrarcuestionario5=false;
     this.mostrarransom=false;
   }
 
@@ -99,8 +93,6 @@ calculateImagePosition() {
     this.mostrarcuestionario=false;
     this.mostrarcuestionario2=true;
     this.mostrarcuestionario3=false;
-    this.mostrarcuestionario4=false;
-    this.mostrarcuestionario5=false;
     this.mostrarransom=false;
   }
 
@@ -109,40 +101,16 @@ calculateImagePosition() {
     this.mostrarcuestionario=false;
     this.mostrarcuestionario2=false;
     this.mostrarcuestionario3=true;
-    this.mostrarcuestionario4=false;
-    this.mostrarcuestionario5=false;
     this.mostrarransom=false;
   }
 
-  showCuest4() {
-    this.mostrarGeneral=false;
-    this.mostrarcuestionario=false;
-    this.mostrarcuestionario2=false;
-    this.mostrarcuestionario3=false;
-    this.mostrarcuestionario4=true;
-    this.mostrarcuestionario5=false;
-    this.mostrarransom=false;
-  }
-
-  showCuest5() {
-    this.mostrarGeneral=false;
-    this.mostrarcuestionario=false;
-    this.mostrarcuestionario2=false;
-    this.mostrarcuestionario3=false;
-    this.mostrarcuestionario4=false;
-    this.mostrarcuestionario5=true;
-    this.mostrarransom=false;
-  }
   showCuestRansom() {
     this.mostrarGeneral=false;
     this.mostrarcuestionario=false;
     this.mostrarcuestionario2=false;
     this.mostrarcuestionario3=false;
-    this.mostrarcuestionario4=false;
-    this.mostrarcuestionario5=false;
     this.mostrarransom=true;
   }
-
 
   showHelp() {
     this.dialog.open(HelpComponent)

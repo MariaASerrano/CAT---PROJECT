@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import {  MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatRadioModule,
     MatTableModule,
     MatMenuModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatStepperModule
   ]
   
 })
