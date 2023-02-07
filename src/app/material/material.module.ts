@@ -14,6 +14,8 @@ import {  MatTableModule } from '@angular/material/table';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     MatTableModule,
     MatMenuModule,
     MatSidenavModule,
-    MatStepperModule
+    MatStepperModule,
+    MatDividerModule
   ]
   
 })

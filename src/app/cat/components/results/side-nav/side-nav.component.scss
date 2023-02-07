@@ -3,8 +3,10 @@
       padding: 40px 40px;
       cursor: pointer;
       font-size: 15px;
+      background-color: #64B4FE;
       position: relative;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: white;
       display: flex;
       &:hover {
         background-color: #0085FF;
@@ -12,6 +14,7 @@
       mat-icon {
         margin-right: 20px;
         font-size: 33px;
+        color: white;
       }
       span {
         display: inline;

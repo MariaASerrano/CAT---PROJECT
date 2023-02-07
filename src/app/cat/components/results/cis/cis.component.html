@@ -1,37 +1,115 @@
+<app-header></app-header>
+<app-side-nav></app-side-nav>
 <div class="title">
-    <h1 class="test"><i><span>T</span>op 3 de controles a mejorar</i></h1>
-    <table class="table1">
-        <tr>
-          <th [ngStyle]="{'background-color':'#f2f2f2','border':'1px solid black'}">Control</th>
-          <th [ngStyle]="{'background-color':'#f2f2f2','border':'1px solid black'}">Exposición (%)</th>
-        </tr>
-        <tr *ngFor="let data of myDataArray">
-          <td [ngStyle]="{'border':'1px solid black'}">{{data.column1}}</td>
-          <td [ngStyle]="{'border':'1px solid black'}">{{data.column2}}</td>
-        </tr>
-      </table>
+  <h1 class="test"><i><span>T</span>op 3 de controles a mejorar en la organización</i></h1>
+  <div class="table1">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-      <table class="table2">
-        <tr>
-          <th [ngStyle]="{'background-color':'#f2f2f2','border':'1px solid black'}">Control</th>
-          <th [ngStyle]="{'background-color':'#f2f2f2','border':'1px solid black'}">Exposición (%)</th>
-        </tr>
-        <tr *ngFor="let data of myDataArray">
-          <td [ngStyle]="{'border':'1px solid black'}">{{data.column1}}</td>
-          <td [ngStyle]="{'border':'1px solid black'}">{{data.column2}}</td>
-        </tr>
-      </table>
+      <ng-container matColumnDef="control">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Control</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.control }}</td>
+      </ng-container>
 
-      <table class="table3">
-        <tr>
-          <th [ngStyle]="{'background-color':'#f2f2f2','border':'1px solid black'}">Control</th>
-          <th [ngStyle]="{'background-color':'#f2f2f2','border':'1px solid black'}">Exposición (%)</th>
-        </tr>
-        <tr *ngFor="let data of myDataArray">
-          <td [ngStyle]="{'border':'1px solid black'}">{{data.column1}}</td>
-          <td [ngStyle]="{'border':'1px solid black'}">{{data.column2}}</td>
-        </tr>
-      </table>
-      
-      
+      <ng-container matColumnDef="exposicion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Madurez (%)</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.exposicion }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-divider></mat-divider>
+
+    <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="control">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Control</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.control }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="exposicion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Madurez (%)</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.exposicion }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="control">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Control</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.control }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="exposicion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Madurez (%)</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.exposicion }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
+<div class="title2">
+  <h1 class="test"><i><span>T</span>op 3 de los mejores controles aplicados en la organización</i></h1>
+  <div class="table2">
+    <table mat-table [dataSource]="dataSource4" class="mat-elevation-z8">
+      <ng-container matColumnDef="control">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Control</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.control }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="exposicion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Madurez (%)</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.exposicion }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <table mat-table [dataSource]="dataSource5" class="mat-elevation-z8">
+      <ng-container matColumnDef="control">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Control</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.control }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="exposicion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Madurez (%)</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.exposicion }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <table mat-table [dataSource]="dataSource6" class="mat-elevation-z8">
+      <ng-container matColumnDef="control">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Control</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.control }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="exposicion">
+        <th mat-header-cell *matHeaderCellDef style="text-align: center;">Madurez (%)</th>
+        <td mat-cell *matCellDef="let element" style="text-align: center;">{{ element.exposicion }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+  </div>
+  <div id="chart">
+    <apx-chart
+      [series]="series"
+      [chart]="chart"
+      [plotOptions]="plotOptions"
+      [labels]="labels"
+      [fill]="fill"
+      [stroke]="stroke"
+    ></apx-chart>
+  </div>
 </div>
