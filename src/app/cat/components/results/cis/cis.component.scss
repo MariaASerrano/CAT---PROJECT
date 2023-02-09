@@ -1,14 +1,17 @@
-.main-container {
+.side-nav {
+  width: 300px;
+  height: 765px;
+  background-color: #64B4FE;
+  color: #fff;
+}
+.posicion {
   display: flex;
-  .main {
-    padding: 30px;
-  }
+  align-items: center;
+  justify-content: flex-end;
+  height: 50px;
+  padding-right: 10px;
 }
-#chart {
-  padding: 0;
-  max-width: 450px;
-  margin: 35px auto;
-}
+
 .test3 {
   background: black;
 }
@@ -19,7 +22,6 @@
     right: 0;
     display: flex;
     padding-top: 150px;
-    padding-left: 120px;
     justify-content: center;
     text-align: center;
 }
@@ -30,7 +32,7 @@
   right: 0;
   display: flex;
   padding-top: 450px;
-  padding-left: 350px;
+  padding-left: 230px;
   justify-content: center;
   text-align: center;
 }
@@ -41,7 +43,6 @@
   right: 0;
   display: flex;
   padding-top: 250px;
-  padding-left: 350px;
   justify-content: center;
   text-align: center;
 }
@@ -53,7 +54,7 @@
   right: 0;
   display: flex;
   padding-top: 620px;
-  padding-left: 350px;
+  padding-left: 50px;
   justify-content: center;
   text-align: center;
 }
@@ -64,7 +65,6 @@
     color: #000;
     font-size: 45px;
     line-height: normal;
-    margin-bottom: 20px;
 }
 
 span { //this works for first letters in blue color

@@ -1,6 +1,5 @@
 .main-container {
     display: flex;
-//    height: 100%;
     .side-nav {
       width: 300px;
       height: 765px;
@@ -9,11 +8,5 @@
     }
     .main {
       padding: 30px;
-    //  height: calc(100% - 200px);
-     // overflow-y: auto;
     }
   }
-/* .container{
-  height: 100vh;
-  position: relative;
-} */

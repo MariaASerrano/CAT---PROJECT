@@ -1,5 +1,8 @@
 <app-header></app-header>
-<app-side-nav></app-side-nav>
+<div class="side-nav">
+  <app-side-nav></app-side-nav>
+  </div>
+
 <div class="title">
   <h1 class="test"><i><span>T</span>op 3 de controles a mejorar en la organización</i></h1>
   <div class="table1">
@@ -102,7 +105,8 @@
     </table>
 
   </div>
-  <div id="chart">
+  <div class="container">
+  <div class="posicion">
     <apx-chart
       [series]="series"
       [chart]="chart"
@@ -112,4 +116,5 @@
       [stroke]="stroke"
     ></apx-chart>
   </div>
+</div>
 </div>

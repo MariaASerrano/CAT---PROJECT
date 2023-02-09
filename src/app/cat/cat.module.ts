@@ -16,6 +16,11 @@ import { SideNavComponent } from './components/results/side-nav/side-nav.compone
 import { MainComponent } from './components/results/main/main.component';
 import { DashboardComponent } from './components/results/dashboard/dashboard.component';
 import { CisComponent } from './components/results/cis/cis.component';
+import { CiberriesgoComponent } from './components/results/ciberriesgo/ciberriesgo.component';
+import { DBIRComponent } from './components/results/dbir/dbir.component';
+import { NISTComponent } from './components/results/nist/nist.component';
+import { PlanmejoraComponent } from './components/results/planmejora/planmejora.component';
+import { RansomwareComponent } from './components/results/ransomware/ransomware.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { CisComponent } from './components/results/cis/cis.component';
     MainComponent,
     DashboardComponent,
     CisComponent,
+    CiberriesgoComponent,
+    DBIRComponent,
+    NISTComponent,
+    PlanmejoraComponent,
+    RansomwareComponent,
   ],
   imports: [
     CommonModule,
