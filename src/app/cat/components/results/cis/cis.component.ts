@@ -65,7 +65,7 @@ export class CisComponent implements OnInit {
   private initializeChartOptions(): void {
     this.series = [80];
     this.chart = {
-      height: 350,
+      height: 300,
       type: "radialBar",
       toolbar: {
         show: true

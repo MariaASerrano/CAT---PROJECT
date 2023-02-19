@@ -48,10 +48,10 @@ export class MainComponent implements OnInit {
     thirdCtrl: ['', Validators.required],
   });
   forthFormGroup = this._formBuilder.group({
-    thirdCtrl: ['', Validators.required],
+    fourthCtrl: ['', Validators.required],
   });
   fifthFormGroup = this._formBuilder.group({
-    thirdCtrl: ['', Validators.required],
+    fifthCtrl: ['', Validators.required],
   });
   stepperOrientation: Observable<StepperOrientation>;
 

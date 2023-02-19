@@ -1,12 +1,12 @@
 .main-container {
     display: flex;
-    .side-nav {
-      width: 300px;
-      height: 765px;
-      background-color: #64B4FE;
-      color: #fff;
-    }
     .main {
       padding: 30px;
     }
+  }
+  .side-nav {
+    width: 300px;
+    height: 765px;
+    background-color: #64B4FE;
+    color: #fff;
   }

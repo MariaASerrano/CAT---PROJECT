@@ -111,61 +111,61 @@
   class="example-stepper"
   [orientation]="(stepperOrientation | async)!"
 >
-  <mat-step
-    [stepControl]="firstFormGroup"
-    label="Inventory and Control of Enterprise Assets"
-  >
-    <h3>
-      Integre dentro de la organización una herramienta que permita descubrir en
-      la red todos los activos de información conectados a la misma.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Data protection">
-    <h3>
-      Implemente dentro de la organización las mejores prácticas para la
-      clasificación de información
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="thirdFormGroup" label="Audit Log Management">
-    <h3>
-      Integre una herramienta de monitoreo de logs para detectar cualquier
-      incidente dentro de la organización.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="forthFormGroup" label="Malware Defenses">
-    <h3>
-      Un Antivirus no es suficiente para proteger los activos de información porque existen programas maliciosos que son capaces de burlar la detección. Por lo tanto, busque soluciones más avanzadas como EDR o XDR.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="fifthFormGroup" label="Penetration Testing">
-    <h3>
+<mat-step
+  [stepControl]="firstFormGroup"
+  label="Inventario y control de los activos de la empresa"
+>
+  <h3>
+    Integre dentro de la organización una herramienta que permita descubrir en
+    la red todos los activos de información conectados a la misma.
+  </h3>
+  <div>
+    <button mat-raised-button matStepperNext>Sig.</button>
+  </div>
+</mat-step>
+<mat-step [stepControl]="secondFormGroup" label="Protección de datos">
+  <h3>
+    Implemente dentro de la organización las mejores prácticas para la
+    clasificación de información
+  </h3>
+  <div>
+    <button mat-raised-button matStepperPrevious>Ant.</button>
+    <button mat-raised-button matStepperNext>Sig.</button>
+  </div>
+</mat-step>
+<mat-step [stepControl]="thirdFormGroup" label="Gestión del registro de auditoría">
+  <h3>
+    Integre una herramienta de monitoreo de logs para detectar cualquier
+    incidente dentro de la organización.
+  </h3>
+  <div>
+    <button mat-raised-button matStepperPrevious>Ant.</button>
+    <button mat-raised-button matStepperNext>Sig.</button>
+  </div>
+</mat-step>
+<mat-step [stepControl]="forthFormGroup" label="Defensas contra malware">
+  <h3>
+    Un Antivirus no es suficiente para proteger los activos de información porque existen programas maliciosos que son capaces de burlar la detección. Por lo tanto, busque soluciones más avanzadas como EDR o XDR.
+  </h3>
+  <div>
+    <button mat-raised-button matStepperPrevious>Ant.</button>
+    <button mat-raised-button matStepperNext>Sig.</button>
+  </div>
+</mat-step>
+<mat-step [stepControl]="fifthFormGroup" label="Pruebas de penetración">
+  <h3>
 Ejecutar pruebas de penetración ayudan a evaluar la efectividad de los controles que tiene la organización ante un posible ataque. Las mejores prácticas aconsejan realizar estas pruebas al menos dos (2) veces al año.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Meta</ng-template>
-    <h3>Una vez, recorrido este camino has dado el paso inicial para mejorar la postura de ciberseguridad de la organización</h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-    </div>
-  </mat-step>
+  </h3>
+  <div>
+    <button mat-raised-button matStepperPrevious>Ant.</button>
+    <button mat-raised-button matStepperNext>Sig.</button>
+  </div>
+</mat-step>
+<mat-step>
+  <ng-template matStepLabel>Meta</ng-template>
+  <h3>Una vez, recorrido este camino has dado el paso inicial para mejorar la postura de ciberseguridad de la organización</h3>
+  <div>
+    <button mat-raised-button matStepperPrevious>Ant.</button>
+  </div>
+</mat-step>
 </mat-stepper>

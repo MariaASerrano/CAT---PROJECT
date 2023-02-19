@@ -4,3 +4,44 @@
     background-color: #64B4FE;
     color: #fff;
   }
+
+  .mat-stepper-vertical {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+  h1 { //this works for home title
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic, bold;
+    color: #000;
+    font-size: 18px;
+    line-height: normal;
+    padding-top: 2rem ;
+}
+.title {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.stepper {
+  position: absolute;
+  top: 200px;
+  left: 330px;
+  right: 0;
+  width: 1300px;
+  height: fit-content;
+}
+.explain-cat{
+  width: 200px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:80%;
+  bottom: 0;
+}
