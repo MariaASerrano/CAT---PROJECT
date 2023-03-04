@@ -1,6 +1,6 @@
 <!-- HIPOTESIS DE CIBERRIESGO -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-<div class="top-section">
+<div class="first-chart">
   <div class="widget-container">
     <div class="widget blue">
       <div class="icon">
@@ -14,7 +14,7 @@
   </div>
 </div>
 <!-- GRAFICA DE BARRAS PARA NIST -->
-<div class="top-section">
+<div class="second-chart">
   <div class="widget-container">
     <div class="widget black">
       <apx-chart
@@ -32,7 +32,7 @@
   </div>
 </div>
 <!-- GRAFICA DE DONA PARA NIVEL DE CIS -->
-<div class="top-section">
+<div class="third-chart">
   <div class="CIS-container">
     <div class="widget">
       <apx-chart
@@ -49,7 +49,7 @@
 </div>
 
 <!-- GRAFICA DE DONA PARA RANSOMWARE READINESS -->
-<div class="top-section">
+<div class="forth-chart">
   <div class="CIS-container">
     <div class="widget">
       <apx-chart
@@ -65,7 +65,7 @@
   </div>
 </div>
 <!-- TABLA DE EXPOSICION -->
-<div class="top-section">
+<div class="tabla-chart">
   <div class="widget">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <caption
@@ -98,6 +98,7 @@
   </div>
 </div>
 <!-- //PLAN DE MEJORA -->
+<div class="plan-chart">
 <ng-container [ngSwitch]="stepperOrientation | async">
   <div *ngSwitchCase="'horizontal'">
     <h1>Hoja de ruta para mejorar la madurez en ciberseguridad</h1>
@@ -169,3 +170,4 @@ Ejecutar pruebas de penetración ayudan a evaluar la efectividad de los controle
   </div>
 </mat-step>
 </mat-stepper>
+</div>

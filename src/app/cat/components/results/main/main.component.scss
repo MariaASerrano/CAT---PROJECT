@@ -1,20 +1,69 @@
-  .middle-section {
-    display: flex;
-    justify-content: space-between;
-    .widget {
-      height: 350px;
-      background-color: #fff;
-      border-radius: 5px;
-      margin: 10px;
-      box-shadow: 5px 5px 5px #939393;
-      &.left {
-        width: 890px;
-      }
-      &.right {
-        width: 450px;
-      }
-    }
-  }
+.first-chart{
+    width: 500px;
+    height: 250px;
+    position: absolute;
+    right: 10px;
+    top:16%;
+    bottom: 0;
+    left: 20%;
+    right: 0;
+}
+
+.second-chart{
+  width: 800px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:16%;
+  bottom: 0;
+  left: 45%;
+  right: 0;
+}
+
+.third-chart{
+  width: 600px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:16%;
+  bottom: 0;
+  left: 70%;
+  right: 0;
+}
+
+.forth-chart{
+  width: 600px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:53%;
+  bottom: 0;
+  left: 20%;
+  right: 0;
+}
+
+.tabla-chart{
+  width: 600px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:55%;
+  bottom: 0;
+  left: 55%;
+  right: 0;
+}
+
+.plan-chart{
+  width: 1500px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:85%;
+  bottom: 0;
+  left: 22%;
+  right: 0;
+}
+
 
   h1 { //this works for home title
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -25,23 +74,6 @@
     padding-top: 2rem ;
 }
 
-  .bottom-section {
-    display: flex;
-    justify-content: space-between;
-    .widget {
-      height: 250px;
-      background-color: #000;
-      border-radius: 5px;
-      margin: 10px;
-      box-shadow: 5px 5px 5px #939393;
-      &.left {
-        width: 670px;
-      }
-      &.right {
-        width: 670px;
-      }
-    }
-  }
  .widget-container {
     display: flex;
     align-items: space-between;
