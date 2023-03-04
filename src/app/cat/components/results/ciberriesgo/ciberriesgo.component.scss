@@ -9,9 +9,9 @@
     top: 150px;
     left: 250px;
     right: 0;
-    display:inline-flex;
     justify-content:right;
     text-align: center;
+    
   }
 
   .othertext {
@@ -19,9 +19,42 @@
     font-size: 14px;
     position: absolute;
     line-height: normal;
-    text-align: center;
     top: 250px;
-    left: 300px;
-    width: 1000px;
+    left: 350px;
   }
-  
+  .mat-card1 {
+    position: absolute; 
+    top: 380px;
+    width: 400px;
+    height: 90px;
+    left: 1050px;
+    right: 0;
+    bottom: 0;
+  }
+  .title-ciber{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    color: #0085FF;
+
+  }
+  .formula{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+  }
+  .table {
+    position: absolute;
+    top: 530px;
+    left: 1010px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .widget {
+    box-shadow: 5px 5px 5px #939393;
+    position: absolute;
+    top: 80%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+  }

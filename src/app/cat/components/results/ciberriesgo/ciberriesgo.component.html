@@ -1,16 +1,81 @@
 <app-header></app-header>
 <div class="side-nav">
-<app-side-nav></app-side-nav>
+  <app-side-nav></app-side-nav>
 </div>
 <div class="title">
-    <h1 style="font-size: 50px; font-style: italic; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Hipótesis de cuantificación de interrupción de la institución causada por ciber-ataques</h1>
+  <h1
+    style="
+      font-size: 50px;
+      font-style: italic;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    "
+  >
+    Hipótesis de cuantificación de interrupción de la institución causada por
+    ciber-ataques
+  </h1>
 </div>
 <h3 class="othertext">
-    Uno de los mayores retos que todo CISO afronta es poder traducir el ciber-riesgo a una pérdida esperada en dinero.
-    Para esto se puede utilizar una fórmula CCR (Costo Ciber Riesgo) con los siguientes parámetros:
-    
-    - Revenue del último año (RN)
-    - Porcentaje de dependencia tecnológica del negocio (%DT)
-    - Factor de exposición en porcentaje (%FE)
-    - Efectividad de la estrategia actual de ciberseguridad (ECS)
+  Uno de los mayores retos que todo CISO afronta es poder traducir el
+  ciber-riesgo a una pérdida esperada en dinero. Para esto se puede utilizar la
+  fórmula CCR (Costo Ciber Riesgo) creada para efectos de este proyecto, la cual tiene los siguientes parámetros:
+  <br /><br />
+  - Revenue del último año (RN)<br />
+  - Porcentaje de dependencia tecnológica del negocio (%DT)<br />
+  - Factor de exposición en porcentaje (%FE)<br />
+  - Efectividad de la estrategia actual de ciberseguridad (ECS)
 </h3>
+<mat-card class="mat-card1">
+  <mat-card-content style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 20px;"
+    >
+    <h1 class="title-ciber">Fórmula de Costo Ciber Riesgo (CCR)	<br></h1>				
+    <h3 class="formula"><b>CCR=((RN*%DT)*%FE))* (100%-(ECS))</b></h3></mat-card-content
+  >
+</mat-card>
+<div class="table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="parametro">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          style="text-align: center; color: #0085FF; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15px;"
+        >
+          Parámetros
+        </th>
+        <td mat-cell *matCellDef="let element"  style="text-align:left; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          {{ element.parametro }}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="valor">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          style="text-align: center; color: '#0085FF'; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 15px;"
+        >
+          Valor
+        </th>
+        <td mat-cell *matCellDef="let element" style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+          {{ element.valor }}
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <mat-card class="widget">
+    <div class="chart-container">
+      <apx-chart
+        [series]="series"
+        [chart]="chart"
+        [title]="title"
+        [dataLabels]="dataLabels"
+        [legend]="legend"
+        [plotOptions]="plotOptions"
+        [xaxis]="xaxis"
+        [yaxis]="yaxis"
+        [colors]="colors"
+      ></apx-chart>
+    </div>
+  </mat-card>
+
