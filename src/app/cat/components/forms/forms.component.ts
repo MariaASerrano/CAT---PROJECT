@@ -21,11 +21,8 @@ export class FormsComponent implements OnInit {
   totalQuestions = 18;
   answeredQuestions = 0;
 
-  totalWidth = 1580; /* adjust the total width as needed */
-  imageWidth = 150; /* adjust the width of the image as needed */
-  preguntas = [];
-  nist: any;
-  orden: any = [];
+totalWidth = 1580; /* adjust the total width as needed */
+imageWidth = 150; /* adjust the width of the image as needed */
 
   calculateImagePosition() {
     const progressWidth = (this.progress * this.totalWidth) / 100;
