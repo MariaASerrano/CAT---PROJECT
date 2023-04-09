@@ -21,6 +21,7 @@ import { DBIRComponent } from './components/results/dbir/dbir.component';
 import { NISTComponent } from './components/results/nist/nist.component';
 import { PlanmejoraComponent } from './components/results/planmejora/planmejora.component';
 import { RansomwareComponent } from './components/results/ransomware/ransomware.component';
+import { InfoCatComponent } from './pages/info-cat/info-cat.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { RansomwareComponent } from './components/results/ransomware/ransomware.
     NISTComponent,
     PlanmejoraComponent,
     RansomwareComponent,
+    InfoCatComponent,
   ],
   imports: [
     CommonModule,
@@ -48,11 +50,8 @@ import { RansomwareComponent } from './components/results/ransomware/ransomware.
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    NgApexchartsModule
+    NgApexchartsModule,
   ],
-  providers:[
-    CurrencyPipe
-  ]
-
+  providers: [CurrencyPipe],
 })
-export class CatModule { }
+export class CatModule {}

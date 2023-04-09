@@ -1,67 +1,37 @@
 .first-chart{
     width: 500px;
     height: 250px;
-    position: absolute;
-    right: 10px;
-    top:16%;
-    bottom: 0;
-    left: 20%;
-    right: 0;
+    
 }
 
 .second-chart{
   width: 800px;
   height: 250px;
-  position: absolute;
-  right: 10px;
-  top:16%;
-  bottom: 0;
-  left: 45%;
-  right: 0;
+  
 }
 
 .third-chart{
   width: 600px;
   height: 250px;
-  position: absolute;
-  right: 10px;
-  top:16%;
-  bottom: 0;
-  left: 70%;
-  right: 0;
+  
 }
 
 .forth-chart{
   width: 600px;
   height: 250px;
-  position: absolute;
-  right: 10px;
-  top:53%;
-  bottom: 0;
-  left: 20%;
-  right: 0;
+  
 }
 
 .tabla-chart{
   width: 600px;
   height: 250px;
-  position: absolute;
-  right: 10px;
-  top:55%;
-  bottom: 0;
-  left: 55%;
-  right: 0;
+  
 }
 
 .plan-chart{
   width: 1500px;
   height: 250px;
-  position: absolute;
-  right: 10px;
-  top:85%;
-  bottom: 0;
-  left: 22%;
-  right: 0;
+  
 }
 
 
@@ -151,4 +121,11 @@ table{
   display: flex;
   overflow: auto;
   padding: 0 10px;
+}
+
+.main-container{
+  overflow-y: auto;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }

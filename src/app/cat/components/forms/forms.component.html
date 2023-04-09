@@ -1,219 +1,468 @@
 <div class="out-container" *ngIf="mostrarGeneral">
-    <h1 class="regulartitle"><span>1.</span>Información general</h1>
-    <div class="form-container">
+  <h1 class="regulartitle"><span>1.</span>Información general</h1>
+  <div [formGroup]="formularioInicial" class="form-container">
     <div class="left-container">
-    <h3>¿Cuál es el nombre de la persona a cargo de esta evaluación?</h3>
-        <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-          <input matInput placeholder="Ingrese su nombre" formControlName="name">
-          <mat-label *ngIf="campoNoValido('name')">Debes ingresar tu nombre</mat-label>
-    </mat-form-field>
-    <h3>¿Cuántas sedes tiene la organización?</h3>
-    <mat-form-field appearance="outline"[formGroup]="formularioInicial">
-        <input type="number" matInput placeholder="Ingrese la cantidad de sedes" formControlName="sedes">
-        <mat-label *ngIf="campoNoValido('sedes')">Debes ingresar la cantidad total de sedes</mat-label>
-    </mat-form-field>
-    <h3>Su entidad opera de:</h3>
-    <mat-radio-group [(ngModel)]="selectedOption" [ngModelOptions]="{standalone: true}">
-      <mat-radio-button color="primary" value="lunesViernes">Lunes a viernes</mat-radio-button><br><br>
-      <mat-radio-button color="primary" value="lunesSabado">Lunes a sábado</mat-radio-button><br><br>
-      <mat-radio-button color="primary" value="todosLosDias">Todos los días</mat-radio-button><br><br>
-    </mat-radio-group>
-    </div>
-  <div class="right-container">
-    <h3>¿Cuántas horas puede durar sin tecnología la organización?</h3>
-    <mat-form-field appearance="outline"[formGroup]="formularioInicial">
-        <input type="number" matInput placeholder="Ingrese la cantidad de dependencia" formControlName="depen">
-        <mat-label *ngIf="campoNoValido('depen')">Debes ingresar la cantidad de horas que puede durar la institución sin tecnología</mat-label>
-    </mat-form-field>
-    <h3>¿Cuántos empleados tiene actualmente la entidad?</h3>
-    <mat-form-field appearance="outline" [formGroup]="formularioInicial">
-      <input type="number" min="0" matInput placeholder="Ingrese la cantidad de empleados" formControlName="empleados">  
-      <mat-label *ngIf="campoNoValido('empleados')">Debes ingresar el total de empleados en la organización</mat-label>
-    </mat-form-field>
-    <h3>¿Cuál fue el ingreso del último año?</h3>
-    <mat-form-field appearance="outline" *ngIf="formularioInicial" [formGroup]="formularioInicial">
-      <input type="text" matInput placeholder="Ingrese la ganancia del último año" formControlName="ganancia" required
-      *ngIf="formularioInicial.controls['ganancia']" [value]="formularioInicial.controls['ganancia'].value | currency:'COP':'symbol':'1.1-2'">
-       <mat-label *ngIf="campoNoValido('ganancia')">Debes ingresar la ganancia (revenue) del último año</mat-label>
+      <h3>¿Cuál es el nombre de la persona a cargo de esta evaluación?</h3>
+      <mat-form-field appearance="outline">
+        <input
+          matInput
+          placeholder="Ingrese su nombre"
+          formControlName="nombreEmpresa"
+        />
+        <mat-label *ngIf="campoNoValido('nombreEmpresa')"
+          >Debes ingresar tu nombre</mat-label
+        >
       </mat-form-field>
-  </div>
-</div>
-    <div class="out-container">
-        <button mat-flat-button class="previous" routerLink="/homeCAT"><mat-icon>west</mat-icon></button>
-        <button [disabled]="formularioInicial.invalid" mat-flat-button class="next" (click)="showCuest()"><mat-icon>east</mat-icon>
-        </button>
+      <h3>¿Cuántas sedes tiene la organización?</h3>
+      <mat-form-field appearance="outline">
+        <input
+          type="number"
+          matInput
+          placeholder="Ingrese la cantidad de sedes"
+          formControlName="nroSedes"
+        />
+        <mat-label *ngIf="campoNoValido('nroSedes')"
+          >Debes ingresar la cantidad total de sedes</mat-label
+        >
+      </mat-form-field>
+      <h3>Su entidad opera de:</h3>
+      <mat-radio-group formControlName="tiempoOpera">
+        <mat-radio-button color="primary" [value]="40"
+          >Lunes a viernes</mat-radio-button
+        ><br /><br />
+        <mat-radio-button color="primary" [value]="48"
+          >Lunes a sábado</mat-radio-button
+        ><br /><br />
+        <mat-radio-button color="primary" [value]="168"
+          >Todos los días</mat-radio-button
+        ><br /><br />
+      </mat-radio-group>
     </div>
+    <div class="right-container">
+      <h3>¿Cuántas horas puede durar sin tecnología la organización?</h3>
+      <mat-form-field appearance="outline">
+        <input
+          type="number"
+          matInput
+          placeholder="Ingrese la cantidad de dependencia"
+          formControlName="dependencia"
+        />
+        <mat-label *ngIf="campoNoValido('dependencia')"
+          >Debes ingresar la cantidad de horas que puede durar la institución
+          sin tecnología</mat-label
+        >
+      </mat-form-field>
+      <h3>¿Cuántos empleados tiene actualmente la entidad?</h3>
+      <mat-form-field appearance="outline">
+        <input
+          type="number"
+          min="0"
+          matInput
+          placeholder="Ingrese la cantidad de empleados"
+          formControlName="nroEmpleados"
+        />
+        <mat-label *ngIf="campoNoValido('nroEmpleados')"
+          >Debes ingresar el total de empleados en la organización</mat-label
+        >
+      </mat-form-field>
+      <h3>¿Cuál fue el ingreso del último año?</h3>
+      <mat-form-field appearance="outline" *ngIf="formularioInicial">
+        <span matPrefix>COP</span>
+        <input
+          type="number"
+          min="0"
+          style="text-align: right"
+          matInput
+          placeholder="Ingrese la ganancia del último año"
+          formControlName="ingreso"
+          required
+          [value]="formularioInicial.value.ingreso"
+        />
+        <mat-label *ngIf="campoNoValido('ingreso')"
+          >Debes ingresar la ganancia (revenue) del último año</mat-label
+        >
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="out-container">
+    <button mat-flat-button class="previous" routerLink="/info-cat">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button
+      [disabled]="formularioInicial.invalid"
+      mat-flat-button
+      class="next"
+      (click)="showCuest()"
+    >
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
 </div>
 
 <div class="out-container" *ngIf="mostrarcuestionario">
-    <h1 class="regulartitle"><span>2.</span>Determinando el nivel de madurez actual</h1>
-    <div class="form-container">
+  <h1 class="regulartitle">
+    <span>2.</span>Determinando el nivel de madurez actual
+  </h1>
+  <div class="form-container">
     <div class="left-container">
-    <h3>¿Existe un inventario de activos informáticos detallado y actualizado? <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
-      <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
+      <h3>
+        ¿Existe un inventario de activos informáticos detallado y actualizado?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a88', $event)"
+      ></app-forms-option>
 
-      <h3>¿Existe un inventario de software detallado y este mismo debidamente actualizado?<button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
-      <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
+      <h3>
+        ¿Existe un inventario de software detallado y este mismo debidamente
+        actualizado?<button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a89', $event)"
+      ></app-forms-option>
 
-        
-      <h3>¿Se implementa una solución de prevención de pérdida de datos (DLP) y sigue la política de proceso de clasificación de datos? <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
-      <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
+      <h3>
+        ¿Se implementa una solución de prevención de pérdida de datos (DLP) y
+        sigue la política de proceso de clasificación de datos?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8a', $event)"
+      ></app-forms-option>
     </div>
     <div class="right-container">
-        <h3>¿Aplican guías de fortalecimiento a los activos empresariales (Endpoint, IoT, Servidores, Móvil, etc.)?<button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
-        <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
+      <h3>
+        ¿Aplican guías de fortalecimiento a los activos empresariales (Endpoint,
+        IoT, Servidores, Móvil, etc.)?<button
+          mat-icon-button
+          (click)="showHelp()"
+          class="help"
+        >
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8b', $event)"
+      ></app-forms-option>
 
-          <h3>¿Cuenta con un directorio activo debidamente administrado? <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
-          <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-      
-            <h3>¿Implementa controles de acceso basado en roles (RBAC) para decidir el tipo de privilegios que se asignarán a los diferentes tipos de cuentas?
-              <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-            </h3>
-            <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-    </div>  
+      <h3>
+        ¿Cuenta con un directorio activo debidamente administrado?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8c', $event)"
+      ></app-forms-option>
+
+      <h3>
+        ¿Implementa controles de acceso basado en roles (RBAC) para decidir el
+        tipo de privilegios que se asignarán a los diferentes tipos de cuentas?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8d', $event)"
+      ></app-forms-option>
+    </div>
   </div>
   <div class="progress-bar-wrapper">
-    <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif">
+    <img
+      class="walking-cat"
+      [style.left.px]="calculateImagePosition()"
+      src="..\..\assets\imgs\cat_walking.gif"
+    />
     <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
-    </div>
-          
-    <div class="out-container">
-        <button mat-flat-button class="previous" (click)="showGen()"><mat-icon>west</mat-icon></button>
-        <button [disabled]="formularioInicial.invalid" mat-flat-button class="next" (click)="showCuest2()"><mat-icon>east</mat-icon></button>
-    </div>
+  </div>
 
+  <div class="out-container">
+    <button mat-flat-button class="previous" (click)="showGen()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button
+      [disabled]="formularioInicial.invalid"
+      mat-flat-button
+      class="next"
+      (click)="showCuest2()"
+    >
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
 </div>
 
 <div class="out-container" *ngIf="mostrarcuestionario2">
-  <h1 class="regulartitle"><span>2.</span>Determinando el nivel de madurez actual</h1>
-    <div class="form-container">
-     <div class="left-container">       
-      <h3>¿Realiza análisis de vulnerabilidades al menos dos veces al año y cuenta con un proceso para la mitigación de las vulnerabilidades encontradas? 
-        <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
+  <h1 class="regulartitle">
+    <span>2.</span>Determinando el nivel de madurez actual
+  </h1>
+  <div class="form-container">
+    <div class="left-container">
+      <h3>
+        ¿Realiza análisis de vulnerabilidades al menos dos veces al año y cuenta
+        con un proceso para la mitigación de las vulnerabilidades encontradas?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
       </h3>
-      <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8e', $event)"
+      ></app-forms-option>
 
-        <h3>¿Cuenta con un Centro de Operaciones de Seguridad (SOC) que está monitoreando eventos de seguridad 24x7 para anticipar, alertar y notificar sobre incidentes de ciberseguridad?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
+      <h3>
+        ¿Cuenta con un Centro de Operaciones de Seguridad (SOC) que está
+        monitoreando eventos de seguridad 24x7 para anticipar, alertar y
+        notificar sobre incidentes de ciberseguridad?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8f', $event)"
+      ></app-forms-option>
 
-        <h3>¿Cuenta con reglas de firewall para restringir la navegación a sitios web no confiables y/o correos de dudosa procedencia?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-       </div>
-
-       <div class="right-container">
-        <h3>¿Cuenta con un Endpoint Detection & Response (EDR) que esté constantemente monitoreando los endpoints para mitigar ciber-amenazas?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-         
-        <h3>¿Cuenta con un proceso debidamente comprobado para la recuperación de datos en caso de un ataque cibernético? 
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-  
-          <h3>¿Aplican guías de endurecimiento a los dispositivos de red? <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button></h3>
-          <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-       </div>
-
+      <h3>
+        ¿Cuenta con reglas de firewall para restringir la navegación a sitios
+        web no confiables y/o correos de dudosa procedencia?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a90', $event)"
+      ></app-forms-option>
     </div>
-    <div class="progress-bar-wrapper">
-      <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif" alt="walking cat">
+
+    <div class="right-container">
+      <h3>
+        ¿Cuenta con un Endpoint Detection & Response (EDR) que esté
+        constantemente monitoreando los endpoints para mitigar ciber-amenazas?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a91', $event)"
+      ></app-forms-option>
+
+      <h3>
+        ¿Cuenta con un proceso debidamente comprobado para la recuperación de
+        datos en caso de un ataque cibernético?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a92', $event)"
+      ></app-forms-option>
+
+      <h3>
+        ¿Aplican guías de endurecimiento a los dispositivos de red?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a93', $event)"
+      ></app-forms-option>
+    </div>
+  </div>
+  <div class="progress-bar-wrapper">
+    <img
+      class="walking-cat"
+      [style.left.px]="calculateImagePosition()"
+      src="..\..\assets\imgs\cat_walking.gif"
+      alt="walking cat"
+    />
     <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
-    </div>
+  </div>
 
-    <div class="out-container">
-        <button mat-flat-button class="previous" (click)="showCuest()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" (click)="showCuest3()"><mat-icon>east</mat-icon></button>
-    </div>
-
-
+  <div class="out-container">
+    <button mat-flat-button class="previous" (click)="showCuest()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-flat-button class="next" (click)="showCuest3()">
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
 </div>
 
 <div class="out-container" *ngIf="mostrarcuestionario3">
-    <h1 class="regulartitle"><span>2.</span>Determinando el nivel de madurez actual</h1>
-    <div class="form-container">
-        <div class="left-container">
-            <h3>¿Cuenta con la tecnología Extended Detection & Response (XDR) desplegada en la red que recopila y correlaciona automáticamente datos en múltiples capas de seguridad?
-              <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-            </h3>
-            <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-            <h3>¿Dentro de la organización se tiene establecido y se mantiene un programa de concientización a usuarios sobre seguridad de la información?
-              <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-            </h3>
-            <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>  
-                <h3>¿Mantiene monitoreada la dark y deep web, supervisando y evaluando la reputación de los proveedores de servicios?
-                  <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-                </h3>
-                <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-        </div>
-        <div class="right-container">
-                <h3>¿Desarrolla sus aplicaciones utilizando las mejores prácticas de ciberseguridad como OWASP Top 10 y las prueba antes de pasarlas a producción?
-                  <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-                </h3>
-                <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-
-        <h3>¿Cuenta con un equipo y plan de respuesta a incidentes?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-
-            <h3>¿Realiza pruebas de penetración a la red interna, externa, wifi y aplicativos web y móviles que posee?
-              <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-            </h3>
-            <app-forms-option (optionSelected)="updateProgress()"></app-forms-option>
-        </div>
+  <h1 class="regulartitle">
+    <span>2.</span>Determinando el nivel de madurez actual
+  </h1>
+  <div class="form-container">
+    <div class="left-container">
+      <h3>
+        ¿Cuenta con la tecnología Extended Detection & Response (XDR) desplegada
+        en la red que recopila y correlaciona automáticamente datos en múltiples
+        capas de seguridad?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a94', $event)"
+      ></app-forms-option>
+      <h3>
+        ¿Dentro de la organización se tiene establecido y se mantiene un
+        programa de concientización a usuarios sobre seguridad de la
+        información?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a95', $event)"
+      ></app-forms-option>
+      <h3>
+        ¿Mantiene monitoreada la dark y deep web, supervisando y evaluando la
+        reputación de los proveedores de servicios?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a96', $event)"
+      ></app-forms-option>
     </div>
-    <div class="progress-bar-wrapper">
-      <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif" alt="walking cat">
-      <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
-    </div>
+    <div class="right-container">
+      <h3>
+        ¿Desarrolla sus aplicaciones utilizando las mejores prácticas de
+        ciberseguridad como OWASP Top 10 y las prueba antes de pasarlas a
+        producción?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a97', $event)"
+      ></app-forms-option>
 
-    <div class="out-container">
-        <button mat-flat-button class="previous" (click)="showCuest2()"><mat-icon>west</mat-icon></button>
-        <button mat-flat-button class="next" (click)="showCuestRansom()"><mat-icon>east</mat-icon></button>
+      <h3>
+        ¿Cuenta con un equipo y plan de respuesta a incidentes?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a98', $event)"
+      ></app-forms-option>
+
+      <h3>
+        ¿Realiza pruebas de penetración a la red interna, externa, wifi y
+        aplicativos web y móviles que posee?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a99', $event)"
+      ></app-forms-option>
     </div>
+  </div>
+  <div class="progress-bar-wrapper">
+    <img
+      class="walking-cat"
+      [style.left.px]="calculateImagePosition()"
+      src="..\..\assets\imgs\cat_walking.gif"
+      alt="walking cat"
+    />
+    <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
+  </div>
+
+  <div class="out-container">
+    <button mat-flat-button class="previous" (click)="showCuest2()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-flat-button class="next" (click)="showCuestRansom()">
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
 </div>
 
 <div class="out-container" *ngIf="mostrarransom">
-  <h1 class="regulartitle"><span>3. R</span>ansomware <span>R</span>eadiness <span>A</span>ssessment</h1>
+  <h1 class="regulartitle">
+    <span>3. R</span>ansomware <span>R</span>eadiness <span>A</span>ssessment
+  </h1>
   <div class="form-container">
-      <div class="left-container">
-          <h3>¿Realiza pruebas de ingeniería social (como phishing) a sus usuarios?
-            <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-          </h3>
-          <app-forms-option></app-forms-option>  
-          <h3>¿Cuenta con tecnologías de gestión de identidad y accesos (IAM) y gestión de privilegios (PAM)?
-            <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-          </h3>
-          <app-forms-option></app-forms-option>
-          <h3>¿Su organización cuenta con actualizaciones automatizadas periódicamente para su software y sistemas?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-          </h3>
-          <app-forms-option></app-forms-option>
-      </div>
-      <div class="right-container">
-        <h3>¿Su organización tiene copias de seguridad programadas regularmente?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option></app-forms-option>
+    <div class="left-container">
+      <h3>
+        ¿Realiza pruebas de ingeniería social (como phishing) a sus usuarios?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option (optionSelected)="
+      updateProgress('63fc9d6e3fdaa4503cd40a9a', $event, false)
+    "></app-forms-option>
+      <h3>
+        ¿Cuenta con tecnologías de gestión de identidad y accesos (IAM) y
+        gestión de privilegios (PAM)?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option (optionSelected)="
+      updateProgress('63fc9d6e3fdaa4503cd40a9b', $event, false)
+    "></app-forms-option>
+      <h3>
+        ¿Su organización cuenta con actualizaciones automatizadas periódicamente
+        para su software y sistemas?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option (optionSelected)="
+      updateProgress('63fc9d6e3fdaa4503cd40a9c', $event, false)
+    "></app-forms-option>
+    </div>
+    <div class="right-container">
+      <h3>
+        ¿Su organización tiene copias de seguridad programadas regularmente?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option (optionSelected)="
+      updateProgress('63fc9d6e3fdaa4503cd40a9d', $event, false)
+    "></app-forms-option>
 
-        <h3>¿Desarrolla escenarios para evaluar cuánto tiempo llevaría recuperar datos críticos y sus servicios?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option></app-forms-option>
-        <h3>¿Su sistema tiene una póliza de seguro cibernético que cubre los ataques de Ransomware?
-          <button mat-icon-button (click)="showHelp()" class="help"><mat-icon>help</mat-icon></button>
-        </h3>
-        <app-forms-option></app-forms-option>
-      </div>
+      <h3>
+        ¿Desarrolla escenarios para evaluar cuánto tiempo llevaría recuperar
+        datos críticos y sus servicios?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option (optionSelected)="
+      updateProgress('63fc9d6e3fdaa4503cd40a9e', $event, false)
+    "></app-forms-option>
+      <h3>
+        ¿Su sistema tiene una póliza de seguro cibernético que cubre los ataques
+        de Ransomware?
+        <button mat-icon-button (click)="showHelp()" class="help">
+          <mat-icon>help</mat-icon>
+        </button>
+      </h3>
+      <app-forms-option
+        (optionSelected)="
+          updateProgress('63fc9d6e3fdaa4503cd40a9f', $event, false)
+        "
+      ></app-forms-option>
+    </div>
   </div>
   <div class="out-container">
-      <button mat-flat-button class="previous" (click)="showCuest3()"><mat-icon>west</mat-icon></button>
-      <button mat-flat-button class="next" routerLink="/results"><mat-icon>east</mat-icon></button>
+    <button mat-flat-button class="previous" (click)="showCuest3()">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button mat-flat-button class="next" (click)="submitForm()">
+      <mat-icon>east</mat-icon>
+    </button>
   </div>
 </div>
-

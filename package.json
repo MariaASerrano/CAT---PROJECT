@@ -23,6 +23,7 @@
     "angular-highcharts": "^14.1.7",
     "apexcharts": "^3.36.3",
     "ng-apexcharts": "^1.7.4",
+    "ng2-currency-mask": "^13.0.3",
     "ngx-mask": "^15.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
