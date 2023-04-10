@@ -11,6 +11,9 @@ import { map } from 'rxjs/operators';
 import { FormBuilder, Validators } from '@angular/forms';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/material/stepper';
+import { LocalStorageService } from 'src/app/services/localStorage.service';
+import { PreguntaService } from 'src/app/services/pregunta.service';
+import { RespuestaService } from 'src/app/services/respuesta.service';
 @Component({
   selector: 'app-ransomware',
   templateUrl: './ransomware.component.html',
@@ -43,10 +46,15 @@ export class RansomwareComponent implements OnInit {
   plotOptions_bar: ApexPlotOptions = {};
   fill_bar: ApexFill = {};
   stroke_bar: ApexStroke = {};
+  preguntas: any[] = [];
+  respuestas: any[] = [];
 
   constructor(
     private _formBuilder: FormBuilder,
-    breakpointObserver: BreakpointObserver
+    breakpointObserver: BreakpointObserver,
+    private preguntaService: PreguntaService,
+    private respuestaService: RespuestaService,
+    private localStorageService: LocalStorageService
   ) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 800px)')
@@ -55,10 +63,23 @@ export class RansomwareComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeChartOptions();
+    this.preguntaService.Get().subscribe((preguntas) => {
+      this.preguntas = preguntas;
+    });
+    this.respuestaService.Get().subscribe((respuestas) => {
+      this.respuestas = respuestas
+        .filter(
+          (respuesta: any) =>
+            respuesta.idEmpresa === this.localStorageService.get('authToken')
+        )
+        .filter((respuesta: any) => !respuesta.orden);
+        
+        this.series_bar = [this.respuestas.reduce((acc, obj) => acc + obj.valor, 0)/6]; 
+    });
   }
   private initializeChartOptions(): void {
     //radial bar
-    this.series_bar = [30]; //aquí va el porcentaje de preparación
+    this.series_bar = [0]; //aquí va el porcentaje de preparación
     (this.chart_bar = {
       height: 350,
       type: 'radialBar',
