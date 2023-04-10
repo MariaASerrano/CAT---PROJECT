@@ -16,6 +16,7 @@ import { StepperOrientation } from '@angular/material/stepper';
   templateUrl: './ransomware.component.html',
   styleUrls: ['./ransomware.component.scss'],
 })
+
 export class RansomwareComponent implements OnInit {
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],

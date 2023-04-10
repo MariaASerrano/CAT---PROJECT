@@ -32,6 +32,7 @@ const ELEMENT_DATA: AttackExpo[] = [
 })
 export class DBIRComponent implements OnInit {
 
+  
   //radial bar
   series_bar: ApexNonAxisChartSeries = [];
   chart_bar: ApexChart = { type: 'radialBar' };

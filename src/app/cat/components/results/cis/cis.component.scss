@@ -1,9 +1,24 @@
-.side-nav {
-  width: 300px;
-  height: 765px;
-  background-color: #64B4FE;
-  color: #fff;
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .main-container {
+    flex: 1 1 max-content;
+    display: flex;
+    .main {
+      flex: 1 1 max-content;
+    }
+    .side-nav {
+      flex: 0 0 300px;
+      height: 100%;
+      background-color: #64b4fe;
+      color: #fff;
+    }
+  }
 }
+
 .posicion {
   display: flex;
   align-items: center;
@@ -18,14 +33,14 @@
 }
 
 .title {
-    position: absolute;
-    top: 0;
-    left: 40px;
-    right: 0;
-    display: flex;
-    padding-top: 150px;
-    justify-content: center;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 0;
+  display: flex;
+  padding-top: 150px;
+  justify-content: center;
+  text-align: center;
 }
 .title2 {
   position: absolute;
@@ -61,18 +76,20 @@
   text-align: center;
 }
 
-  .test { //this works for home title
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: italic, bold;
-    color: #000;
-    font-size: 45px;
-    line-height: normal;
+.test {
+  //this works for home title
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic, bold;
+  color: #000;
+  font-size: 45px;
+  line-height: normal;
 }
 
-span { //this works for first letters in blue color
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-style: italic, bold;
-    color: #0085FF;
-    line-height: normal;
-    margin: auto;
+span {
+  //this works for first letters in blue color
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic, bold;
+  color: #0085ff;
+  line-height: normal;
+  margin: auto;
 }
