@@ -12,47 +12,72 @@ import {
   ApexFill,
   ApexNonAxisChartSeries,
 } from 'ng-apexcharts';
-
+import { EmpresaService } from 'src/app/services/empresa.service';
+import { LocalStorageService } from 'src/app/services/localStorage.service';
+import { PreguntaService } from 'src/app/services/pregunta.service';
+import { RespuestaService } from 'src/app/services/respuesta.service';
 
 export interface NISTExpo {
   parametro: string[];
   valor: number;
-
 }
-
-const ELEMENT_DATA: NISTExpo[] = [
-  { parametro: ['Revenue del último año (RN)'], valor: 4000000 },
-  { parametro: ['Porcentaje de dependencia tecnológica del negocio (%DT)'], valor: 98 },
-  { parametro: ['Factor de exposición en porcentaje (%FE)'], valor: 40 },
-  { parametro: ['Efectividad de la estrategia actual de ciberseguridad (ECS)'], valor: 0 },
-];
-
 
 @Component({
   selector: 'app-ciberriesgo',
   templateUrl: './ciberriesgo.component.html',
-  styleUrls: ['./ciberriesgo.component.scss']
+  styleUrls: ['./ciberriesgo.component.scss'],
 })
 export class CiberriesgoComponent implements OnInit {
-    //bar series
-    series: ApexAxisChartSeries = [];
-    chart: ApexChart = { type: 'bar' };
-    title: ApexTitleSubtitle = {};
-    yaxis: ApexYAxis = {};
-    xaxis: ApexXAxis = {};
-    colors: string[] = [];
-    plotOptions: ApexPlotOptions = {};
-    dataLabels: ApexDataLabels = {};
-    legend: ApexLegend = {};
+  //bar series
+  series: ApexAxisChartSeries = [];
+  chart: ApexChart = { type: 'bar' };
+  title: ApexTitleSubtitle = {};
+  yaxis: ApexYAxis = {};
+  xaxis: ApexXAxis = {};
+  colors: string[] = [];
+  plotOptions: ApexPlotOptions = {};
+  dataLabels: ApexDataLabels = {};
+  legend: ApexLegend = {};
+  preguntas: any[] = [];
+  respuestas: any[] = [];
+  empresa: any;
 
-  constructor() { }
+  ELEMENT_DATA: NISTExpo[] = [
+    { parametro: ['Revenue del último año (RN)'], valor: 4000000 },
+    {
+      parametro: ['Porcentaje de dependencia tecnológica del negocio (%DT)'],
+      valor: 98,
+    },
+  ];
+
+  constructor(
+    private preguntaService: PreguntaService,
+    private respuestaService: RespuestaService,
+    private localStorageService: LocalStorageService,
+    private empresaService: EmpresaService
+  ) {}
 
   ngOnInit(): void {
     this.initializeChartOptions();
+    this.empresaService
+      .GetId(this.localStorageService.get('authToken') as string)
+      .subscribe((empresa) => {
+        this.empresa = empresa;
+        console.log(empresa);
+        this.ELEMENT_DATA[0].valor = empresa.ingreso;
+        this.ELEMENT_DATA[1].valor = empresa.dependencia;
+        const valueDay = empresa.dependencia * empresa.ingreso;
+        this.series = [
+          {
+            name: 'Pérdida',
+            data: [valueDay, 3 * valueDay, 5 * valueDay, 10 * valueDay],
+          },
+        ];
+      });
   }
   displayedColumns: string[] = ['parametro', 'valor'];
   //For improvement
-  dataSource = ELEMENT_DATA;
+  dataSource = this.ELEMENT_DATA;
   private initializeChartOptions(): void {
     this.title = {
       text: 'Pérdida exponencial en días',

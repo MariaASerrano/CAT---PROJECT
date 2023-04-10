@@ -1,96 +1,93 @@
-<app-header></app-header>
-<div class="side-nav">
-  <app-side-nav></app-side-nav>
-</div>
+<div class="container">
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-side-nav></app-side-nav>
+    </div>
+    <div class="main">
+      <div class="title">
+        <h1 style="font-size: 40px; font-style: italic">
+          Hoja de ruta para mejorar la madurez en ciberseguridad
+        </h1>
+      </div>
 
-<div class="title">
-  <h1 style="font-size: 40px; font-style: italic">
-    Hoja de ruta para mejorar la madurez en ciberseguridad
-  </h1>
+      <mat-stepper
+        class="stepper"
+        orientation="vertical"
+        [linear]="isLinear"
+        #stepper
+      >
+        <mat-step
+          [stepControl]="firstFormGroup"
+          [label]="getPregunta(0) ? getPregunta(0).descripcion : 'Value'"
+        >
+          <h3>
+            {{ getPregunta(0) ? getPregunta(0).propuesta : "Value" }}
+          </h3>
+          <div>
+            <button mat-raised-button matStepperNext>Sig.</button>
+          </div>
+        </mat-step>
+        <mat-step
+          [stepControl]="thirdFormGroup"
+          [label]="getPregunta(1) ? getPregunta(1).descripcion : 'Value'"
+        >
+          <h3>
+            {{ getPregunta(1) ? getPregunta(1).propuesta : "Value" }}
+          </h3>
+          <div>
+            <button mat-raised-button matStepperPrevious>Ant.</button>
+            <button mat-raised-button matStepperNext>Sig.</button>
+          </div>
+        </mat-step>
+        <mat-step
+          [stepControl]="forthFormGroup"
+          [label]="getPregunta(2) ? getPregunta(2).descripcion : 'Value'"
+        >
+          <h3>
+            {{ getPregunta(2) ? getPregunta(2).propuesta : "Value" }}
+          </h3>
+          <div>
+            <button mat-raised-button matStepperPrevious>Ant.</button>
+            <button mat-raised-button matStepperNext>Sig.</button>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="fifthFormGroup" 
+        [label]="getPregunta(3) ? getPregunta(3).descripcion : 'Value'"
+        >
+          <h3>
+            {{ getPregunta(3) ? getPregunta(3).propuesta : "Value" }}
+          </h3>
+          <div>
+            <button mat-raised-button matStepperPrevious>Ant.</button>
+            <button mat-raised-button matStepperNext>Sig.</button>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup" 
+        [label]="getPregunta(4) ? getPregunta(4).descripcion : 'Value'"
+        >
+          <h3>
+            {{ getPregunta(4) ? getPregunta(4).propuesta : "Value" }}
+          </h3>
+          <div>
+            <button mat-raised-button matStepperPrevious>Ant.</button>
+            <button mat-raised-button matStepperNext>Sig.</button>
+          </div>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel>Meta</ng-template>
+          <h3>
+            Una vez, recorrido este camino has dado el paso inicial para mejorar
+            la postura de ciberseguridad de la organización
+          </h3>
+          <div>
+            <button mat-raised-button matStepperPrevious>Ant.</button>
+          </div>
+        </mat-step>
+      </mat-stepper>
+      <img class="explain-cat" src="assets\imgs\gato.png " alt="cat" />
+    </div>
+  </div>
 </div>
-
-<mat-stepper
-  class="stepper"
-  orientation="vertical"
-  [linear]="isLinear"
-  #stepper
->
-  <mat-step
-    [stepControl]="firstFormGroup"
-    label="Inventario y control de los activos de la empresa"
-  >
-    <h3>
-      Implemente una herramienta que permita descubrir en la red todos los activos de
-      información conectados a la misma. Además, poder instalar un agente en los
-      dispositivos para extraer el inventario del hardware conectado en forma
-      automática. Que notifique y alerte en caso de que ocurra algún incidente
-      con algún dispositivo de la organización.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Protección de datos">
-    <h3>
-      Adopte una metodología de clasificación de la información que sea
-      replicada a los usuarios y puesta en práctica. La clasificación de la
-      información deberá servir para que un software de Prevención de Fuga de
-      Datos, pueda detectar cuando un usuario quiera exfiltar información
-      confidencial, secreta o sensible fuera de la red de la organización.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step
-    [stepControl]="thirdFormGroup"
-    label="Gestión del registro de auditoría"
-  >
-    <h3>
-      Los ciber-incidentes ocurrirán de una u otra manera, lo que debe
-      reducir es el tiempo de detección para responder lo más rápido posible
-      antes que un atacante cause daño a la organización. 
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="forthFormGroup" label="Defensas contra malware">
-    <h3>
-      El Antivirus no es suficiente para proteger los activos de información
-      porque existen programas maliciosos que son capaces de burlar la
-      detección. Por lo anterior, se requiere de tecnología con inteligencia
-      artificial que logre detectar comportamietos anómalos tal como el EDR y
-      XDR.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step [stepControl]="fifthFormGroup" label="Pruebas de penetración">
-    <h3>
-      El ejercicio de prueba de penetración tiene el propósito de además de
-      descubrir vulnerabilidades, diseñar ataques que burlen las defensas que la
-      entidad ha implementado en el tiempo. Simula lo que haría un atacante para
-      anticipar y eliminar las puertas de entrada que se descubran.
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-      <button mat-raised-button matStepperNext>Sig.</button>
-    </div>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Meta</ng-template>
-    <h3>
-      Una vez, recorrido este camino has dado el paso inicial para mejorar la
-      postura de ciberseguridad de la organización
-    </h3>
-    <div>
-      <button mat-raised-button matStepperPrevious>Ant.</button>
-    </div>
-  </mat-step>
-</mat-stepper>
-<img class="explain-cat" src="assets\imgs\gato.png " alt="cat">
