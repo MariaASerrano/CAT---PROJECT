@@ -39,7 +39,7 @@
       </mat-radio-group>
     </div>
     <div class="right-container">
-      <h3>¿Cuántas horas puede durar sin tecnología la organización?</h3>
+      <h3>¿En qué porcentaje diría que la institución depende de la tecnología para operar?</h3>
       <mat-form-field appearance="outline">
         <input
           type="number"
@@ -174,7 +174,11 @@
     </div>
   </div>
   <div class="progress-bar-wrapper">
-    <img class="walking-cat" [style.left.px]="calculateImagePosition()" src="..\..\assets\imgs\cat_walking.gif">
+    <img
+      class="walking-cat"
+      [style.left.px]="calculateImagePosition()"
+      src="..\..\assets\imgs\cat_walking.gif" alt="walking-cat"
+    />
     <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
   </div>
 

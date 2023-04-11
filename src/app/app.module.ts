@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { AuthInterceptor } from './services/interceptor.service';
-import { InfoCatComponent } from './cat/pages/info-cat/info-cat.component';
 
 @NgModule({
   declarations: [AppComponent],

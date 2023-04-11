@@ -38,7 +38,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatMenuModule,
     MatSidenavModule,
     MatStepperModule,
-    MatDividerModule
+    MatDividerModule,
   ]
   
 })

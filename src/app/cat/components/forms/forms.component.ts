@@ -21,9 +21,11 @@ export class FormsComponent implements OnInit {
   totalQuestions = 18;
   answeredQuestions = 0;
 
-totalWidth = 1580; /* adjust the total width as needed */
+totalWidth = 1500; /* adjust the total width as needed */
 imageWidth = 150; /* adjust the width of the image as needed */
-
+preguntas = [];
+nist: any;
+orden: any = [];
   calculateImagePosition() {
     const progressWidth = (this.progress * this.totalWidth) / 100;
     const imagePosition =
@@ -78,6 +80,7 @@ imageWidth = 150; /* adjust the width of the image as needed */
       tiempoOpera: ['', [Validators.required]],
     });
     this.formularioPreguntas = this.fb.group({
+      //PREGUNTAS CONTROLES
       '63fc9d6e3fdaa4503cd40a88': ['', [Validators.required]],
       '63fc9d6e3fdaa4503cd40a89': ['', [Validators.required]],
       '63fc9d6e3fdaa4503cd40a8a': ['', [Validators.required]],
@@ -96,7 +99,7 @@ imageWidth = 150; /* adjust the width of the image as needed */
       '63fc9d6e3fdaa4503cd40a97': ['', [Validators.required]],
       '63fc9d6e3fdaa4503cd40a98': ['', [Validators.required]],
       '63fc9d6e3fdaa4503cd40a99': ['', [Validators.required]],
-      ///
+      ///PREGUNTAS RANSOMWARE
       '63fc9d6e3fdaa4503cd40a9a': ['', [Validators.required]],
       '63fc9d6e3fdaa4503cd40a9b': ['', [Validators.required]],
       '63fc9d6e3fdaa4503cd40a9c': ['', [Validators.required]],
