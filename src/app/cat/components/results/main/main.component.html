@@ -1,8 +1,6 @@
 <!-- HIPOTESIS DE CIBERRIESGO -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script> -->
-<div class="main-container">
-  <div>
-  <div class="first-chart">
+<div class="card">  
+<div class="card-content">
     <div class="widget-container">
       <div class="widget blue">
         <div class="icon">
@@ -15,8 +13,10 @@
       </div>
     </div>
   </div>
+</div>
   <!-- GRAFICA DE BARRAS PARA NIST -->
-  <div class="second-chart">
+  <div class="card">
+  <div class="card-content">
     <div class="widget-container">
       <div class="widget black">
         <apx-chart
@@ -33,8 +33,10 @@
       </div>
     </div>
   </div>
+</div>
   <!-- GRAFICA DE DONA PARA NIVEL DE CIS -->
-  <div class="third-chart">
+  <div class="card">
+  <div class="card-content">
     <div class="CIS-container">
       <div class="widget">
         <apx-chart
@@ -49,9 +51,10 @@
       </div>
     </div>
   </div>
-
+</div>
   <!-- GRAFICA DE DONA PARA RANSOMWARE READINESS -->
-  <div class="forth-chart">
+  <div class="card">
+  <div class="card-content">
     <div class="CIS-container">
       <div class="widget">
         <apx-chart
@@ -66,8 +69,10 @@
       </div>
     </div>
   </div>
+  </div> 
   <!-- TABLA DE EXPOSICION -->
-  <div class="tabla-chart">
+  <div class="card">
+    <div class="card-content">
     <div class="widget">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <caption
@@ -111,8 +116,10 @@
       </table>
     </div>
   </div>
+  </div>
   <!-- //PLAN DE MEJORA -->
-  <div class="plan-chart">
+  <div class="card">
+  <div class="card-content">
     <ng-container [ngSwitch]="stepperOrientation | async">
       <div *ngSwitchCase="'horizontal'">
         <h1>Hoja de ruta para mejorar la madurez en ciberseguridad</h1>
@@ -197,6 +204,5 @@
         </div>
       </mat-step>
     </mat-stepper>
-  </div>
   </div>
 </div>

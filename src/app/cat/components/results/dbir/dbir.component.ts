@@ -45,7 +45,7 @@ export class DBIRComponent implements OnInit {
       code: 'BWAA',
     },
     { categoria: ['Intrusión física'], exposicion: 0, code: 'SI' },
-    { categoria: ['Ingeniería social'], exposicion: 0, code: 'MISC' },
+    { categoria: ['Errores Miscelaneos'], exposicion: 0, code: 'MISC' },
   ];
 
   attacks = ['BWAA', 'SI', 'MISC'];
