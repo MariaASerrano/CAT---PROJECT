@@ -45,8 +45,10 @@ export class DBIRComponent implements OnInit {
       code: 'BWAA',
     },
     { categoria: ['Intrusión física'], exposicion: 0, code: 'SI' },
-    { categoria: ['Errores Miscelaneos'], exposicion: 0, code: 'MISC' },
+    { categoria: ['Ingeniería social'], exposicion: 0, code: 'MISC' },
   ];
+
+  attacks = ['BWAA', 'SI', 'MISC'];
 
   exposicion: any = {};
   exposicionQuantity: any = {};
@@ -69,8 +71,37 @@ export class DBIRComponent implements OnInit {
         )
         .filter((respuesta: any) => !!respuesta.orden)
         .sort((a: any, b: any) => a.orden - b.orden);
+      for (let respuesta of this.respuestas) {
+        const preguntaAux = this.preguntas.find(
+          (pregunta: any) => pregunta._id == respuesta.idPregunta
+        );
+        for (let pregunta of preguntaAux.tipoAtaque) {
+          const ElementAux = this.ELEMENT_DATA.find(
+            (elemento: any) => elemento.code == pregunta
+          );
+          if (ElementAux) {
+            ElementAux.exposicion += respuesta.valor;
+          }
+        }
+      }
+
+      this.ELEMENT_DATA[0].exposicion = Math.floor(
+        this.ELEMENT_DATA[0].exposicion / 5
+      );
+      this.ELEMENT_DATA[1].exposicion = Math.floor(
+        this.ELEMENT_DATA[1].exposicion / 17
+      );
+      this.ELEMENT_DATA[2].exposicion = Math.floor(
+        this.ELEMENT_DATA[2].exposicion / 13
+      );
+
+      this.exposicion = this.series_bar = [
+        (this.ELEMENT_DATA[0].exposicion +
+          this.ELEMENT_DATA[1].exposicion +
+          this.ELEMENT_DATA[2].exposicion) /
+          3,
+      ];
     });
-    this.exposicion = this.series_bar = [];
     this.initializeChartOptions();
   }
   displayedColumns: string[] = ['categoria', 'exposicion'];
