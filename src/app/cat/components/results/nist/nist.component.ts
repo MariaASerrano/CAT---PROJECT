@@ -110,6 +110,7 @@ export class NISTComponent implements OnInit {
           ),
         },
       ];
+
       ELEMENT_DATA.map((element) => {
         element.exposicion = Math.floor(this.nist[element.code]);
       });
@@ -134,7 +135,7 @@ export class NISTComponent implements OnInit {
     this.series = [
       {
         name: 'NIST',
-        data: [15, 20, 45, 10, 10],
+        data: [],
       },
     ];
 

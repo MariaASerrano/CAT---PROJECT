@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StartComponent } from '../start/start.component';
+
 
 @Component({
   selector: 'app-logout',
@@ -8,12 +8,12 @@ import { StartComponent } from '../start/start.component';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor(private startComponent: StartComponent) { }
+  constructor() {
+    
+   }
 
   ngOnInit(): void {
-  }
-  Logout(){
-    this.startComponent.onLogout();
+    
   }
 
 }

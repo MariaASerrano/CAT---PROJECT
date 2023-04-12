@@ -2,15 +2,15 @@
   <h1 class="regulartitle"><span>1.</span>Información general</h1>
   <div [formGroup]="formularioInicial" class="form-container">
     <div class="left-container">
-      <h3>¿Cuál es el nombre de la persona a cargo de esta evaluación?</h3>
+      <h3>¿Cuál es el nombre de la institución?</h3>
       <mat-form-field appearance="outline">
         <input
           matInput
-          placeholder="Ingrese su nombre"
+          placeholder="Ingrese el nombre de la institución"
           formControlName="nombreEmpresa"
         />
         <mat-label *ngIf="campoNoValido('nombreEmpresa')"
-          >Debes ingresar tu nombre</mat-label
+          >Debes ingresar el nombre de la institución</mat-label
         >
       </mat-form-field>
       <h3>¿Cuántas sedes tiene la organización?</h3>

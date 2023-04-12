@@ -78,7 +78,7 @@ export class CisComponent implements OnInit {
         .sort((a: any, b: any) => a.orden - b.orden);
       this.cisTotal = Math.floor(
         respuestas.reduce((acc: any, obj: any) => acc + obj.valor, 0) /
-          this.respuestas.length
+          respuestas.length
       );
       this.series = [this.cisTotal];
     });

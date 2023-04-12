@@ -3,7 +3,7 @@
     </div>
     <div class="user">
       <div class="user-name">
-        <button mat-button [matMenuTriggerFor]="menu" #menuTrigger>Universidad Industrial de Santander</button>
+        <button mat-button [matMenuTriggerFor]="menu" #menuTrigger>{{nombreEmpresa}}</button>
         
         <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="showLogout()">Cerrar Sesión</button>
