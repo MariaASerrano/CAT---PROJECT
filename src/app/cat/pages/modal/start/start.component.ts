@@ -65,25 +65,12 @@ export class StartComponent implements OnInit {
         this.dialog.close(true);
         this.router.navigate(['/homecat']);
       } else {
-        this.router.navigate(['/results']);
-        this.dialog.close(false);
-      }
-    });
-  }
-
-  onLogout() {
-    const credentials = this.logEmpresaForm.value;
-    this.empresaService.Login(credentials).subscribe((resp) => {
-      localStorage.removeItem("authToken");
-      if (!resp.ingreso) {
-        this.dialog.close(true);
-        this.router.navigate(['/homecat']);
-      } else {
         this.router.navigate(['/dashboard']);
         this.dialog.close(false);
       }
     });
   }
 
-  //create a function onLogout()?
 }
+
+

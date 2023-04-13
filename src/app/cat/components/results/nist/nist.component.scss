@@ -1,23 +1,17 @@
-.container {
-  height: 100vh;
-  width: 100vw;
+.main-container {
+  flex: 1 1 max-content;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  .main-container {
+  .main {
     flex: 1 1 max-content;
-    display: flex;
-    .main {
-      flex: 1 1 max-content;
-    }
-    .side-nav {
-      flex: 0 0 300px;
-      height: 100%;
-      background-color: #64b4fe;
-      color: #fff;
-    }
+  }
+  .side-nav {
+    flex: 0 0 300px;
+    height: 100%;
+    background-color: #64b4fe;
+    color: #fff;
   }
 }
+
 
   .widget {
     box-shadow: 5px 5px 5px #939393;
@@ -60,3 +54,4 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
+//Can you create a style in css to put an image right after the side-nav?

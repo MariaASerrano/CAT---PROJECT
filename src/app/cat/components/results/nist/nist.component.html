@@ -1,27 +1,28 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
+<div class="header"> <!-- header -->
+  <app-header></app-header>
+</div>
+
+<div class="main-container columns"> <!-- main-container -->
+  <div class="side-nav column is-2"> <!-- side-nav -->
+    <app-side-nav></app-side-nav>
   </div>
-  <div class="main-container">
-    <div class="side-nav">
-      <app-side-nav></app-side-nav>
+
+  <div class="content"> <!-- main content -->
+    <div class="card">
+      <apx-chart
+        [series]="series"
+        [chart]="chart"
+        [title]="title"
+        [dataLabels]="dataLabels"
+        [legend]="legend"
+        [plotOptions]="plotOptions"
+        [xaxis]="xaxis"
+        [yaxis]="yaxis"
+        [colors]="colors"
+      ></apx-chart>
     </div>
-    <div class="content">
-      <div class="card">
-        <apx-chart
-          [series]="series"
-          [chart]="chart"
-          [title]="title"
-          [dataLabels]="dataLabels"
-          [legend]="legend"
-          [plotOptions]="plotOptions"
-          [xaxis]="xaxis"
-          [yaxis]="yaxis"
-          [colors]="colors"
-        ></apx-chart>
-      </div>
-    </div>
-    <div class="content">
+
+    <div class="content"> <!-- additional main content -->
       <apx-chart
         [series]="series_bar"
         [chart]="chart_bar"
@@ -31,7 +32,8 @@
         [stroke]="stroke_bar"
       ></apx-chart>
     </div>
-    <div class="content">
+
+    <div class="content"> <!-- additional main content -->
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="categoria">
           <th

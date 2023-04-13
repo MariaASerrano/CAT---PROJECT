@@ -12,6 +12,7 @@ import {
   ApexFill,
   ApexNonAxisChartSeries,
 } from 'ng-apexcharts';
+import { elementAt } from 'rxjs';
 import { LocalStorageService } from 'src/app/services/localStorage.service';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import { RespuestaService } from 'src/app/services/respuesta.service';
@@ -22,13 +23,7 @@ export interface NISTExpo {
   code: string;
 }
 
-let ELEMENT_DATA: NISTExpo[] = [
-  { categoria: ['Identificar'], exposicion: 0, code: 'ID' },
-  { categoria: ['Proteger'], exposicion: 0, code: 'PRO' },
-  { categoria: ['Detectar'], exposicion: 0, code: 'DET' },
-  { categoria: ['Responder'], exposicion: 0, code: 'RES' },
-  { categoria: ['Recuperar'], exposicion: 0, code: 'REC' },
-];
+
 
 @Component({
   selector: 'app-nist',
@@ -63,7 +58,13 @@ export class NISTComponent implements OnInit {
     private respuestaService: RespuestaService,
     private localStorageService: LocalStorageService
   ) {}
-
+  ELEMENT_DATA: NISTExpo[] = [
+    { categoria: ['Identificar'], exposicion: 0, code: 'ID' },
+    { categoria: ['Proteger'], exposicion: 0, code: 'PRO' },
+    { categoria: ['Detectar'], exposicion: 0, code: 'DET' },
+    { categoria: ['Responder'], exposicion: 0, code: 'RES' },
+    { categoria: ['Recuperar'], exposicion: 0, code: 'REC' },
+  ];
   ngOnInit(): void {
     this.initializeChartOptions();
     this.initializeChartOptions();
@@ -102,19 +103,18 @@ export class NISTComponent implements OnInit {
                 this.nistQuantity[preguntaAux.nist].length;
         }
       }
+
+      
+      this.ELEMENT_DATA.map((element) => {
+        element.exposicion = Math.floor(this.nist[element.code]);
+      });
       this.series = [
         {
           name: 'NIST',
-          data: Object.keys(this.nist).map((nisted) =>
-            Math.floor(this.nist[nisted])
-          ),
+          data: this.ELEMENT_DATA.map((element)=>element.exposicion)
         },
       ];
-
-      ELEMENT_DATA.map((element) => {
-        element.exposicion = Math.floor(this.nist[element.code]);
-      });
-
+      
       this.series_bar = [
         Object.keys(this.nist).reduce(
           (acc: any, obj: any) => acc + this.nist[obj],
@@ -126,7 +126,7 @@ export class NISTComponent implements OnInit {
 
   displayedColumns: string[] = ['categoria', 'exposicion'];
   //For improvement
-  dataSource = ELEMENT_DATA;
+  dataSource = this.ELEMENT_DATA;
 
   private initializeChartOptions(): void {
     this.title = {

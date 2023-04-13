@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
+
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="main-container">
+  <div class="side-nav">
+    <app-side-nav></app-side-nav>
   </div>
-  <div class="main-container">
-    <div class="side-nav">
-      <app-side-nav></app-side-nav>
-    </div>
+</div>
     <div class="main">
       <div class="title">
         <h1
@@ -42,7 +44,7 @@
           </h1>
           <h3 class="formula">
             <b>CCR=(RN*(%DT))</b>
-            CCR = 
+            CCR = {{ccr}}
           </h3></mat-card-content
         >
       </mat-card>
@@ -120,5 +122,4 @@
         </div>
       </mat-card>
     </div>
-  </div>
-</div>
+

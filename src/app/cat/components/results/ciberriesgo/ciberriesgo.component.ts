@@ -41,7 +41,7 @@ export class CiberriesgoComponent implements OnInit {
   preguntas: any[] = [];
   respuestas: any[] = [];
   empresa: any;
-
+  ccr = 0;
   ELEMENT_DATA: NISTExpo[] = [
     { parametro: ['Revenue del último año (RN)'], valor: 4000000 },
     {
@@ -73,6 +73,7 @@ export class CiberriesgoComponent implements OnInit {
             data: [valueDay, 3 * valueDay, 5 * valueDay, 10 * valueDay],
           },
         ];
+        this.ccr = valueDay;
       });
   }
   displayedColumns: string[] = ['parametro', 'valor'];
