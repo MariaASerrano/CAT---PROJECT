@@ -63,69 +63,6 @@ span { //this works for first letters in blue color
     margin: auto;
 }
   
-.rectangle {
-    position: absolute;
-    right: 17%;
-    width: 350px;
-    height: 0px;
-    top:13rem;
-    background-color: #fff;
-    border: 2px solid #E2E2E2;
-    display: flex; /* make the rectangles flex containers */
-    align-items: center; /* center the text vertically */
-  }
-  .rectangle::before {
-    content: "Nombre de la empresa: ";
-    display: block;
-    text-align: center;
-    font-size: 16px;
-    font-style: italic;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000;
-  }
-
-  .rectangle2 {
-    position: absolute;
-    right: 17%;
-    width: 350px;
-    height: 0px;
-    top:23rem;
-    background-color: #fff;
-    border: 2px solid #E2E2E2;
-    display: flex; /* make the rectangles flex containers */
-    align-items: center; /* center the text vertically */
-  }
-  .rectangle2::before {
-    content: "Fecha: ";
-    display: block;
-    text-align: center;
-    font-size: 16px;
-    font-style: italic;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000;
-  }
-
-  .rectangle3 {
-    position: absolute;
-    right: 17%;
-    width: 350px;
-    height: 0px;
-    top:33rem;
-    background-color: #fff;
-    border: 2px solid #E2E2E2;
-    display: flex; /* make the rectangles flex containers */
-    align-items: center; /* center the text vertically */
-  }
-  .rectangle3::before {
-    content: "Diligenciado por: ";
-    display: block;
-    font-style: italic;
-    text-align: center;
-    font-size: 16px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000;
-  }
-
   .start {
     /* Ver Button */
     background-color: #0085FF;
