@@ -31,10 +31,10 @@
   }
   .mat-card1 {
     position: absolute; 
-    top: 380px;
-    width: 400px;
-    height: 90px;
-    left: 1050px;
+    top: 420px;
+    width: 420px;
+    height: 120px;
+    left: 1037px;
     right: 0;
     bottom: 0;
   }
@@ -46,12 +46,18 @@
   }
   .formula{
     font-family:'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .resultado{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 35px;
     text-align: center;
   }
   .table {
     position: absolute;
-    top: 530px;
+    top: 600px;
     left: 1010px;
     right: 0;
     display: flex;

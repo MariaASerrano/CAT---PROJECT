@@ -42,9 +42,10 @@
           <h1 class="title-ciber">
             Fórmula de Costo Ciber Riesgo (CCR) <br />
           </h1>
-          <h3 class="formula">
-            <b>CCR=(RN*(%DT))</b>
-            CCR = {{ccr}}
+          <h2 class="resultado"><b><i> CCR = {{ccr | currency}} </i></b></h2>
+            <h3 class="formula">
+            <i>CCR=(RN*(%DT))</i>
+            
           </h3></mat-card-content
         >
       </mat-card>
@@ -91,15 +92,18 @@
               Valor
             </th>
             <td
-              mat-cell
-              *matCellDef="let element"
-              style="
-                text-align: center;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-              "
-            >
+            mat-cell
+            *matCellDef="let element; let i = index"
+            style="text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+          >
+            <ng-container *ngIf="i === 0; else noCurrency">
+              {{ element.valor | currency }}
+            </ng-container>
+            <ng-template #noCurrency>
               {{ element.valor }}
-            </td>
+            </ng-template>
+          </td>
+          
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
