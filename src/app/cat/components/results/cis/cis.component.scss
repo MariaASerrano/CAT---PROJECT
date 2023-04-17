@@ -1,3 +1,4 @@
+@import '~bulma';
   .main-container {
     flex: 1 1 max-content;
     display: flex;
@@ -12,66 +13,6 @@
     }
   }
 
-.posicion {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 10px;
-
-  padding-right: 10px;
-}
-
-.test3 {
-  background: black;
-}
-td, th
-{
-  border: 1px solid black;
-}
-
-.title {
-  position: absolute;
-  top: 0;
-  left: 40px;
-  right: 0;
-  display: flex;
-  padding-top: 150px;
-  justify-content: center;
-  text-align: center;
-}
-.title2 {
-  position: absolute;
-  top: 0;
-  left: 65px;
-  right: 0;
-  display: flex;
-  padding-top: 450px;
-  padding-left: 230px;
-  justify-content: center;
-  text-align: center;
-}
-.table1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  padding-top: 250px;
-  justify-content: center;
-  text-align: center;
-}
-
-.table2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  padding-top: 620px;
-  padding-left: 50px;
-  justify-content: center;
-  text-align: center;
-}
 
 .test {
   //this works for home title
@@ -89,4 +30,23 @@ span {
   color: #0085ff;
   line-height: normal;
   margin: auto;
+}
+
+.grupo {
+  padding: 40px;
+}
+.grafica {
+  padding: 20px;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  align-self: auto;
+  align-content: stretch;
+}
+.column{
+  text-align: center;
+  padding-top: 40px;
 }

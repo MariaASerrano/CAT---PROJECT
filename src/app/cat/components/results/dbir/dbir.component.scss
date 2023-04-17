@@ -11,36 +11,27 @@
     color: #fff;
   }
 }
+.content {
+  display: flex;
+  .column {
+    flex: 1 1 auto;
+    padding: 15px;
+    width: fit-content;
 
-
-  .posicion {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 50px;
-    padding-right: 20px;
-    position: absolute;
-    top: 40%;
-    left: 29%;
-    transform: translate(0, -50%);
   }
+}
 
-  .table {
-    position: absolute;
-    top: 0;
-    left: 22%;
-    display: flex;
-    padding-top: 500px;
-    justify-content: center;
-    text-align: center;
-  }
-  .mat-column-categoria {
-    padding-left: 16px;
+.mat-card{
+  display: flex;
+
+}
+ .mat-column-categoria {
+
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .mat-column-exposicion {
-    padding-left: 16px;
+
     font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
@@ -48,79 +39,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 5%;
-    top:110%;
-    left: 3%;
-    width: 70%;
+    padding: 70px 0px 0px 0px; 
   }
-  .title {
-    position: absolute;
-    top: 150px;
-    left: 0;
-    right: 120px;
-    display: flex;
-    justify-content:right;
-    text-align: center;
-  }
-  .images {
-    position: absolute;
-    top: 150px;
-    left: 0;
-    right: 200px;
-    display: flex;
-    justify-content:right;
-    text-align: center;
-  }
-  .frec{
+
+  .img{
     width: 150px;
     height: 120px;
-    position: absolute;
-    right: 250px;
-    top: 100px;
-    justify-content: center;
-    bottom: 0;
   }
-  .threat{
-    width: 150px;
-    height: 120px;
-    position: absolute;
-    right: 250px;
-    top: 300px;
-    justify-content: center;
-    bottom: 0;
-  }
-  .data{
-    width: 150px;
-    height: 120px;
-    position: absolute;
-    right: 250px;
-    top: 520px;
-    justify-content: center;
-    bottom: 0;
-  }
-  .mat-card1 {
-    position: relative; /* Required for top/bottom/left/right to work */
-    top: 110px;
-    width: 400px;
-    left: 1050px;
-    right: 0;
+
+  .card-text {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100px;
   }
-  .mat-card2 {
-    position: relative; /* Required for top/bottom/left/right to work */
-    top: 320px;
-    width: 400px;
-    left: 620px;
-    right: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .mat-card3 {
-    position: relative; /* Required for top/bottom/left/right to work */
-    top: 530px;
-    width: 400px;
-    left: 190px;
-    right: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
+.grupo-img{
+  padding: 40px 0px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+//  align-content: center;
+}

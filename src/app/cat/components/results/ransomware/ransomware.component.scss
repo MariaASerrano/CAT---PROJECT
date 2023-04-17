@@ -12,14 +12,16 @@
     }
   }
 
+  .grupo{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
   .title {
-    position: absolute;
-    top: 125px;
-    left: 230px;
-    right: 0;
     display: flex;
     justify-content: center;
     text-align: center;
+    padding-top: 15px;
   }
   span { //this works for first letters in blue color
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -33,25 +35,15 @@
     height: 250px;
     position: absolute;
     right: 10px;
-    top:80%;
+    top:70%;
     bottom: 0;
   }
   .posicion {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 50px;
-    padding-right: 20px;
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    transform: translate(0, -50%);
+    padding-top: 60px;
+    padding-right: 15px;
   }
   .stepper {
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    right: 0;
     width: 800px;
     height: fit-content;
   }
@@ -62,9 +54,4 @@
     width: 900px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
-    padding-right: 20px;
-    position: absolute;
-    top: 30%;
-    left: 22%;
-    transform: translate(0, -50%);
   }

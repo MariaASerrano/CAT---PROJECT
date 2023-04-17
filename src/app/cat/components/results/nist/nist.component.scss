@@ -12,7 +12,14 @@
   }
 }
 
-
+.content {
+  display: flex;
+  .column {
+    flex: 1 1 auto;
+    padding: 15px;
+    width: fit-content;
+  }
+}
   .widget {
     box-shadow: 5px 5px 5px #939393;
     position: absolute;
@@ -21,28 +28,6 @@
     transform: translate(-50%, -50%);
   }
 
-  .posicion {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 50px;
-    padding-right: 20px;
-    top: 45%;
-    right: 1%;
-    transform: translate(0, -50%);
-  }
-
-  .table {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    padding-top: 560px;
-    padding-left: 1160px;
-    justify-content: center;
-    text-align: center;
-  }
   .mat-column-categoria {
     padding-left: 16px;
     font-size: 20px;
@@ -54,4 +39,6 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
-//Can you create a style in css to put an image right after the side-nav?
+.content2{
+  padding-left:15px ;
+}

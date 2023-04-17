@@ -92,21 +92,18 @@ export class NISTComponent implements OnInit {
         .sort((a: any, b: any) => a.orden - b.orden);
       for (let respuesta of this.respuestas) {
         const preguntaAux = this.preguntas.find(
-          (pregunta: any) => pregunta._id == respuesta.idPregunta
+          (pregunta: any) => pregunta._id === respuesta.idPregunta
         );
         if (preguntaAux) {
           const nistAux = preguntaAux.nist;
-          this.nist[nistAux] =
-            this.nist[nistAux] ??
-            0 +
-              (preguntaAux.tipoAtaque.length * respuesta.valor) /
-                this.nistQuantity[preguntaAux.nist].length;
+          this.nist[nistAux] = (this.nist[nistAux] ?? 0) + 
+          (respuesta.valor) / this.nistQuantity[preguntaAux.nist].length;                    
         }
       }
 
       
       this.ELEMENT_DATA.map((element) => {
-        element.exposicion = Math.floor(this.nist[element.code]);
+        element.exposicion = Math.ceil(this.nist[element.code]);
       });
       this.series = [
         {

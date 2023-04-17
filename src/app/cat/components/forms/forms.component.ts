@@ -208,6 +208,7 @@ orden: any = [];
     this.mostrarcuestionario2 = true;
     this.mostrarcuestionario3 = false;
     this.mostrarransom = false;
+    console.log(this.formularioPreguntas.value)
   }
 
   showCuest3() {
@@ -216,6 +217,7 @@ orden: any = [];
     this.mostrarcuestionario2 = false;
     this.mostrarcuestionario3 = true;
     this.mostrarransom = false;
+    console.log(this.formularioPreguntas.value)
   }
 
   showCuestRansom() {

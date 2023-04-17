@@ -23,10 +23,10 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.empresaService.Get().subscribe((resp) => {
+    this.empresaService.GetId(this.localStorageService.get('authToken')??'').subscribe((resp) => {
       // Assuming the response is an array and you want to extract the first element's nombreEmpresa value
-      if (resp && resp.length > 0) {
-        this.nombreEmpresa = resp[0].nombreEmpresa; // Extract the nombreEmpresa value from the first element of the response
+      if (resp) {
+        this.nombreEmpresa = resp.nombreEmpresa; // Extract the nombreEmpresa value from the first element of the response
       }
     });
   
