@@ -1,93 +1,97 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
-  </div>
-  <div class="main-container">
-    <div class="side-nav">
-      <app-side-nav></app-side-nav>
-    </div>
-    <div class="main">
-      <div class="title">
-        <h1 style="font-size: 40px; font-style: italic">
-          Hoja de ruta para mejorar la madurez en ciberseguridad
-        </h1>
-      </div>
 
-      <mat-stepper
-        class="stepper"
-        orientation="vertical"
-        [linear]="isLinear"
-        #stepper
-      >
-        <mat-step
-          [stepControl]="firstFormGroup"
-          [label]="getPregunta(0) ? getPregunta(0).descripcion : 'Value'"
-        >
-          <h3>
-            {{ getPregunta(0) ? getPregunta(0).propuesta : "Value" }}
-          </h3>
-          <div>
-            <button mat-raised-button matStepperNext>Sig.</button>
-          </div>
-        </mat-step>
-        <mat-step
-          [stepControl]="thirdFormGroup"
-          [label]="getPregunta(1) ? getPregunta(1).descripcion : 'Value'"
-        >
-          <h3>
-            {{ getPregunta(1) ? getPregunta(1).propuesta : "Value" }}
-          </h3>
-          <div>
-            <button mat-raised-button matStepperPrevious>Ant.</button>
-            <button mat-raised-button matStepperNext>Sig.</button>
-          </div>
-        </mat-step>
-        <mat-step
-          [stepControl]="forthFormGroup"
-          [label]="getPregunta(2) ? getPregunta(2).descripcion : 'Value'"
-        >
-          <h3>
-            {{ getPregunta(2) ? getPregunta(2).propuesta : "Value" }}
-          </h3>
-          <div>
-            <button mat-raised-button matStepperPrevious>Ant.</button>
-            <button mat-raised-button matStepperNext>Sig.</button>
-          </div>
-        </mat-step>
-        <mat-step [stepControl]="fifthFormGroup" 
-        [label]="getPregunta(3) ? getPregunta(3).descripcion : 'Value'"
-        >
-          <h3>
-            {{ getPregunta(3) ? getPregunta(3).propuesta : "Value" }}
-          </h3>
-          <div>
-            <button mat-raised-button matStepperPrevious>Ant.</button>
-            <button mat-raised-button matStepperNext>Sig.</button>
-          </div>
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup" 
-        [label]="getPregunta(4) ? getPregunta(4).descripcion : 'Value'"
-        >
-          <h3>
-            {{ getPregunta(4) ? getPregunta(4).propuesta : "Value" }}
-          </h3>
-          <div>
-            <button mat-raised-button matStepperPrevious>Ant.</button>
-            <button mat-raised-button matStepperNext>Sig.</button>
-          </div>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Meta</ng-template>
-          <h3>
-            Una vez, recorrido este camino has dado el paso inicial para mejorar
-            la postura de ciberseguridad de la organización
-          </h3>
-          <div>
-            <button mat-raised-button matStepperPrevious>Ant.</button>
-          </div>
-        </mat-step>
-      </mat-stepper>
-      <img class="explain-cat" src="assets\imgs\gato.png " alt="cat" />
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="main-container">
+  <div class="side-nav">
+    <app-side-nav></app-side-nav>
+  </div>
+  <div class="main">
+    <div class="title">
+      <h1 style="font-size: 40px; font-style: italic">
+        Hoja de ruta para mejorar la madurez en ciberseguridad
+      </h1>
     </div>
+    <div class="column">
+    <mat-stepper
+      class="stepper"
+      orientation="vertical"
+      [linear]="isLinear"
+      #stepper
+    >
+      <mat-step
+        [stepControl]="firstFormGroup"
+        [label]="getPregunta(0) ? getPregunta(0).descripcion : 'Value'"
+      >
+        <h3>
+          {{ getPregunta(0) ? getPregunta(0).propuesta : "Value" }}
+        </h3>
+        <div>
+          <button mat-raised-button matStepperNext>Sig.</button>
+        </div>
+      </mat-step>
+      <mat-step
+        [stepControl]="thirdFormGroup"
+        [label]="getPregunta(1) ? getPregunta(1).descripcion : 'Value'"
+      >
+        <h3>
+          {{ getPregunta(1) ? getPregunta(1).propuesta : "Value" }}
+        </h3>
+        <div>
+          <button mat-raised-button matStepperPrevious>Ant.</button>
+          <button mat-raised-button matStepperNext>Sig.</button>
+        </div>
+      </mat-step>
+      <mat-step
+        [stepControl]="forthFormGroup"
+        [label]="getPregunta(2) ? getPregunta(2).descripcion : 'Value'"
+      >
+        <h3>
+          {{ getPregunta(2) ? getPregunta(2).propuesta : "Value" }}
+        </h3>
+        <div>
+          <button mat-raised-button matStepperPrevious>Ant.</button>
+          <button mat-raised-button matStepperNext>Sig.</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="fifthFormGroup" 
+      [label]="getPregunta(3) ? getPregunta(3).descripcion : 'Value'"
+      >
+        <h3>
+          {{ getPregunta(3) ? getPregunta(3).propuesta : "Value" }}
+        </h3>
+        <div>
+          <button mat-raised-button matStepperPrevious>Ant.</button>
+          <button mat-raised-button matStepperNext>Sig.</button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" 
+      [label]="getPregunta(4) ? getPregunta(4).descripcion : 'Value'"
+      >
+        <h3>
+          {{ getPregunta(4) ? getPregunta(4).propuesta : "Value" }}
+        </h3>
+        <div>
+          <button mat-raised-button matStepperPrevious>Ant.</button>
+          <button mat-raised-button matStepperNext>Sig.</button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Meta</ng-template>
+        <h3>
+          Una vez, recorrido este camino has dado el paso inicial para mejorar
+          la postura de ciberseguridad de la organización
+        </h3>
+        <div>
+          <button mat-raised-button matStepperPrevious>Ant.</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+<!--     <div class="explain-cat">
+      <img src="assets\imgs\gato.png " alt="cat" />
+    </div> -->
   </div>
 </div>
+</div>
+

@@ -1,116 +1,121 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="main-container">
+  <div class="side-nav">
+    <app-side-nav></app-side-nav>
   </div>
-  <div class="main-container">
-    <div class="side-nav">
-      <app-side-nav></app-side-nav>
+  <div class="main">
+    <div class="title">
+      <h1
+        style="
+          font-size: 40px;
+          font-style: italic;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
+            sans-serif;
+        "
+      >
+        <span>P</span>reparación de la organización para un ataque de
+        <span>R</span>ansomware
+      </h1>
     </div>
-    <div class="main">
-      <div class="title">
-        <h1
-          style="
-            font-size: 40px;
-            font-style: italic;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-              sans-serif;
-          "
-        >
-          <span>P</span>reparación de la organización para un ataque de
-          <span>R</span>ansomware
-        </h1>
-      </div>
+    <div class="grupo">
       <div class="how">
         ¿Cómo realizamos este análisis? Sencillo, utilizamos las respuestas que
         diste en las preguntas del módulo Ransomware Readiness Assessment y nos
         apoyamos con las seis (6) fases definidas por diferente agencias de los
         Estados Unidos ante un ataque de Ransomware
-
-        <mat-stepper
-          class="stepper"
-          orientation="vertical"
-          [linear]="isLinear"
-          #stepper
-        >
-          <mat-step [stepControl]="firstFormGroup" label="Reconocimiento">
-            <h3>
-              En esta etapa los actores maliciosos hacen uso de la ingeniería
-              social, (como phishing) para llegar a sus víctimas.
-            </h3>
-            <div>
-              <button mat-raised-button matStepperNext>Sig.</button>
-            </div>
-          </mat-step>
-          <mat-step [stepControl]="secondFormGroup" label="Acceso Inicial">
-            <h3>
-              Utilizando las contraseñas débiles y la suplantación de identidad
-              los actores maliciosos logran acceder a la red.
-            </h3>
-            <div>
-              <button mat-raised-button matStepperPrevious>Ant.</button>
-              <button mat-raised-button matStepperNext>Sig.</button>
-            </div>
-          </mat-step>
-          <mat-step [stepControl]="thirdFormGroup" label="Ejecución">
-            <h3>
-              Cuando las víctimas abren aquel correo malicioso, este descarga
-              malware y se realizan explotaciones de vulnerabilidades.
-            </h3>
-            <div>
-              <button mat-raised-button matStepperPrevious>Ant.</button>
-              <button mat-raised-button matStepperNext>Sig.</button>
-            </div>
-          </mat-step>
-          <mat-step [stepControl]="forthFormGroup" label="Comando y control">
-            <h3>
-              En esta fase, ya los atacantes se encuentran dentro de la red y se
-              comunican con dispositivos maliciosos.
-            </h3>
-            <div>
-              <button mat-raised-button matStepperPrevious>Ant.</button>
-              <button mat-raised-button matStepperNext>Sig.</button>
-            </div>
-          </mat-step>
-          <mat-step [stepControl]="fifthFormGroup" label="Persistencia">
-            <h3>
-              Utilizando un protocolo de escritorio remoto y credenciales
-              robadas, los atacantes pueden obtener acceso a la red, donde
-              proceden a cargar un DLL cifrado en la memoria y lo ejecutan.
-            </h3>
-            <div>
-              <button mat-raised-button matStepperPrevious>Ant.</button>
-              <button mat-raised-button matStepperNext>Sig.</button>
-            </div>
-          </mat-step>
-          <mat-step>
-            <ng-template matStepLabel>Exfiltración de datos</ng-template>
-            <h3>
-              Los atacantes una vez dentro y con control sobre la red pueden
-              realizar múltiples daños, como buscar información sensible/valiosa
-              y extraerla o amenazar con extfiltrarla para pedir un rescate por
-              ella.
-            </h3>
-            <div>
-              <button mat-raised-button matStepperPrevious>Ant.</button>
-            </div>
-          </mat-step>
-        </mat-stepper>
       </div>
-      <div class="posicion">
-        <apx-chart
-          [series]="series_bar"
-          [chart]="chart_bar"
-          [plotOptions]="plotOptions_bar"
-          [labels]="labels_bar"
-          [fill]="fill_bar"
-          [stroke]="stroke_bar"
-        ></apx-chart>
+  <div class="stepper">
+    <mat-stepper
+    class="stepper"
+    orientation="vertical"
+    [linear]="isLinear"
+    #stepper
+  >
+    <mat-step [stepControl]="firstFormGroup" label="Reconocimiento">
+      <h3>
+        En esta etapa los actores maliciosos hacen uso de la ingeniería
+        social, (como phishing) para llegar a sus víctimas.
+      </h3>
+      <div>
+        <button mat-raised-button matStepperNext>Sig.</button>
       </div>
-      <img
-        class="explain-cat"
-        src="assets\imgs\kiara-hack 2.png "
-        alt="cat-hacker"
-      />
-    </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Acceso Inicial">
+      <h3>
+        Utilizando las contraseñas débiles y la suplantación de identidad
+        los actores maliciosos logran acceder a la red.
+      </h3>
+      <div>
+        <button mat-raised-button matStepperPrevious>Ant.</button>
+        <button mat-raised-button matStepperNext>Sig.</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Ejecución">
+      <h3>
+        Cuando las víctimas abren aquel correo malicioso, este descarga
+        malware y se realizan explotaciones de vulnerabilidades.
+      </h3>
+      <div>
+        <button mat-raised-button matStepperPrevious>Ant.</button>
+        <button mat-raised-button matStepperNext>Sig.</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="forthFormGroup" label="Comando y control">
+      <h3>
+        En esta fase, ya los atacantes se encuentran dentro de la red y se
+        comunican con dispositivos maliciosos.
+      </h3>
+      <div>
+        <button mat-raised-button matStepperPrevious>Ant.</button>
+        <button mat-raised-button matStepperNext>Sig.</button>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="fifthFormGroup" label="Persistencia">
+      <h3>
+        Utilizando un protocolo de escritorio remoto y credenciales robadas,
+        los atacantes pueden obtener acceso a la red, donde proceden a
+        cargar un DLL cifrado en la memoria y lo ejecutan.
+      </h3>
+      <div>
+        <button mat-raised-button matStepperPrevious>Ant.</button>
+        <button mat-raised-button matStepperNext>Sig.</button>
+      </div>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Exfiltración de datos</ng-template>
+      <h3>
+        Los atacantes una vez dentro y con control sobre la red pueden
+        realizar múltiples daños, como buscar información sensible/valiosa y
+        extraerla o amenazar con extfiltrarla para pedir un rescate por
+        ella.
+      </h3>
+      <div>
+        <button mat-raised-button matStepperPrevious>Ant.</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
   </div>
-</div>
+
+      </div>
+    </div>
+
+    <div class="posicion">
+      <apx-chart
+        [series]="series_bar"
+        [chart]="chart_bar"
+        [plotOptions]="plotOptions_bar"
+        [labels]="labels_bar"
+        [fill]="fill_bar"
+        [stroke]="stroke_bar"
+      ></apx-chart>
+    </div>
+    <img
+      class="explain-cat"
+      src="assets\imgs\kiara-hack 2.png "
+      alt="cat-hacker"
+    />
+  </div>
+

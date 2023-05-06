@@ -22,6 +22,8 @@ import { NISTComponent } from './components/results/nist/nist.component';
 import { PlanmejoraComponent } from './components/results/planmejora/planmejora.component';
 import { RansomwareComponent } from './components/results/ransomware/ransomware.component';
 import { InfoCatComponent } from './pages/info-cat/info-cat.component';
+import { LogoutComponent } from './pages/modal/logout/logout.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { InfoCatComponent } from './pages/info-cat/info-cat.component';
     PlanmejoraComponent,
     RansomwareComponent,
     InfoCatComponent,
-  ],
+    LogoutComponent,
+    ],
   imports: [
     CommonModule,
     CatRoutingModule,

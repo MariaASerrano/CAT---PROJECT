@@ -5,34 +5,28 @@ span { //this works for first letters in blue color
   line-height: normal;
   margin: auto;
 }
+/* Update with a more specific selector */
 .header {
-    height: 70px;
-    padding: 20px 50px;
-    background-color: #9BCEFD;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 5px 5px 5px #939393;
-    .logo {
-      font-size: 40px;
-      margin-top: 0.75rem;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-style: italic;
-    }
-    .user {
-      display: flex;
-      align-items: center;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      .user-image {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        background-color: #2874A6;
-        margin-left: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-  }
+  height: 70px;
+  padding: 20px 50px;
+  background-color: #9BCEFD;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 5px 5px 5px #939393;
+}
+
+/* Update with a more specific selector */
+.header .logo {
+  font-size: 40px;
+  margin-top: 0.75rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: italic;
+}
+
+/* Update with a more specific selector */
+.header .user {
+  display: flex;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

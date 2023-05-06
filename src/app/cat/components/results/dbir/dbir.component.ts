@@ -45,7 +45,7 @@ export class DBIRComponent implements OnInit {
       code: 'BWAA',
     },
     { categoria: ['Intrusión física'], exposicion: 0, code: 'SI' },
-    { categoria: ['Errores miscelaneos'], exposicion: 0, code: 'MISC' },
+    { categoria: ['Errores Miscelaneos'], exposicion: 0, code: 'MISC' },
   ];
 
   attacks = ['BWAA', 'SI', 'MISC'];
@@ -86,13 +86,13 @@ export class DBIRComponent implements OnInit {
       }
 
       this.ELEMENT_DATA[0].exposicion = Math.floor(
-        this.ELEMENT_DATA[0].exposicion / 5
+       (100 - this.ELEMENT_DATA[0].exposicion / 5)
       );
       this.ELEMENT_DATA[1].exposicion = Math.floor(
-        this.ELEMENT_DATA[1].exposicion / 17
+      (100 - this.ELEMENT_DATA[1].exposicion / 17 )
       );
       this.ELEMENT_DATA[2].exposicion = Math.floor(
-        this.ELEMENT_DATA[2].exposicion / 13
+      (100 -  this.ELEMENT_DATA[2].exposicion / 13 )
       );
 
       this.exposicion = this.series_bar = [

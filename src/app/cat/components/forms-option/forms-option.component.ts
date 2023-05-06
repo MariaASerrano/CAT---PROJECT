@@ -14,8 +14,14 @@ export class FormsOptionComponent {
     { value: 75, label: 'Si, en forma proactiva' },
     { value: 100, label: 'Si, en forma anticipada' },
   ];
+  @Input()
+  value!: number;
   @Output() optionSelected = new EventEmitter<string>();
   onOptionSelected(option: MatSelectChange) {
     this.optionSelected.emit(option.value);
+  }
+
+  constructor (){
+    console.log(this.value);
   }
 }

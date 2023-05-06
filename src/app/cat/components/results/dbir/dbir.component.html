@@ -1,99 +1,83 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
+<div class="header">
+  <app-header></app-header>
+</div>
+
+<div class="main-container">
+  <div class="side-nav">
+    <app-side-nav></app-side-nav>
   </div>
-  <div class="main-container">
-    <div class="side-nav">
-      <app-side-nav></app-side-nav>
-    </div>
-    <div class="main">
-      <div class="posicion">
-        <apx-chart
-          [series]="series_bar"
-          [chart]="chart_bar"
-          [plotOptions]="plotOptions_bar"
-          [labels]="labels_bar"
-          [fill]="fill_bar"
-          [stroke]="stroke_bar"
-        ></apx-chart>
+  <div class="main">
+    <div class="content">
+      <div class="column">
+        <div class="grafico">
+          <apx-chart [series]="series_bar" [chart]="chart_bar" [plotOptions]="plotOptions_bar" [labels]="labels_bar"
+              [fill]="fill_bar" [stroke]="stroke_bar"></apx-chart>
+        </div>
+        <div class="table">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="categoria">
+              <th mat-header-cell *matHeaderCellDef style="text-align: center; color: '#02B2FF'">
+                Patrón de ataque
+              </th>
+              <td mat-cell *matCellDef="let element" style="text-align: center">
+                {{ element.categoria }}
+              </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="exposicion">
+              <th mat-header-cell *matHeaderCellDef style="text-align: center; color: 'red'">
+                Exposición (%)
+              </th>
+              <td mat-cell *matCellDef="let element" style="text-align: center">
+                {{ element.exposicion }}
+              </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </div>
+        <div class="final-text">
+          <h3 style="
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  font-style: italic;
+                ">
+            En esta medición, la organización debe buscar acercarse a 0%.<br />
+            Debido a que estamos determinando el nivel de exposición de 1% a 100%.
+          </h3>
+        </div>
       </div>
-      <div class="table">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="categoria">
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              style="text-align: center; color: '#02B2FF'"
-            >
-              Patrón de ataque
-            </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center">
-              {{ element.categoria }}
-            </td>
-          </ng-container>
-      
-          <ng-container matColumnDef="exposicion">
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              style="text-align: center; color: 'red'"
-            >
-              Exposición (%)
-            </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center">
-              {{ element.exposicion }}
-            </td>
-          </ng-container>
-      
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
-      </div>
-      <div class="final-text">
-        <h3
-          style="
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-style: italic;
-          "
-        >
-          En esta medición, la organización debe buscar acercarse a 0%.<br />
-          Debido a que estamos determinando el nivel de exposición de 1% a 100%.
-        </h3>
-      </div>
-      <div class="title">
-        <h1 style="font-size: 40px; font-style: italic">¿Qué dice el DBIR 2022?</h1>
-      </div>
-      <div class="images">
-        <img class="frec" src="assets\imgs\frequency.png " alt="Frecuencia" />
-        <mat-card class="mat-card1">
-          <mat-card-content
-            >De 1.241 incidentes, se confirmaron 282 con datos divulgados. Es decir,
-            el 23% de los incidentes se convirtieron en brechas de
-            seguridad.</mat-card-content
-          >
-        </mat-card>
-        <img
-          class="threat"
-          src="assets\imgs\threat_actor.png "
-          alt="Actores de amenaza"
-        />
-        <mat-card class="mat-card2">
-          <mat-card-content
-            >El 95% de los actores realizan este tipo de ataques con el fin de extraer
-            dinero de estos, el 5% restante lo hace con fines de
-            espionaje</mat-card-content
-          >
-        </mat-card>
-        <img class="data" src="assets\imgs\data.png " alt="Datos comprometidos" />
-        <mat-card class="mat-card3">
-          <mat-card-content
-            >El 63% de los datos comprometidos fueron personales, el 41% fueron
-            credenciales, datos internos el 10% y otros no especificados el 23%
-            restante.</mat-card-content
-          >
-        </mat-card>
+      <div class="column">
+        <div class="title">
+          <h1 style="font-size: 40px; font-style: italic">¿Qué dice el DBIR 2022?</h1>
+        </div>
+        <div class="images">
+          <div class="grupo-img">
+            <img class="img" src="assets\imgs\frequency.png " alt="Frecuencia" />
+            <mat-card class="mat-card">
+              <mat-card-content>De 1.241 incidentes, se confirmaron 282 con datos divulgados. Es decir,
+                el 23% de los incidentes se convirtieron en brechas de
+                seguridad.</mat-card-content>
+            </mat-card>
+          </div>
+          <div class="grupo-img">
+            <img class="img" src="assets\imgs\threat_actor.png " alt="Actores de amenaza" />
+          <mat-card class="mat-card">
+            <mat-card-content>El 95% de los actores realizan este tipo de ataques con el fin de extraer
+              dinero de estos, el 5% restante lo hace con fines de
+              espionaje</mat-card-content>
+          </mat-card>
+          </div>
+          <div class="grupo-img">
+            <img class="img" src="assets\imgs\data.png " alt="Datos comprometidos" />
+          <mat-card class="mat-card">
+            <mat-card-content>El 63% de los datos comprometidos fueron personales, el 41% fueron
+              credenciales, datos internos el 10% y otros no especificados el 23%
+              restante.</mat-card-content>
+          </mat-card>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-

@@ -90,7 +90,7 @@ export class RansomwareComponent implements OnInit {
       (this.plotOptions_bar = {
         radialBar: {
           startAngle: -135,
-          endAngle: 225,
+          endAngle: 225,  
           hollow: {
             margin: 0,
             size: '70%',

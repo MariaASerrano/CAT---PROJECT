@@ -1,131 +1,25 @@
-.first-chart{
-    width: 500px;
-    height: 250px;
-    
-}
-
-.second-chart{
-  width: 800px;
-  height: 250px;
-  
-}
-
-.third-chart{
-  width: 600px;
-  height: 250px;
-  
-}
-
-.forth-chart{
-  width: 600px;
-  height: 250px;
-  
-}
-
-.tabla-chart{
-  width: 600px;
-  height: 250px;
-  
-}
-
-.plan-chart{
-  width: 1500px;
-  height: 250px;
-  
-}
-
-
   h1 { //this works for home title
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic, bold;
     color: #000;
-    font-size: 18px;
+    font-size: 68px;
     line-height: normal;
     padding-top: 2rem ;
 }
 
- .widget-container {
-    display: flex;
-    align-items: space-between;
-    .widget {
-      width: 300px;
-      height: 175px;
-      background-color: #fff;
-      border-radius: 5px;
-      color:#fff;
-      margin: 10px;
-      box-shadow: 5px 5px 5px #939393;
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      &.blue {
-        background-color: rgb(1, 11, 72);
-      }
-      &.white{
-        background-color: #fff;
-      }
-      &.black {
-          color: #000;
-          }
-      }
-      .icon {
-        width: 100%;
-        font-size: 40px;
-        text-align: center;
-        mat-icon {
-          margin-right: 50px;
-          font-size: 55px;
-        }
-      }
-      .value {
-        text-align: center;
-        width: 175px;
-        .top {
-          font-size: 30px;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        .bottom {
-          font-size: 20px;
-          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-          margin-top: 10px;
-        }
-      }
-    }
-
-    .CIS-container {
-      display: flex;
-      align-items: space-between;
-      .widget {
-        width: 400px;
-        height: 200px;
-        background-color: #fff;
-        border-radius: 5px;
-        color:#fff;
-        margin: 10px;
-        box-shadow: 5px 5px 5px #939393;
-        display: flex;
-        align-items: center;
-        padding: 20px;
-        }
-    }
-
-table{
-  width: 100%;
+.center-screen {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-::ng-deep .apexcharts-legend.apx-legend-position-right {
-  justify-content: center !important;
-}
-
-.apexcharts-legend {
-  display: flex;
-  overflow: auto;
-  padding: 0 10px;
-}
-
-.main-container{
-  overflow-y: auto;
-  display: flex;
-  height: 100%;
-  width: 100%;
+.explain-cat{
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  right: 10px;
+  top:80%;
+  bottom: 0;
 }

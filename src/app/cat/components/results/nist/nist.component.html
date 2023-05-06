@@ -1,14 +1,18 @@
-<div class="container">
-  <div class="header">
-    <app-header></app-header>
+<div class="header">
+  <!-- header -->
+  <app-header></app-header>
+</div>
+
+<div class="main-container">
+  <!-- main-container -->
+  <div class="side-nav">
+    <!-- side-nav -->
+    <app-side-nav></app-side-nav>
   </div>
-  <div class="main-container">
-    <div class="side-nav">
-      <app-side-nav></app-side-nav>
-    </div>
-    <div class="main">
-      <mat-card class="widget">
-        <div class="chart-container">
+  <div class="main">
+    <div class="content">
+      <div class="column">
+        <div>
           <apx-chart
             [series]="series"
             [chart]="chart"
@@ -21,49 +25,52 @@
             [colors]="colors"
           ></apx-chart>
         </div>
-      </mat-card>
-
-      <div class="posicion">
-        <apx-chart
-          [series]="series_bar"
-          [chart]="chart_bar"
-          [plotOptions]="plotOptions_bar"
-          [labels]="labels_bar"
-          [fill]="fill_bar"
-          [stroke]="stroke_bar"
-        ></apx-chart>
       </div>
-      <div class="table">
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-          <ng-container matColumnDef="categoria">
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              style="text-align: center; color: '#02B2FF'"
-            >
-              Categoría
-            </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center">
-              {{ element.categoria }}
-            </td>
-          </ng-container>
+      <div class="column">
+        <div class="content">
+          <!-- additional main content -->
+          <apx-chart
+            [series]="series_bar"
+            [chart]="chart_bar"
+            [plotOptions]="plotOptions_bar"
+            [labels]="labels_bar"
+            [fill]="fill_bar"
+            [stroke]="stroke_bar"
+          ></apx-chart>
+        </div>
 
-          <ng-container matColumnDef="exposicion">
-            <th
-              mat-header-cell
-              *matHeaderCellDef
-              style="text-align: center; color: '#79FF02'"
-            >
-              Madurez (%)
-            </th>
-            <td mat-cell *matCellDef="let element" style="text-align: center">
-              {{ element.exposicion }}
-            </td>
-          </ng-container>
+        <div class="content2">
+          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="categoria">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                style="text-align: center; color: '#02B2FF'"
+              >
+                Categoría
+              </th>
+              <td mat-cell *matCellDef="let element" style="text-align: center">
+                {{ element.categoria }}
+              </td>
+            </ng-container>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-        </table>
+            <ng-container matColumnDef="exposicion">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                style="text-align: center; color: '#79FF02'"
+              >
+                Madurez (%)
+              </th>
+              <td mat-cell *matCellDef="let element" style="text-align: center">
+                {{ element.exposicion }}
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>

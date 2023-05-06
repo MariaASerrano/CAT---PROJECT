@@ -58,6 +58,8 @@ export class CisComponent implements OnInit {
   preguntas: any[] = [];
   respuestas: any[] = [];
   cisTotal = 0;
+  nist: any = {};
+  nistQuantity: any;
   constructor(
     private preguntaService: PreguntaService,
     private respuestaService: RespuestaService,
@@ -76,14 +78,14 @@ export class CisComponent implements OnInit {
         )
         .filter((respuesta: any) => !!respuesta.orden)
         .sort((a: any, b: any) => a.orden - b.orden);
-      this.cisTotal = Math.floor(
+      this.cisTotal = Math.ceil(
         respuestas.reduce((acc: any, obj: any) => acc + obj.valor, 0) /
-          this.respuestas.length
-      );
+          respuestas.length
+      );   
       this.series = [this.cisTotal];
     });
     this.initializeChartOptions();
-  }
+}
   displayedColumns: string[] = ['control', 'exposicion'];
   //For improvement
   dataSource = ELEMENT_DATA;

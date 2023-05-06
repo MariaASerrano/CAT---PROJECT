@@ -2,15 +2,15 @@
   <h1 class="regulartitle"><span>1.</span>Información general</h1>
   <div [formGroup]="formularioInicial" class="form-container">
     <div class="left-container">
-      <h3>¿Cuál es el nombre de la persona a cargo de esta evaluación?</h3>
+      <h3>¿Cuál es el nombre de la institución?</h3>
       <mat-form-field appearance="outline">
         <input
           matInput
-          placeholder="Ingrese su nombre"
+          placeholder="Ingrese el nombre de la institución"
           formControlName="nombreEmpresa"
         />
         <mat-label *ngIf="campoNoValido('nombreEmpresa')"
-          >Debes ingresar tu nombre</mat-label
+          >Debes ingresar el nombre de la institución</mat-label
         >
       </mat-form-field>
       <h3>¿Cuántas sedes tiene la organización?</h3>
@@ -39,7 +39,7 @@
       </mat-radio-group>
     </div>
     <div class="right-container">
-      <h3>¿Cuántas horas puede durar sin tecnología la organización?</h3>
+      <h3>¿En qué porcentaje diría que la institución depende de la tecnología para operar?</h3>
       <mat-form-field appearance="outline">
         <input
           type="number"
@@ -112,7 +112,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a88', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a88', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a88'].value"
       ></app-forms-option>
 
       <h3>
@@ -122,7 +122,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a89', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a89', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a89'].value"
       ></app-forms-option>
 
       <h3>
@@ -133,7 +133,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8a', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8a', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a8a'].value"
       ></app-forms-option>
     </div>
     <div class="right-container">
@@ -148,7 +148,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8b', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8b', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a8b'].value"
       ></app-forms-option>
 
       <h3>
@@ -158,7 +158,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8c', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8c', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a8c'].value"
       ></app-forms-option>
 
       <h3>
@@ -169,7 +169,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8d', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8d', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a8d'].value"
       ></app-forms-option>
     </div>
   </div>
@@ -177,7 +177,7 @@
     <img
       class="walking-cat"
       [style.left.px]="calculateImagePosition()"
-      src="..\..\assets\imgs\cat_walking.gif"
+      src="..\..\assets\imgs\cat_walking.gif" alt="walking-cat"
     />
     <mat-progress-bar [value]="progress" mode="determinate"></mat-progress-bar>
   </div>
@@ -211,7 +211,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8e', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8e', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a8e'].value" 
       ></app-forms-option>
 
       <h3>
@@ -223,7 +223,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8f', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a8f', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a8f'].value"
       ></app-forms-option>
 
       <h3>
@@ -234,7 +234,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a90', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a90', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a90'].value"
       ></app-forms-option>
     </div>
 
@@ -247,7 +247,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a91', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a91', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a91'].value"
       ></app-forms-option>
 
       <h3>
@@ -258,7 +258,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a92', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a92', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a92'].value"
       ></app-forms-option>
 
       <h3>
@@ -268,7 +268,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a93', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a93', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a93'].value"
       ></app-forms-option>
     </div>
   </div>
@@ -307,7 +307,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a94', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a94', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a94'].value"
       ></app-forms-option>
       <h3>
         ¿Dentro de la organización se tiene establecido y se mantiene un
@@ -318,7 +318,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a95', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a95', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a95'].value"
       ></app-forms-option>
       <h3>
         ¿Mantiene monitoreada la dark y deep web, supervisando y evaluando la
@@ -328,7 +328,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a96', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a96', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a96'].value"
       ></app-forms-option>
     </div>
     <div class="right-container">
@@ -341,7 +341,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a97', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a97', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a97'].value"
       ></app-forms-option>
 
       <h3>
@@ -351,7 +351,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a98', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a98', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a98'].value"
       ></app-forms-option>
 
       <h3>
@@ -362,7 +362,7 @@
         </button>
       </h3>
       <app-forms-option
-        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a99', $event)"
+        (optionSelected)="updateProgress('63fc9d6e3fdaa4503cd40a99', $event)" [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a99'].value"
       ></app-forms-option>
     </div>
   </div>
@@ -399,8 +399,8 @@
         </button>
       </h3>
       <app-forms-option (optionSelected)="
-      updateProgress('63fc9d6e3fdaa4503cd40a9a', $event, false)
-    "></app-forms-option>
+      updateProgress('63fc9d6e3fdaa4503cd40a9a', $event, false) 
+    " [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a9a'].value"></app-forms-option>
       <h3>
         ¿Cuenta con tecnologías de gestión de identidad y accesos (IAM) y
         gestión de privilegios (PAM)?
@@ -410,7 +410,7 @@
       </h3>
       <app-forms-option (optionSelected)="
       updateProgress('63fc9d6e3fdaa4503cd40a9b', $event, false)
-    "></app-forms-option>
+    " [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a9b'].value"></app-forms-option>
       <h3>
         ¿Su organización cuenta con actualizaciones automatizadas periódicamente
         para su software y sistemas?
@@ -420,7 +420,7 @@
       </h3>
       <app-forms-option (optionSelected)="
       updateProgress('63fc9d6e3fdaa4503cd40a9c', $event, false)
-    "></app-forms-option>
+    " [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a9c'].value"></app-forms-option>
     </div>
     <div class="right-container">
       <h3>
@@ -431,7 +431,7 @@
       </h3>
       <app-forms-option (optionSelected)="
       updateProgress('63fc9d6e3fdaa4503cd40a9d', $event, false)
-    "></app-forms-option>
+    " [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a9d'].value"></app-forms-option>
 
       <h3>
         ¿Desarrolla escenarios para evaluar cuánto tiempo llevaría recuperar
@@ -442,7 +442,7 @@
       </h3>
       <app-forms-option (optionSelected)="
       updateProgress('63fc9d6e3fdaa4503cd40a9e', $event, false)
-    "></app-forms-option>
+    " [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a9e'].value"></app-forms-option>
       <h3>
         ¿Su sistema tiene una póliza de seguro cibernético que cubre los ataques
         de Ransomware?
@@ -453,7 +453,7 @@
       <app-forms-option
         (optionSelected)="
           updateProgress('63fc9d6e3fdaa4503cd40a9f', $event, false)
-        "
+        " [value]="formularioPreguntas.controls['63fc9d6e3fdaa4503cd40a9f'].value"
       ></app-forms-option>
     </div>
   </div>

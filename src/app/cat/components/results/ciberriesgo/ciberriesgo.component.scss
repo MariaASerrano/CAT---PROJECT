@@ -1,29 +1,28 @@
-.container {
-  height: 100vh;
-  width: 100vw;
+.main-container {
+  flex: 1 1 max-content;
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  .main-container {
+  .main {
     flex: 1 1 max-content;
-    display: flex;
-    .main {
-      flex: 1 1 max-content;
-    }
-    .side-nav {
-      flex: 0 0 300px;
-      height: 100%;
-      background-color: #64b4fe;
-      color: #fff;
-    }
+  }
+  .side-nav {
+    flex: 0 0 300px;
+    height: 100%;
+    background-color: #64b4fe;
+    color: #fff;
+  }
+}
+
+.content {
+  display: flex;
+  .column {
+    flex: 1 1 auto;
+    padding: 15px;
+    width: fit-content;
+
   }
 }
   .title {
-    position: absolute;
-    top: 150px;
-    left: 250px;
-    right: 0;
-    justify-content:right;
+    padding-top: 20px;
     text-align: center;
     
   }
@@ -31,19 +30,13 @@
   .othertext {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px;
-    position: absolute;
     line-height: normal;
-    top: 250px;
-    left: 350px;
+    padding: 20px;
   }
   .mat-card1 {
-    position: absolute; 
-    top: 380px;
-    width: 400px;
-    height: 90px;
-    left: 1050px;
-    right: 0;
-    bottom: 0;
+    display: flex;
+    width: 420px;
+    height: 120px;
   }
   .title-ciber{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -53,22 +46,21 @@
   }
   .formula{
     font-family:'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .resultado{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 35px;
     text-align: center;
   }
   .table {
-    position: absolute;
-    top: 530px;
-    left: 1010px;
-    right: 0;
     display: flex;
     justify-content: center;
     text-align: center;
+    padding-top: 20px;
   }
   .widget {
     box-shadow: 5px 5px 5px #939393;
-    position: absolute;
-    top: 80%;
-    left: 43%;
-    transform: translate(-50%, -50%);
   }

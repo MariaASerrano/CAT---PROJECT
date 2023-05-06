@@ -21,12 +21,11 @@ export class FormsComponent implements OnInit {
   totalQuestions = 18;
   answeredQuestions = 0;
 
-  totalWidth = 1580; /* adjust the total width as needed */
-  imageWidth = 150; /* adjust the width of the image as needed */
-  preguntas = [];
-  nist: any;
-  orden: any = [];
-
+totalWidth = 1500; /* adjust the total width as needed */
+imageWidth = 150; /* adjust the width of the image as needed */
+preguntas = [];
+nist: any;
+orden: any = [];
   calculateImagePosition() {
     const progressWidth = (this.progress * this.totalWidth) / 100;
     const imagePosition =
@@ -208,6 +207,7 @@ export class FormsComponent implements OnInit {
     this.mostrarcuestionario2 = true;
     this.mostrarcuestionario3 = false;
     this.mostrarransom = false;
+    console.log(this.formularioPreguntas.value)
   }
 
   showCuest3() {
@@ -216,6 +216,7 @@ export class FormsComponent implements OnInit {
     this.mostrarcuestionario2 = false;
     this.mostrarcuestionario3 = true;
     this.mostrarransom = false;
+    console.log(this.formularioPreguntas.value)
   }
 
   showCuestRansom() {

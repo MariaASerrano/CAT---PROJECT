@@ -65,9 +65,12 @@ export class StartComponent implements OnInit {
         this.dialog.close(true);
         this.router.navigate(['/homecat']);
       } else {
-        this.router.navigate(['/results']);
+        this.router.navigate(['/dashboard']);
         this.dialog.close(false);
       }
     });
   }
+
 }
+
+

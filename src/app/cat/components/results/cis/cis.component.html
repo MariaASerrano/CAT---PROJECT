@@ -1,4 +1,3 @@
-<div class="container">
   <div class="header">
     <app-header></app-header>
   </div>
@@ -7,186 +6,130 @@
       <app-side-nav></app-side-nav>
     </div>
     <div class="main">
-      <div class="title">
-        <h1 class="test">
-          <i><span>T</span>op 3 de controles a mejorar en la organización</i>
-        </h1>
-        <div class="table1">
-          <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-            <ng-container matColumnDef="control">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Control
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getPregunta(0) ? getPregunta(0).descripcion : "Value" }}
-              </td>
-            </ng-container>
+      <div class="content">
+        <div class="column">
+            <div style="text-align: center">
+              <h1 class="test">
+                <i
+                  ><span>T</span>op 3 de controles a mejorar en la organización</i
+                >
+              </h1>
+            </div>
+              <table class="table table is-bordered" style="text-align: center">
+                <thead>
+                  <tr>
+                    <th style="text-align: center">Control</th>
+                    <th style="text-align: center">Madurez (%)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      {{ getPregunta(0) ? getPregunta(0).descripcion : "Value" }}
+                    </td>
+                    <td>
+                      {{
+                        getRespuesta(getPregunta(0))
+                          ? getRespuesta(getPregunta(0)).valor
+                          : "Value"
+                      }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      {{ getPregunta(1) ? getPregunta(1).descripcion : "Value" }}
+                    </td>
+                    <td>
+                      {{
+                        getRespuesta(getPregunta(1))
+                          ? getRespuesta(getPregunta(1)).valor
+                          : "Value"
+                      }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      {{ getPregunta(2) ? getPregunta(2).descripcion : "Value" }}
+                    </td>
+                    <td>
+                      {{
+                        getRespuesta(getPregunta(2))
+                          ? getRespuesta(getPregunta(2)).valor
+                          : "Value"
+                      }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 
-            <ng-container matColumnDef="exposicion">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Madurez (%)
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{
-                  getRespuesta(getPregunta(0))
-                    ? getRespuesta(getPregunta(0)).valor
-                    : "Value"
-                }}
-              </td>
-            </ng-container>
+          <div class="grupo">
+            <div style="text-align: center">
+              <h1 class="test">
+                <i
+                  ><span>T</span>op 3 de los mejores controles aplicados en la
+                  organización</i
+                >
+              </h1>
+            </div>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-          <mat-divider></mat-divider>
-
-          <table mat-table [dataSource]="dataSource2" class="mat-elevation-z8">
-            <ng-container matColumnDef="control">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Control
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getPregunta(1) ? getPregunta(1).descripcion : "Value" }}
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="exposicion">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Madurez (%)
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getRespuesta(getPregunta(1))
-                  ? getRespuesta(getPregunta(1)).valor
-                  : "Value" }}
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-
-          <table mat-table [dataSource]="dataSource3" class="mat-elevation-z8">
-            <ng-container matColumnDef="control">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Control
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getPregunta(2) ? getPregunta(2).descripcion : "Value" }}
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="exposicion">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Madurez (%)
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getRespuesta(getPregunta(2))
-                  ? getRespuesta(getPregunta(2)).valor
-                  : "Value" }}
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-        </div>
-      </div>
-      <div class="title2">
-        <h1 class="test">
-          <i
-            ><span>T</span>op 3 de los mejores controles aplicados en la
-            organización</i
-          >
-        </h1>
-        <div class="table2">
-          <table mat-table [dataSource]="dataSource4" class="mat-elevation-z8">
-            <ng-container matColumnDef="control">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Control
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getPregunta(17) ? getPregunta(17).descripcion : "Value"}}
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="exposicion">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Madurez (%)
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getRespuesta(getPregunta(17))
-                  ? getRespuesta(getPregunta(17)).valor
-                  : "Value" }}
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-
-          <table mat-table [dataSource]="dataSource5" class="mat-elevation-z8">
-            <ng-container matColumnDef="control">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Control
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getPregunta(16) ? getPregunta(16).descripcion : "Value" }}
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="exposicion">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Madurez (%)
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getRespuesta(getPregunta(16))
-                  ? getRespuesta(getPregunta(16)).valor
-                  : "Value" }}
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-
-          <table mat-table [dataSource]="dataSource6" class="mat-elevation-z8">
-            <ng-container matColumnDef="control">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Control
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getPregunta(15) ? getPregunta(15).descripcion : "Value" }}
-              </td>
-            </ng-container>
-
-            <ng-container matColumnDef="exposicion">
-              <th mat-header-cell *matHeaderCellDef style="text-align: center">
-                Madurez (%)
-              </th>
-              <td mat-cell *matCellDef="let element" style="text-align: center">
-                {{ getRespuesta(getPregunta(15))
-                  ? getRespuesta(getPregunta(15)).valor
-                  : "Value" }}
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-          </table>
-        </div>
-        <div class="container">
-          <div class="posicion">
-            <apx-chart
-              [series]="series"
-              [chart]="chart"
-              [plotOptions]="plotOptions"
-              [labels]="labels"
-              [fill]="fill"
-              [stroke]="stroke"
-            ></apx-chart>
+            <table class="table is-bordered" style="text-align: center">
+              <thead>
+                <tr>
+                  <th style="text-align: center">Control</th>
+                  <th style="text-align: center">Madurez (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    {{ getPregunta(17) ? getPregunta(17).descripcion : "Value" }}
+                  </td>
+                  <td>
+                    {{
+                      getRespuesta(getPregunta(17))
+                        ? getRespuesta(getPregunta(17)).valor
+                        : "Value"
+                    }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {{ getPregunta(16) ? getPregunta(16).descripcion : "Value" }}
+                  </td>
+                  <td>
+                    {{
+                      getRespuesta(getPregunta(16))
+                        ? getRespuesta(getPregunta(16)).valor
+                        : "Value"
+                    }}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    {{ getPregunta(15) ? getPregunta(15).descripcion : "Value" }}
+                  </td>
+                  <td>
+                    {{
+                      getRespuesta(getPregunta(15))
+                        ? getRespuesta(getPregunta(15)).valor
+                        : "Value"
+                    }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+    <div class="grafica">
+      <apx-chart
+        [series]="series"
+        [chart]="chart"
+        [plotOptions]="plotOptions"
+        [labels]="labels"
+        [fill]="fill"
+        [stroke]="stroke"
+      ></apx-chart>
+    </div>
   </div>
-</div>
