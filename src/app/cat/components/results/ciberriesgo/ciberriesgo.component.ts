@@ -68,7 +68,7 @@ export class CiberriesgoComponent implements OnInit {
         console.log(empresa);
         this.ELEMENT_DATA[0].valor = empresa.ingreso;
         this.ELEMENT_DATA[1].valor = empresa.dependencia;
-        const valueDay = empresa.dependencia * empresa.ingreso;
+        const valueDay = ((empresa.dependencia)/100) * empresa.ingreso;
         this.series = [
           {
             name: 'Pérdida',

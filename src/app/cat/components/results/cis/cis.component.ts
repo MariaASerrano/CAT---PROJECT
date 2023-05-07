@@ -78,10 +78,10 @@ export class CisComponent implements OnInit {
         )
         .filter((respuesta: any) => !!respuesta.orden)
         .sort((a: any, b: any) => a.orden - b.orden);
-      this.cisTotal = Math.ceil(
-        respuestas.reduce((acc: any, obj: any) => acc + obj.valor, 0) /
-          respuestas.length
-      );   
+        this.cisTotal = Math.floor(
+          this.respuestas.reduce((acc: any, obj: any) => acc + obj.valor, 0) /
+            this.respuestas.length
+        );
       this.series = [this.cisTotal];
     });
     this.initializeChartOptions();
