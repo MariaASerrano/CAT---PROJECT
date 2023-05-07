@@ -22,6 +22,7 @@
     "@angular/router": "^14.2.12",
     "angular-highcharts": "^14.1.7",
     "apexcharts": "^3.36.3",
+    "firebase": "^9.21.0",
     "bulma": "^0.9.4",
     "ng-apexcharts": "^1.7.4",
     "ng2-currency-mask": "^13.0.3",
